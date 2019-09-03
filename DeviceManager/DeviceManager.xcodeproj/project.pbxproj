@@ -34,6 +34,8 @@
 		8F73311B231E9C5B009D3083 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F73311A231E9C5A009D3083 /* EditProfile.storyboard */; };
 		8F73311D231E9C86009D3083 /* HomeHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F73311C231E9C86009D3083 /* HomeHistory.storyboard */; };
 		8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */; };
+		8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733120231EA9E4009D3083 /* BaseTVC.swift */; };
+		8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733122231EA9FF009D3083 /* LoginCell.swift */; };
 		C2F9254F0D973FE7CF85AAF9 /* Pods_DeviceManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801D604D57D63D2C791D3F45 /* Pods_DeviceManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		8F73311A231E9C5A009D3083 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		8F73311C231E9C86009D3083 /* HomeHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeHistory.storyboard; sourceTree = "<group>"; };
 		8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHistoryVC.swift; sourceTree = "<group>"; };
+		8F733120231EA9E4009D3083 /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
+		8F733122231EA9FF009D3083 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +143,11 @@
 				8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */,
 				8F73311C231E9C86009D3083 /* HomeHistory.storyboard */,
 				8F733116231E9C29009D3083 /* AvailableDevice.storyboard */,
+				8F733120231EA9E4009D3083 /* BaseTVC.swift */,
 				8F733112231E9BB9009D3083 /* AdminEmpVC.swift */,
 				8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */,
 				8F131B9A231E849000509249 /* Login.storyboard */,
+				8F733122231EA9FF009D3083 /* LoginCell.swift */,
 				8F131B9C231E853500509249 /* LoginVC.swift */,
 				8F131B94231E808E00509249 /* BaseVC.swift */,
 				8F131BA0231E85A200509249 /* InvalidPasswordVC.swift */,
@@ -306,12 +312,14 @@
 			files = (
 				8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */,
 				8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */,
+				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
 				8F131BA1231E85A200509249 /* InvalidPasswordVC.swift in Sources */,
 				8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
 				8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */,
 				8F131B95231E808E00509249 /* BaseVC.swift in Sources */,
+				8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */,
 				8F131B9D231E853500509249 /* LoginVC.swift in Sources */,
 				8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */,
 				8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */,
