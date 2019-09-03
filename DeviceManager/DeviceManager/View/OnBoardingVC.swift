@@ -12,9 +12,5 @@ class ViewController: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
-
 }
-

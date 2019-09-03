@@ -9,14 +9,9 @@
 import UIKit
 
 class ProfileVC: BaseVC {
-
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
+    super.viewDidLoad()
     }
-    
-
     /*
     // MARK: - Navigation
 

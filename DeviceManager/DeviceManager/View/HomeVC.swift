@@ -12,10 +12,9 @@ class HomeVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       // var a: Int = 4
         // Do any additional setup after loading the view.
-    }
-    
+}
 
     /*
     // MARK: - Navigation
