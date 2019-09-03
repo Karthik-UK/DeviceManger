@@ -20,6 +20,10 @@
 		8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BA2231E85B900509249 /* ProfileVC.swift */; };
 		8F131BA5231E860800509249 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BA4231E860800509249 /* ForgotPassword.storyboard */; };
 		8F131BA7231E862400509249 /* InvalidPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BA6231E862400509249 /* InvalidPassword.storyboard */; };
+		8F131BA9231E8F9A00509249 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BA8231E8F9A00509249 /* Dashboard.storyboard */; };
+		8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BAA231E92AB00509249 /* HomeVC.swift */; };
+		8F131BAD231E949200509249 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BAC231E949200509249 /* Profile.storyboard */; };
+		8F131BAF231E94B400509249 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BAE231E94B400509249 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		8F131BA2231E85B900509249 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		8F131BA4231E860800509249 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		8F131BA6231E862400509249 /* InvalidPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InvalidPassword.storyboard; sourceTree = "<group>"; };
+		8F131BA8231E8F9A00509249 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		8F131BAA231E92AB00509249 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		8F131BAC231E949200509249 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		8F131BAE231E94B400509249 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				8F131B84231E7E3200509249 /* Main.storyboard */,
+				8F131BA8231E8F9A00509249 /* Dashboard.storyboard */,
+				8F131BAE231E94B400509249 /* Home.storyboard */,
+				8F131BAC231E949200509249 /* Profile.storyboard */,
+				8F131BAA231E92AB00509249 /* HomeVC.swift */,
 				8F131BA6231E862400509249 /* InvalidPassword.storyboard */,
 				8F131BA4231E860800509249 /* ForgotPassword.storyboard */,
 				8F131B9A231E849000509249 /* Login.storyboard */,
@@ -172,9 +184,12 @@
 			files = (
 				8F131B9B231E849000509249 /* Login.storyboard in Resources */,
 				8F131B8B231E7E3300509249 /* LaunchScreen.storyboard in Resources */,
+				8F131BAD231E949200509249 /* Profile.storyboard in Resources */,
+				8F131BAF231E94B400509249 /* Home.storyboard in Resources */,
 				8F131BA5231E860800509249 /* ForgotPassword.storyboard in Resources */,
 				8F131B88231E7E3300509249 /* Assets.xcassets in Resources */,
 				8F131BA7231E862400509249 /* InvalidPassword.storyboard in Resources */,
+				8F131BA9231E8F9A00509249 /* Dashboard.storyboard in Resources */,
 				8F131B86231E7E3200509249 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */,
+				8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */,
 				8F131BA1231E85A200509249 /* InvalidPasswordVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
 				8F131B95231E808E00509249 /* BaseVC.swift in Sources */,
