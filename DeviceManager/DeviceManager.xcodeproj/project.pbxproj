@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD71231F7CFF00DC3634 /* LoginModel.swift */; };
+		8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD73231F7D3C00DC3634 /* LoginVM.swift */; };
 		8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B80231E7E3200509249 /* AppDelegate.swift */; };
 		8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B82231E7E3200509249 /* OnBoardingVC.swift */; };
 		8F131B86231E7E3200509249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131B84231E7E3200509249 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		1620D13A1469713F5F4BD5C0 /* Pods-DeviceManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviceManager.release.xcconfig"; path = "Target Support Files/Pods-DeviceManager/Pods-DeviceManager.release.xcconfig"; sourceTree = "<group>"; };
 		801D604D57D63D2C791D3F45 /* Pods_DeviceManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeviceManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82904A0F6CC37A7C6B0CB400 /* Pods-DeviceManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviceManager.debug.xcconfig"; path = "Target Support Files/Pods-DeviceManager/Pods-DeviceManager.debug.xcconfig"; sourceTree = "<group>"; };
+		8F07FD71231F7CFF00DC3634 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		8F07FD73231F7D3C00DC3634 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		8F131B7D231E7E3200509249 /* DeviceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F131B80231E7E3200509249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F131B82231E7E3200509249 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		8F131B96231E81AF00509249 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8F07FD71231F7CFF00DC3634 /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 		8F131B98231E81C500509249 /* View-Model */ = {
 			isa = PBXGroup;
 			children = (
+				8F07FD73231F7D3C00DC3634 /* LoginVM.swift */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
 				8F131BA1231E85A200509249 /* InvalidPasswordVC.swift in Sources */,
+				8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */,
 				8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
 				8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */,
@@ -325,6 +332,7 @@
 				8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */,
 				8F131B9F231E858300509249 /* ForgotPasswordVC.swift in Sources */,
 				8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */,
+				8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

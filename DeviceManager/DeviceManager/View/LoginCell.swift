@@ -11,7 +11,7 @@ import UIKit
 class LoginCell: BaseTVC {
 
     @IBOutlet weak var cellLabel: UILabel!
-    @IBOutlet weak var cellTextField: UITextField!
+    @IBOutlet weak var cellTextField: CustomTextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

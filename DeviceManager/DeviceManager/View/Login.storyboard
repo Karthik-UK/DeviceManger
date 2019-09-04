@@ -25,21 +25,21 @@
                                     <constraint firstAttribute="height" constant="200" id="M4C-k9-v2y"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="123" id="oEh-9D-Sih" customClass="LoginCell" customModule="DeviceManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="123"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="176" id="oEh-9D-Sih" customClass="LoginCell" customModule="DeviceManager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oEh-9D-Sih" id="Hnb-Ov-CMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="122.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="175.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPy-4i-pGq">
-                                                    <rect key="frame" x="30" y="44" width="42" height="35"/>
+                                                    <rect key="frame" x="30" y="44" width="42" height="88"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQ7-vv-jkD">
-                                                    <rect key="frame" x="111" y="44" width="253" height="35"/>
+                                                    <rect key="frame" x="111" y="44" width="233" height="88"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -77,7 +77,7 @@
                         <constraints>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="width" secondItem="YE6-aN-taU" secondAttribute="width" multiplier="0.1" id="62Y-4k-jdA"/>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="top" secondItem="0Sr-BI-tRt" secondAttribute="top" constant="10" id="GHI-Pp-Z9l"/>
-                            <constraint firstItem="EOM-KE-34L" firstAttribute="leading" secondItem="0Sr-BI-tRt" secondAttribute="leading" multiplier="0.5" constant="20" id="LvB-nK-Kpm"/>
+                            <constraint firstItem="EOM-KE-34L" firstAttribute="leading" secondItem="0Sr-BI-tRt" secondAttribute="leading" constant="20" id="LvB-nK-Kpm"/>
                             <constraint firstItem="0Sr-BI-tRt" firstAttribute="trailing" secondItem="EOM-KE-34L" secondAttribute="trailing" constant="20" id="Miq-Vd-39c"/>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="Nb9-FV-U5M"/>
                             <constraint firstItem="EOM-KE-34L" firstAttribute="top" secondItem="wG8-uB-wGd" secondAttribute="bottom" constant="25" id="tYs-4C-h4M"/>
