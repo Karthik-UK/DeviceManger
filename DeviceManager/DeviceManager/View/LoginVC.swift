@@ -37,7 +37,6 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
                 } else {
                     currentIndex = indexPath
                     cell.cellTextField.type = .password
-                    
                 }
             return cell
             }
@@ -46,16 +45,21 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
     func textFieldDidBeginEditing(_ textField: UITextField) {
         currentIndex = IndexPath(row: textField.tag, section: 0)
     }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if currentIndex == IndexPath(row: 0, section: 0) {
             if let index = currentIndex {
-                let cell = tableView.cellForRow(at: index) as? LoginCell
-                let text = cell?.cellTextField.text
+                if let cell = tableView.cellForRow(at: index) as? LoginCell
+                { let text = cell.cellTextField.text
                 if text!.isValid(.email) {
-                    print("validemail")
+                    cell.cellLabel.textColor = .blue
                 } else {
-                    print("Invalidmail")}
+                    cell.cellLabel.textColor = .red
+                    let nextIndex = IndexPath(row: 1, section: 0)
+                       let cell = tableView.cellForRow(at: nextIndex) as? LoginCell
+                       cell?.cellTextField.text = ""
+                }
+                }
             }
         }
         if currentIndex == IndexPath(row: 1, section: 0) {
@@ -63,18 +67,11 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
                 let cell = tableView.cellForRow(at: index) as? LoginCell
                 let text = cell?.cellTextField.text
                 if text!.isValid(.password) {
-                    print("validposs")
+                    cell?.cellLabel.textColor = .blue
                 } else {
-                    print("Invalidpss")}
+                    cell?.cellLabel.textColor = .red
+                }
             }
         }
-        return true
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-       
     }
 }

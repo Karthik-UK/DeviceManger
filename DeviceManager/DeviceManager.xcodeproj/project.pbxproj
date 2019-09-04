@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD71231F7CFF00DC3634 /* LoginModel.swift */; };
 		8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD73231F7D3C00DC3634 /* LoginVM.swift */; };
+		8F07FD76231FF8FE00DC3634 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */; };
+		8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD77231FF93300DC3634 /* Extension+String.swift */; };
 		8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B80231E7E3200509249 /* AppDelegate.swift */; };
 		8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B82231E7E3200509249 /* OnBoardingVC.swift */; };
 		8F131B86231E7E3200509249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131B84231E7E3200509249 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		82904A0F6CC37A7C6B0CB400 /* Pods-DeviceManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviceManager.debug.xcconfig"; path = "Target Support Files/Pods-DeviceManager/Pods-DeviceManager.debug.xcconfig"; sourceTree = "<group>"; };
 		8F07FD71231F7CFF00DC3634 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8F07FD73231F7D3C00DC3634 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		8F07FD77231FF93300DC3634 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8F131B7D231E7E3200509249 /* DeviceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F131B80231E7E3200509249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F131B82231E7E3200509249 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
@@ -134,11 +138,13 @@
 			isa = PBXGroup;
 			children = (
 				8F131B84231E7E3200509249 /* Main.storyboard */,
+				8F07FD77231FF93300DC3634 /* Extension+String.swift */,
 				8F131BA8231E8F9A00509249 /* Dashboard.storyboard */,
 				8F131BAE231E94B400509249 /* Home.storyboard */,
 				8F131BAC231E949200509249 /* Profile.storyboard */,
 				8F131BAA231E92AB00509249 /* HomeVC.swift */,
 				8F131BA6231E862400509249 /* InvalidPassword.storyboard */,
+				8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */,
 				8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */,
 				8F131BB1231E9B4700509249 /* AdminDevice.storyboard */,
 				8F131BA4231E860800509249 /* ForgotPassword.storyboard */,
@@ -321,9 +327,11 @@
 				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
 				8F131BA1231E85A200509249 /* InvalidPasswordVC.swift in Sources */,
+				8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */,
 				8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */,
 				8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
+				8F07FD76231FF8FE00DC3634 /* CustomTextField.swift in Sources */,
 				8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */,
 				8F131B95231E808E00509249 /* BaseVC.swift in Sources */,
 				8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */,
