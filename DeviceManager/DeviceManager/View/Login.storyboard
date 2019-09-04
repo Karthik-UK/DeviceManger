@@ -25,21 +25,21 @@
                                     <constraint firstAttribute="height" constant="200" id="M4C-k9-v2y"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="176" id="oEh-9D-Sih" customClass="LoginCell" customModule="DeviceManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="176"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="123" id="oEh-9D-Sih" customClass="LoginCell" customModule="DeviceManager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oEh-9D-Sih" id="Hnb-Ov-CMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="175.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="122.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPy-4i-pGq">
-                                                    <rect key="frame" x="30" y="44" width="42" height="88"/>
+                                                    <rect key="frame" x="30" y="44" width="42" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQ7-vv-jkD">
-                                                    <rect key="frame" x="111" y="44" width="233" height="88"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQ7-vv-jkD" customClass="CustomTextField" customModule="DeviceManager" customModuleProvider="target">
+                                                    <rect key="frame" x="111" y="44" width="233" height="35"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
