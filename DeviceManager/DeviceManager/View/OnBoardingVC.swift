@@ -10,7 +10,12 @@ import UIKit
 
 class ViewController: BaseVC {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var getStarted: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        getStarted.layer.borderWidth = 2
+        getStarted.layer.borderColor = UIColor.black.cgColor
+        
     }
 }

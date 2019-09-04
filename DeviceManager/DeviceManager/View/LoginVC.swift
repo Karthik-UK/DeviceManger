@@ -18,7 +18,6 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         labelField.login()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,7 +25,6 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LoginCell.self), for: indexPath) as? LoginCell {
-            
             currentIndex = indexPath
             cell.cellTextField.tag = indexPath.row
             cell.cellLabel.text = labelField.loginInfo[indexPath.row].title

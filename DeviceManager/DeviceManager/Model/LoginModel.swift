@@ -17,9 +17,6 @@ enum KeyType: Int {
             return "Enter Mail"
         case .password:
             return "Enter Password"
-        
         }
     }
 }
-
-
