@@ -46,7 +46,3 @@ extension OnBoardingVC: UICollectionViewDelegateFlowLayout {
         return UIScreen.main.bounds.size
     }
 }
-
-
-
-

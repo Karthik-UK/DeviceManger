@@ -6,21 +6,17 @@
 //  Copyright © 2019 Karthik UK. All rights reserved.
 //
 
-
-
 import Foundation
 extension String {
     enum Validity {
         case email
         case  password
-        
     }
     
-    enum Regex: String{
+    enum Regex: String {
         case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{3,64}"
         case password = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
     }
-    
     func isValid(_ validityType: Validity) -> Bool {
         let format = "SELF MATCHES %@"
         var regex = " "
@@ -32,5 +28,4 @@ extension String {
         }
         return NSPredicate(format: format, regex).evaluate(with: self)
     }
-    
 }
