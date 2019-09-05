@@ -8,45 +8,37 @@
 
 import UIKit
 
-class OnBoardingVC: BaseVC, UICollectionViewDataSource,UICollectionViewDelegate {
-    
+class OnBoardingVC: BaseVC {
     @IBOutlet weak var onClick: UIButton!
-    
-
     @IBOutlet weak var pageControl: UIPageControl!
     let model =  WalkThroughVM()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         model.onBoarding()
         onClick.layer.borderWidth = 2
         onClick.layer.borderColor = UIColor.black.cgColor
-        
     }
-    
+}
+
+extension OnBoardingVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.info.count
-        
     }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
         print(scrollView.contentOffset.x)
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnBoardingCVC", for: indexPath as IndexPath) as? OnBoardingCVC
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: "OnBoardingCVC"), for: indexPath as IndexPath) as? OnBoardingCVC
         cell?.imageOutlet.image =  UIImage(named: model.info[indexPath.row].images)
         cell?.title.text = model.info[indexPath.row].titles
         cell?.descriptionLabel.text = model.info[indexPath.row].about
         return cell ?? UICollectionViewCell()
     }
-    
-    
 }
 
-extension OnBoardingVC: UICollectionViewDelegateFlowLayout{
+extension OnBoardingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

@@ -1,10 +1,12 @@
 import Foundation
 import UIKit
 
+//For label Field
 struct LoginFields {
     let title: String
 }
 
+//To select type of keyboard
 enum KeyType: Int {
     case defaultcase = 0
     case email

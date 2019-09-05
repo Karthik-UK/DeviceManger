@@ -11,8 +11,6 @@ import UIKit
 class OnBoardingCVC: BaseCVC {
 
     @IBOutlet weak var imageOutlet: UIImageView!
-    
     @IBOutlet weak var title: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
 }

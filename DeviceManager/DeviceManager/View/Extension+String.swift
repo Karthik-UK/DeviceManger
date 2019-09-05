@@ -9,13 +9,14 @@
 
 
 import Foundation
-extension String{
-    enum Validity{
+extension String {
+    enum Validity {
         case email
         case  password
         
     }
-    enum Regex : String{
+    
+    enum Regex: String{
         case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{3,64}"
         case password = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
     }
@@ -28,7 +29,6 @@ extension String{
             regex = Regex.email.rawValue
         case .password:
             regex = Regex.password.rawValue
-            
         }
         return NSPredicate(format: format, regex).evaluate(with: self)
     }

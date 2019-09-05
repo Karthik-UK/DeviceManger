@@ -21,6 +21,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MXu-qr-kcU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eJP-NV-KL7">
                                     <size key="itemSize" width="419" height="718"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -35,30 +36,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="419" height="718"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-OW-d1u">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-OW-d1u">
                                                     <rect key="frame" x="8" y="52" width="403" height="658"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irK-pH-NzN">
-                                                    <rect key="frame" x="38" y="200" width="343" height="61"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irK-pH-NzN">
+                                                    <rect key="frame" x="38" y="150" width="343" height="61"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="51"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-rQ-hZd">
-                                                    <rect key="frame" x="38" y="281" width="343" height="349"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-rQ-hZd">
+                                                    <rect key="frame" x="38" y="251" width="343" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.43496574700000001" green="0.47571399790000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="irK-pH-NzN" firstAttribute="leading" secondItem="XuA-mg-2yn" secondAttribute="leadingMargin" constant="30" id="3Uf-zK-ORk"/>
-                                            <constraint firstItem="irK-pH-NzN" firstAttribute="top" relation="lessThanOrEqual" secondItem="XuA-mg-2yn" secondAttribute="top" priority="999" constant="200" id="8KQ-AD-wPB"/>
+                                            <constraint firstItem="irK-pH-NzN" firstAttribute="top" secondItem="XuA-mg-2yn" secondAttribute="top" constant="150" id="8KQ-AD-wPB"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="irK-pH-NzN" secondAttribute="trailing" constant="30" id="EBz-h2-fEc"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="d1z-rQ-hZd" secondAttribute="bottom" constant="80" id="GBQ-A8-GkU"/>
-                                            <constraint firstItem="d1z-rQ-hZd" firstAttribute="top" secondItem="irK-pH-NzN" secondAttribute="bottom" constant="20" id="KY9-xe-2cs"/>
+                                            <constraint firstItem="d1z-rQ-hZd" firstAttribute="top" secondItem="irK-pH-NzN" secondAttribute="bottom" constant="40" id="KY9-xe-2cs"/>
                                             <constraint firstItem="irK-pH-NzN" firstAttribute="centerX" secondItem="XuA-mg-2yn" secondAttribute="centerX" id="N43-ih-qyH"/>
                                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="d1z-rQ-hZd" secondAttribute="bottom" constant="20" id="Rmo-NG-Svd"/>
                                             <constraint firstItem="oFp-OW-d1u" firstAttribute="top" secondItem="XuA-mg-2yn" secondAttribute="topMargin" id="UxF-MH-xq3"/>
@@ -69,6 +74,11 @@
                                             <constraint firstItem="oFp-OW-d1u" firstAttribute="bottom" secondItem="XuA-mg-2yn" secondAttribute="bottomMargin" id="uMy-ar-9es"/>
                                             <constraint firstItem="oFp-OW-d1u" firstAttribute="leading" secondItem="XuA-mg-2yn" secondAttribute="leadingMargin" id="wEn-gc-lZd"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="d1z-rQ-hZd" id="ZbE-JU-1GY"/>
                                             <outlet property="imageOutlet" destination="oFp-OW-d1u" id="lpo-IF-PMP"/>
@@ -81,6 +91,12 @@
                                     <outlet property="delegate" destination="6qu-xp-pmr" id="5QJ-hf-DLE"/>
                                 </connections>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Computer-Hardware-Device-Manager-icon" translatesAutoresizingMaskIntoConstraints="NO" id="EPA-Go-9h3">
+                                <rect key="frame" x="176" y="64" width="62" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EPA-Go-9h3" secondAttribute="height" multiplier="100:100" id="G8m-X3-YUD"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDV-Ne-Smt">
                                 <rect key="frame" x="132" y="812" width="150" height="30"/>
                                 <constraints>
@@ -94,12 +110,6 @@
                                     <constraint firstAttribute="width" constant="39" id="VyD-QG-rYi"/>
                                 </constraints>
                             </pageControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Computer-Hardware-Device-Manager-icon" translatesAutoresizingMaskIntoConstraints="NO" id="EPA-Go-9h3">
-                                <rect key="frame" x="176" y="64" width="62" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="EPA-Go-9h3" secondAttribute="height" multiplier="100:100" id="G8m-X3-YUD"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
