@@ -7,11 +7,30 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 let labelField = LoginVM()
 class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldDelegate {
+//    @IBAction func forgotPassword(_ sender: Any) {
+//        if let ForgotViewController = UIStoryboard(name: "ForgotPasswordVC", bundle:
+    //nil).instantiateViewController(withIdentifier: String(describing: "ForgotPasswordVC")) as? ForgotPasswordVC { return }
+//        self.navigationController?.pushViewController(forgotViewController, animated: true)
+//    }
     var currentIndex : IndexPath?
+    var email: String = ""
+    var password: String = ""
+    @IBAction func manualLogin(_ sender: Any) {
+        print(currentIndex)
+        
+    }
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func googleSignIn(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+        Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
+                                                 "STATUS": "TRUE"])
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -26,6 +45,7 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LoginCell.self), for: indexPath) as? LoginCell {
             currentIndex = indexPath
+            cell.selectionStyle = .none
             cell.cellTextField.tag = indexPath.row
             cell.cellLabel.text = labelField.loginInfo[indexPath.row].title
             cell.cellTextField.delegate = self
@@ -53,9 +73,7 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
                     cell.cellLabel.textColor = .blue
                 } else {
                     cell.cellLabel.textColor = .red
-                    let nextIndex = IndexPath(row: 1, section: 0)
-                       let cell = tableView.cellForRow(at: nextIndex) as? LoginCell
-                       cell?.cellTextField.text = ""
+                   
                 }
                 }
             }

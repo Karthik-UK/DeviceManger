@@ -6,12 +6,13 @@
 //  Copyright © 2019 Karthik UK. All rights reserved.
 
 import Foundation
-class WalkThroughVM {
+import UIKit
+class OnBoardingVM {
     var info: [Descriptions] = []
     func onBoarding() {
-        let about: [Descriptions] = [Descriptions(images: "3455ea17f8301fdbf7927ce662697a1d", titles: "De.Ma", about:"One stop to manage all your devices"),
-            Descriptions(images: "solid-blue", titles: "Manage Your Devices", about: "Get notified with all the available free devices"),
-            Descriptions(images: "download", titles: "Transfer Devices", about: "Request and transfer devices Hassle-free")]
+        let about: [Descriptions] = [Descriptions(images: UIImage(named:"3455ea17f8301fdbf7927ce662697a1d"), titles: "De.Ma", about:"One stop to manage all your devices"),
+            Descriptions(images: UIImage(named: "solid-blue"), titles: "Manage Your Devices", about: "Get notified with all the available free devices"),
+            Descriptions(images: UIImage(named: "download"), titles: "Transfer Devices", about: "Request and transfer devices Hassle-free")]
             info = about
     }
 }

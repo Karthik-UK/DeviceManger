@@ -6,6 +6,8 @@ target 'DeviceManager' do
   use_frameworks!
 
   # Pods for DeviceManager
-    
-    
+    pod 'Firebase/Auth'
+   pod 'Firebase/Analytics'
+    pod 'GoogleSignIn'
+    pod 'Firebase/Database'
 end

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,6 +44,9 @@
 		8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */; };
 		8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733120231EA9E4009D3083 /* BaseTVC.swift */; };
 		8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733122231EA9FF009D3083 /* LoginCell.swift */; };
+		8F83BE0923211B7F00BA4428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F83BE0823211B7F00BA4428 /* GoogleService-Info.plist */; };
+		8F83BE0E23213E4500BA4428 /* FireBaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F83BE0D23213E4500BA4428 /* FireBaseDB.swift */; };
+		8F83BE102321466100BA4428 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */; };
 		C2F9254F0D973FE7CF85AAF9 /* Pods_DeviceManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801D604D57D63D2C791D3F45 /* Pods_DeviceManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHistoryVC.swift; sourceTree = "<group>"; };
 		8F733120231EA9E4009D3083 /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
 		8F733122231EA9FF009D3083 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		8F83BE0823211B7F00BA4428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F83BE0D23213E4500BA4428 /* FireBaseDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDB.swift; sourceTree = "<group>"; };
+		8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 		8F131B7F231E7E3200509249 /* DeviceManager */ = {
 			isa = PBXGroup;
 			children = (
+				8F83BE0823211B7F00BA4428 /* GoogleService-Info.plist */,
 				8F131B80231E7E3200509249 /* AppDelegate.swift */,
 				8F131B98231E81C500509249 /* View-Model */,
 				8F131B97231E81BD00509249 /* View */,
@@ -147,22 +154,23 @@
 		8F131B97231E81BD00509249 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8F131B84231E7E3200509249 /* Main.storyboard */,
 				8F07FD77231FF93300DC3634 /* Extension+String.swift */,
 				8F131BA8231E8F9A00509249 /* Dashboard.storyboard */,
 				8F131BAE231E94B400509249 /* Home.storyboard */,
+				8F83BE112321603800BA4428 /* OnBoarding */,
 				8F131BAC231E949200509249 /* Profile.storyboard */,
 				8F131BAA231E92AB00509249 /* HomeVC.swift */,
+				8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */,
 				8F131BA6231E862400509249 /* InvalidPassword.storyboard */,
 				8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */,
 				8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */,
 				8F131BB1231E9B4700509249 /* AdminDevice.storyboard */,
 				8F131BA4231E860800509249 /* ForgotPassword.storyboard */,
 				8F733114231E9C14009D3083 /* AvailableDeviceVC.swift */,
+				8F83BE0D23213E4500BA4428 /* FireBaseDB.swift */,
 				8F733118231E9C43009D3083 /* EditProfileVC.swift */,
 				8F73311A231E9C5A009D3083 /* EditProfile.storyboard */,
 				8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */,
-				8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */,
 				8F07FD792320077400DC3634 /* BaseCVC.swift */,
 				8F73311C231E9C86009D3083 /* HomeHistory.storyboard */,
 				8F733116231E9C29009D3083 /* AvailableDevice.storyboard */,
@@ -176,7 +184,6 @@
 				8F131BA0231E85A200509249 /* InvalidPasswordVC.swift */,
 				8F131BA2231E85B900509249 /* ProfileVC.swift */,
 				8F131B9E231E858300509249 /* ForgotPasswordVC.swift */,
-				8F131B82231E7E3200509249 /* OnBoardingVC.swift */,
 				8F131B89231E7E3300509249 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -189,6 +196,16 @@
 				8F1063742320D052001330AB /* OnBoardingVM.swift */,
 			);
 			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		8F83BE112321603800BA4428 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				8F131B84231E7E3200509249 /* Main.storyboard */,
+				8F131B82231E7E3200509249 /* OnBoardingVC.swift */,
+				8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		D1F2E8CF12B981F65EB300CC /* Frameworks */ = {
@@ -220,6 +237,8 @@
 				8F131B7A231E7E3200509249 /* Frameworks */,
 				8F131B7B231E7E3200509249 /* Resources */,
 				8F131BB0231E98CF00509249 /* ShellScript */,
+				91A9C0A99364AF319EA49839 /* [CP] Embed Pods Frameworks */,
+				1D2FC617B0F107E75ADDC7F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,6 +289,7 @@
 			files = (
 				8F73310F231E9B8D009D3083 /* AdminEmployee.storyboard in Resources */,
 				8F131B9B231E849000509249 /* Login.storyboard in Resources */,
+				8F83BE0923211B7F00BA4428 /* GoogleService-Info.plist in Resources */,
 				8F73311B231E9C5B009D3083 /* EditProfile.storyboard in Resources */,
 				8F733117231E9C29009D3083 /* AvailableDevice.storyboard in Resources */,
 				8F73311D231E9C86009D3083 /* HomeHistory.storyboard in Resources */,
@@ -288,6 +308,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1D2FC617B0F107E75ADDC7F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviceManager/Pods-DeviceManager-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviceManager/Pods-DeviceManager-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeviceManager/Pods-DeviceManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8F131BB0231E98CF00509249 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +341,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n\n";
+		};
+		91A9C0A99364AF319EA49839 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviceManager/Pods-DeviceManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviceManager/Pods-DeviceManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeviceManager/Pods-DeviceManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FE3E1EBE8A5F03D566F8C0E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -344,6 +398,7 @@
 				8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */,
 				8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */,
 				8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */,
+				8F83BE0E23213E4500BA4428 /* FireBaseDB.swift in Sources */,
 				8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
 				8F07FD76231FF8FE00DC3634 /* CustomTextField.swift in Sources */,
@@ -353,6 +408,7 @@
 				8F131B9D231E853500509249 /* LoginVC.swift in Sources */,
 				8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */,
 				8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */,
+				8F83BE102321466100BA4428 /* GoogleSignIn.swift in Sources */,
 				8F131B9F231E858300509249 /* ForgotPasswordVC.swift in Sources */,
 				8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */,
 				8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */,
