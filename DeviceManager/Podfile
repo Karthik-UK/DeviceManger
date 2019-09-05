@@ -6,6 +6,6 @@ target 'DeviceManager' do
   use_frameworks!
 
   # Pods for DeviceManager
-    pod 'SwiftLint'
+    
     
 end

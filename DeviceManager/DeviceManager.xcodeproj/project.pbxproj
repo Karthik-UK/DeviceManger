@@ -13,6 +13,8 @@
 		8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD77231FF93300DC3634 /* Extension+String.swift */; };
 		8F07FD7A2320077400DC3634 /* BaseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD792320077400DC3634 /* BaseCVC.swift */; };
 		8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */; };
+		8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063742320D052001330AB /* OnBoardingVM.swift */; };
+		8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063762320D07A001330AB /* OnBoardingModel.swift */; };
 		8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B80231E7E3200509249 /* AppDelegate.swift */; };
 		8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B82231E7E3200509249 /* OnBoardingVC.swift */; };
 		8F131B86231E7E3200509249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131B84231E7E3200509249 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		8F07FD77231FF93300DC3634 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8F07FD792320077400DC3634 /* BaseCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVC.swift; sourceTree = "<group>"; };
 		8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCVC.swift; sourceTree = "<group>"; };
+		8F1063742320D052001330AB /* OnBoardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVM.swift; sourceTree = "<group>"; };
+		8F1063762320D07A001330AB /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		8F131B7D231E7E3200509249 /* DeviceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F131B80231E7E3200509249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F131B82231E7E3200509249 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		8F131B7F231E7E3200509249 /* DeviceManager */ = {
 			isa = PBXGroup;
 			children = (
+				8F131B80231E7E3200509249 /* AppDelegate.swift */,
 				8F131B98231E81C500509249 /* View-Model */,
 				8F131B97231E81BD00509249 /* View */,
 				8F131B96231E81AF00509249 /* Model */,
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8F07FD71231F7CFF00DC3634 /* LoginModel.swift */,
+				8F1063762320D07A001330AB /* OnBoardingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,7 +177,6 @@
 				8F131BA2231E85B900509249 /* ProfileVC.swift */,
 				8F131B9E231E858300509249 /* ForgotPasswordVC.swift */,
 				8F131B82231E7E3200509249 /* OnBoardingVC.swift */,
-				8F131B80231E7E3200509249 /* AppDelegate.swift */,
 				8F131B89231E7E3300509249 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				8F07FD73231F7D3C00DC3634 /* LoginVM.swift */,
+				8F1063742320D052001330AB /* OnBoardingVM.swift */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -297,7 +303,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
+			shellScript = "
+
+
+";
 		};
 		FE3E1EBE8A5F03D566F8C0E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -332,9 +341,11 @@
 				8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */,
 				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
 				8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */,
+				8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
 				8F131BA1231E85A200509249 /* InvalidPasswordVC.swift in Sources */,
 				8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */,
+				8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */,
 				8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */,
 				8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
