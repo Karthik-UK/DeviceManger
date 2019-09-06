@@ -24,9 +24,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="M4C-k9-v2y"/>
                                 </constraints>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="123" id="oEh-9D-Sih" customClass="LoginCell" customModule="DeviceManager" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="123" id="oEh-9D-Sih" customClass="LoginCell" customModule="DeviceManager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="280" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oEh-9D-Sih" id="Hnb-Ov-CMb">
@@ -40,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQ7-vv-jkD" customClass="CustomTextField" customModule="DeviceManager" customModuleProvider="target">
-                                                    <rect key="frame" x="106" y="64" width="243" height="15"/>
+                                                    <rect key="frame" x="106" y="64" width="149" height="15"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -75,7 +75,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1M-H9-Slh">
-                                <rect key="frame" x="120" y="313" width="80" height="0.0"/>
+                                <rect key="frame" x="120" y="312" width="80" height="0.0"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.034703119267767146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="vRS-Po-scy"/>
@@ -94,13 +94,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-5F-NDj">
-                                <rect key="frame" x="139.5" y="338" width="41" height="36"/>
+                                <rect key="frame" x="139.5" y="347" width="41" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kU4-ZH-clg">
-                                <rect key="frame" x="137" y="399" width="46" height="46"/>
+                                <rect key="frame" x="137" y="404" width="46" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kU4-ZH-clg" secondAttribute="height" multiplier="1:1" id="RWZ-0X-5ey"/>
                                     <constraint firstAttribute="width" constant="46" id="Rtf-KL-i2E"/>
@@ -111,7 +111,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ks-SH-aJh">
-                                <rect key="frame" x="175" y="315" width="115" height="1"/>
+                                <rect key="frame" x="175" y="315" width="115" height="0.0"/>
                                 <state key="normal" title="Forgot Password"/>
                                 <connections>
                                     <action selector="forgotPassword:" destination="dDN-7r-jBX" eventType="touchUpInside" id="pnJ-QF-8HJ"/>
@@ -127,13 +127,13 @@
                             <constraint firstItem="0Sr-BI-tRt" firstAttribute="trailing" secondItem="EOM-KE-34L" secondAttribute="trailing" constant="20" id="Miq-Vd-39c"/>
                             <constraint firstItem="1ks-SH-aJh" firstAttribute="top" secondItem="EOM-KE-34L" secondAttribute="bottom" constant="8" id="MsX-Kh-xhi"/>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="Nb9-FV-U5M"/>
-                            <constraint firstItem="0Sr-BI-tRt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kU4-ZH-clg" secondAttribute="bottom" constant="35" id="P3C-wR-1GJ"/>
+                            <constraint firstItem="0Sr-BI-tRt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kU4-ZH-clg" secondAttribute="bottom" constant="30" id="P3C-wR-1GJ"/>
                             <constraint firstItem="l1M-H9-Slh" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="PhI-8v-vG0"/>
                             <constraint firstItem="k9m-5F-NDj" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="jfh-CU-MZm"/>
                             <constraint firstItem="0Sr-BI-tRt" firstAttribute="trailing" secondItem="1ks-SH-aJh" secondAttribute="trailing" constant="30" id="mP3-0I-j5g"/>
                             <constraint firstItem="EOM-KE-34L" firstAttribute="top" secondItem="wG8-uB-wGd" secondAttribute="bottom" constant="25" id="tYs-4C-h4M"/>
                             <constraint firstItem="l1M-H9-Slh" firstAttribute="top" secondItem="1ks-SH-aJh" secondAttribute="bottom" constant="-3" id="xFI-Sj-PX9"/>
-                            <constraint firstItem="k9m-5F-NDj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="l1M-H9-Slh" secondAttribute="bottom" constant="25" id="xiX-R4-105"/>
+                            <constraint firstItem="k9m-5F-NDj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="l1M-H9-Slh" secondAttribute="bottom" constant="35" id="xiX-R4-105"/>
                             <constraint firstItem="kU4-ZH-clg" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="yaM-Xv-hKC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Sr-BI-tRt"/>

@@ -8,7 +8,11 @@
 
 import Foundation
 import FirebaseDatabase
-class FireBaseDB{
-    var ref: DatabaseReference! = Database.database().reference()
+class FireBaseDB : BaseVC{
+    var ref = Database.database().reference()
+    
+    func addmailId(){
+        
+    }
     
 }

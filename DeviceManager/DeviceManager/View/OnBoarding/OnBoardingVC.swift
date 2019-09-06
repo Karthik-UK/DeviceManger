@@ -17,8 +17,6 @@ class OnBoardingVC: BaseVC {
         super.viewDidLoad()
         pageControl.currentPageIndicatorTintColor = .blue
         onBoardingmodel.onBoarding()
-        onClick.layer.borderWidth = 2
-        onClick.layer.borderColor = UIColor.black.cgColor
     }
 }
 
