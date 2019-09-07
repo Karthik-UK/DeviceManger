@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aaA-Rt-wf9">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,26 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="34y-vv-Mdj">
-            <objects>
-                <navigationController id="76c-MH-le8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xG1-lc-l2G">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="aaA-Rt-wf9" kind="relationship" relationship="rootViewController" id="z64-JY-pB8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dFG-yV-dWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1410" y="-127"/>
-        </scene>
         <!--Dash BoardVC-->
         <scene sceneID="cqq-6f-j2X">
             <objects>
-                <tabBarController storyboardIdentifier="DashBoardVC" id="aaA-Rt-wf9" customClass="DashBoardVC" customModule="DeviceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="DashBoardVC" modalTransitionStyle="flipHorizontal" id="aaA-Rt-wf9" customClass="DashBoardVC" customModule="DeviceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DQv-8i-Odz"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RlO-Mc-hJS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -45,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-712" y="-127"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="ILq-9Y-DIo">
             <objects>
                 <viewController storyboardIdentifier="ProfileVC" id="5i7-Cg-uG5" customClass="ProfileVC" customModule="DeviceManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,28 +39,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VoY-8O-7LO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="AkQ-qm-GfJ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icon_about_us" id="AkQ-qm-GfJ">
+                        <color key="badgeColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RU-gm-pqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="146" y="-168"/>
         </scene>
-        <!--Test-->
-        <scene sceneID="gLP-XC-eG2">
-            <objects>
-                <viewController storyboardIdentifier="Test" id="qFg-v0-fYF" customClass="Test" customModule="DeviceManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="08q-eS-TiO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Tkl-X3-kfJ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nmt-ie-dgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1013" y="-169"/>
-        </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="ZRv-nM-0BQ">
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="sRa-AQ-mEv" customClass="HomeVC" customModule="DeviceManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,11 +58,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dac-k1-CXg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="d3W-PW-NiT"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="icon_home_page" id="d3W-PW-NiT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CvK-DQ-L9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="167" y="588"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_about_us" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="icon_home_page" width="16.666666030883789" height="16.666666030883789"/>
+    </resources>
 </document>

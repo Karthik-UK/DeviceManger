@@ -12,10 +12,7 @@ import GoogleSignIn
 
 
 class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldDelegate {
-    let firebaseauth = FirebaseAuthManager()
-    let fireBaseDB = FireaBaseDB()
     let labelField = LoginVM()
-
 //    @IBAction func forgotPassword(_ sender: Any) {
 //        if let ForgotViewController = UIStoryboard(name: "ForgotPasswordVC", bundle:
     //nil).instantiateViewController(withIdentifier: String(describing: "ForgotPasswordVC")) as? ForgotPasswordVC { return }
@@ -33,7 +30,8 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
     @IBAction func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
-    
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
       
         Analytics.logEvent("GoogleLogin", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
@@ -44,17 +42,17 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
     override func viewDidLoad() {
         super.viewDidLoad()
         labelField.login()
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        
         
     }
     
     @objc func navigateDashboard() {
-        guard let DashBoardVC = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashBoardVC") as? DashBoardVC else { return }
-        self.present(DashBoardVC, animated: true, completion: nil)
-//        self.
-//        self.pushViewController(DashBoardVC, animated: true)
+        guard let DashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashBoardVC") as? DashBoardVC else { return }
+        self.present(DashBoard, animated: true, completion: nil)
     }
-    
+    @objc func wrongncredential() {
+        showAlert(message: "Wrong Credentials", title: "Email dosent Exist ", type: .alert ,action :[AlertAction(title:"OK",style: .default ,handler: nil)])
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return labelField.loginInfo.count
     }

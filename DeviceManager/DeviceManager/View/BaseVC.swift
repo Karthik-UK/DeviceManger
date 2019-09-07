@@ -8,13 +8,15 @@
 
 import UIKit
 
+struct  AlertAction {
+    var title: String?
+    var style : UIAlertAction.Style
+    var handler :((UIAlertAction)->Void)?
+}
+
 class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        struct  AlertAction {
-            var title: String?
-            var style : UIAlertAction.Style
-            var handler :((UIAlertAction)->Void)?
         }
         func showAlert( message: String, title : String, type : UIAlertController.Style, action :[AlertAction]) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: type)
@@ -23,6 +25,6 @@ class BaseVC: UIViewController {
                 )
             }
             self.present(alert, animated: true, completion: nil)
-        }
+        
     }
 }

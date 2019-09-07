@@ -12,7 +12,8 @@ class DashBoardVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UITabBar.appearance().tintColor = .cyan
+        UITabBar.appearance().barTintColor = .black
     }
     
 
