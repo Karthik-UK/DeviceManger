@@ -15,8 +15,6 @@ class DashBoardVC: UITabBarController {
         UITabBar.appearance().tintColor = .cyan
         UITabBar.appearance().barTintColor = .black
     }
-    
-
     /*
     // MARK: - Navigation
 

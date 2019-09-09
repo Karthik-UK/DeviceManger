@@ -22,7 +22,9 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
-            //cell.notificationLabel
+           // cell.deviceLabel =
+           // cell.employeeName =
+           // cell.entryTime =
             return cell
         }
             return HomeCell()

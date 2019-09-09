@@ -32,4 +32,8 @@ class FireBaseManager {
             }
         }
     }
+    func getHomeDetails(){
+        ref.child("allDevices")
+        
+    }
 }

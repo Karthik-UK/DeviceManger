@@ -9,7 +9,9 @@
 import UIKit
 
 class ProfileTVCell: BaseTVC {
-
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var photoImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

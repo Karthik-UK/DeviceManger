@@ -44,10 +44,10 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
         return UITableView.automaticDimension
     }
     
-//    deinit {
-//        NotificationCenter.default.removeObserver(self)
-//
-//    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+
+    }
     
     @objc func navigateDashboard() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",

@@ -6,8 +6,8 @@ import GoogleSignIn
 class GoogleSignin :NSObject ,GIDSignInDelegate {
     static let shared = GoogleSignin()
     var emailverify = EmailVerification()
-    var gmail : String = ""
-    
+    let loginvm = LoginVM()
+
     private override init() {
         super.init()
     }
@@ -34,17 +34,16 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
                 if let error = error {
                     print(error)
                 } else {
-                    self.gmail = googlemail
-                    self.emailverify.verifyemail(mail :self.gmail)
+                    self.loginvm.email = googlemail
+                    self.emailverify.verifyemail(mail :self.loginvm.email)
                 }
             }}
-        
     }
 }
 
 class EmailVerification {
     func verifyemail(mail :String) {
-        FireBaseManager.shared.getusers() { (mailinfo) in
+        FireBaseManager.shared.getusers { (mailinfo) in
             for currentmail in mailinfo {
                 if currentmail == mail {
                     FireBaseManager.shared.addUser(email: mail)

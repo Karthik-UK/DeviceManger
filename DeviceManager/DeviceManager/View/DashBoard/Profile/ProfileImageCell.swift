@@ -18,7 +18,6 @@ class ProfileImageCell: BaseTVC {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileDescription: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

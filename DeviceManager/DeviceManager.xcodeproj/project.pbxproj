@@ -172,9 +172,9 @@
 				8F07FD792320077400DC3634 /* BaseCVC.swift */,
 				8F131B94231E808E00509249 /* BaseVC.swift */,
 				8F733120231EA9E4009D3083 /* BaseTVC.swift */,
-				8FAF4DB0232394A200CA3BA2 /* DashBoard */,
 				8F83BE112321603800BA4428 /* OnBoarding */,
 				8F07140223221032007839C7 /* Login  */,
+				8FAF4DB0232394A200CA3BA2 /* DashBoard */,
 			);
 			path = View;
 			sourceTree = "<group>";
