@@ -23,8 +23,8 @@ class FireBaseManager {
     
     func getusers(completion: @escaping (([String]) -> Void)) {
         let existing = ref.child("existingUsers")
-        existing.observeSingleEvent(of: .value) { (DataSnapshot) in
-            if let dict = DataSnapshot.value as? [[String: String]] {
+        existing.observeSingleEvent(of: .value) { (dataSnapshot) in
+            if let dict = dataSnapshot.value as? [[String: String]] {
                 for item in dict {
                     self.mailinfo.append(item["email"]!)
                 }

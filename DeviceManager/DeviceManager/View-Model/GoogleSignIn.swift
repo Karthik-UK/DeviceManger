@@ -44,12 +44,10 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
 class EmailVerification {
     func verifyemail(mail :String) {
         FireBaseManager.shared.getusers { (mailinfo) in
-            for currentmail in mailinfo {
-                if currentmail == mail {
-                    FireBaseManager.shared.addUser(email: mail)
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
-                    return
-                }
+            for currentmail in mailinfo where currentmail == mail {
+                FireBaseManager.shared.addUser(email: mail)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
+                return
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
         }

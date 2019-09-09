@@ -52,8 +52,8 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
     @objc func navigateDashboard() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                        "STATUS": "TRUE"])
-        guard let DashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashBoardVC") as? DashBoardVC else { return }
-        self.present(DashBoard, animated: true, completion: nil)
+        guard let dashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashBoardVC") as? DashBoardVC else { return }
+        self.present(dashBoard, animated: true, completion: nil)
     }
     @objc func wrongncredential() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
