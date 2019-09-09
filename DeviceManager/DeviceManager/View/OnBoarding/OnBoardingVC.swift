@@ -16,6 +16,7 @@ class OnBoardingVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.currentPageIndicatorTintColor = .blue
+        pageControl.pageIndicatorTintColor = .white
         onBoardingmodel.onBoarding()
     }
 }
@@ -31,7 +32,7 @@ extension OnBoardingVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: "OnBoardingCVC"), for: indexPath as IndexPath) as? OnBoardingCVC
-        cell?.imageOutlet.image =  onBoardingmodel.info[indexPath.row].images
+        cell?.imageOutlet.image = onBoardingmodel.info[indexPath.row].images
         cell?.title.text = onBoardingmodel.info[indexPath.row].titles
         cell?.descriptionLabel.text = onBoardingmodel.info[indexPath.row].about
         return cell ?? UICollectionViewCell()

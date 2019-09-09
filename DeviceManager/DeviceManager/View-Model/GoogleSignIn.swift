@@ -4,12 +4,13 @@ import Firebase
 import GoogleSignIn
 
 class GoogleSignin :NSObject ,GIDSignInDelegate {
-    static let shared  = GoogleSignin()
+    static let shared = GoogleSignin()
     var emailverify = EmailVerification()
     var gmail : String = ""
-    private override init(){
+    private override init() {
         super.init()
     }
+    
     func googleCredential() {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -25,15 +26,13 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
             }
             return
         }
-        
-        if let googlemail =  user?.profile.email {
+        if let googlemail = user?.profile.email {
             guard let authentication = user?.authentication else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-            Auth.auth().signIn(with: credential) {(authResult, error) in
+            Auth.auth().signIn(with: credential) {( _ , error) in
                 if let error = error {
                     print(error)
-                }
-                else {
+                } else {
                     self.gmail = googlemail
                     self.emailverify.verifyemail(mail :self.gmail)
                 }
@@ -42,11 +41,11 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
     }
 }
 
-class EmailVerification{
+class EmailVerification {
     func verifyemail(mail :String) {
         FireBaseManager.shared.getusers() { (mailinfo) in
             for currentmail in mailinfo {
-                if currentmail == mail{
+                if currentmail == mail {
                     FireBaseManager.shared.addUser(email: mail)
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
                     return

@@ -17,7 +17,6 @@
 		8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063762320D07A001330AB /* OnBoardingModel.swift */; };
 		8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B80231E7E3200509249 /* AppDelegate.swift */; };
 		8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B82231E7E3200509249 /* OnBoardingVC.swift */; };
-		8F131B86231E7E3200509249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131B84231E7E3200509249 /* Main.storyboard */; };
 		8F131B88231E7E3300509249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F131B87231E7E3300509249 /* Assets.xcassets */; };
 		8F131B8B231E7E3300509249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131B89231E7E3300509249 /* LaunchScreen.storyboard */; };
 		8F131B95231E808E00509249 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B94231E808E00509249 /* BaseVC.swift */; };
@@ -28,9 +27,14 @@
 		8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BA2231E85B900509249 /* ProfileVC.swift */; };
 		8F131BA5231E860800509249 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BA4231E860800509249 /* ForgotPassword.storyboard */; };
 		8F131BA7231E862400509249 /* InvalidPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BA6231E862400509249 /* InvalidPassword.storyboard */; };
-		8F131BA9231E8F9A00509249 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BA8231E8F9A00509249 /* Dashboard.storyboard */; };
 		8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BAA231E92AB00509249 /* HomeVC.swift */; };
 		8F131BB2231E9B4700509249 /* AdminDevice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BB1231E9B4700509249 /* AdminDevice.storyboard */; };
+		8F7271F0232617CE0030519A /* CurrentDevicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EC232617CD0030519A /* CurrentDevicesCell.swift */; };
+		8F7271F1232617CE0030519A /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271ED232617CE0030519A /* LogoutCell.swift */; };
+		8F7271F2232617CE0030519A /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EE232617CE0030519A /* ProfileImageCell.swift */; };
+		8F7271F3232617CE0030519A /* NotificationPreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */; };
+		8F7271F5232618230030519A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7271F4232618230030519A /* Dashboard.storyboard */; };
+		8F7271F723263A050030519A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7271F623263A050030519A /* Main.storyboard */; };
 		8F73310F231E9B8D009D3083 /* AdminEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */; };
 		8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */; };
 		8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733112231E9BB9009D3083 /* AdminEmpVC.swift */; };
@@ -46,7 +50,6 @@
 		8F83BE102321466100BA4428 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */; };
 		8FE824C8232226F9002FD8A6 /* FireBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE824C7232226F9002FD8A6 /* FireBaseManager.swift */; };
 		8FE824CA23228555002FD8A6 /* DashBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE824C923228555002FD8A6 /* DashBoardVC.swift */; };
-		8FE824CC2322AB3E002FD8A6 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE824CB2322AB3E002FD8A6 /* Test.swift */; };
 		C2F9254F0D973FE7CF85AAF9 /* Pods_DeviceManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801D604D57D63D2C791D3F45 /* Pods_DeviceManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +68,6 @@
 		8F131B7D231E7E3200509249 /* DeviceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F131B80231E7E3200509249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F131B82231E7E3200509249 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
-		8F131B85231E7E3200509249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F131B87231E7E3300509249 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F131B8A231E7E3300509249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F131B8C231E7E3300509249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,9 +79,14 @@
 		8F131BA2231E85B900509249 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		8F131BA4231E860800509249 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		8F131BA6231E862400509249 /* InvalidPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InvalidPassword.storyboard; sourceTree = "<group>"; };
-		8F131BA8231E8F9A00509249 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		8F131BAA231E92AB00509249 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		8F131BB1231E9B4700509249 /* AdminDevice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminDevice.storyboard; sourceTree = "<group>"; };
+		8F7271EC232617CD0030519A /* CurrentDevicesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDevicesCell.swift; sourceTree = "<group>"; };
+		8F7271ED232617CE0030519A /* LogoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
+		8F7271EE232617CE0030519A /* ProfileImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
+		8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPreferencesCell.swift; sourceTree = "<group>"; };
+		8F7271F4232618230030519A /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dashboard.storyboard; path = ../../../../../../Desktop/DeviceManager1/DeviceManager/View/DashBoard/Dashboard.storyboard; sourceTree = "<group>"; };
+		8F7271F623263A050030519A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminEmployee.storyboard; sourceTree = "<group>"; };
 		8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDeviceVC.swift; sourceTree = "<group>"; };
 		8F733112231E9BB9009D3083 /* AdminEmpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEmpVC.swift; sourceTree = "<group>"; };
@@ -95,7 +102,6 @@
 		8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		8FE824C7232226F9002FD8A6 /* FireBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseManager.swift; sourceTree = "<group>"; };
 		8FE824C923228555002FD8A6 /* DashBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardVC.swift; sourceTree = "<group>"; };
-		8FE824CB2322AB3E002FD8A6 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,10 +192,8 @@
 				8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */,
 				8F131B94231E808E00509249 /* BaseVC.swift */,
 				8F131BA0231E85A200509249 /* InvalidPasswordVC.swift */,
-				8F131BA2231E85B900509249 /* ProfileVC.swift */,
 				8F131B9E231E858300509249 /* ForgotPasswordVC.swift */,
 				8F131B89231E7E3300509249 /* LaunchScreen.storyboard */,
-				8FE824CB2322AB3E002FD8A6 /* Test.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,7 +212,7 @@
 		8F83BE112321603800BA4428 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				8F131B84231E7E3200509249 /* Main.storyboard */,
+				8F7271F623263A050030519A /* Main.storyboard */,
 				8F131B82231E7E3200509249 /* OnBoardingVC.swift */,
 				8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */,
 			);
@@ -218,8 +222,13 @@
 		8FAF4DB0232394A200CA3BA2 /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				8F131BA2231E85B900509249 /* ProfileVC.swift */,
 				8FE824C923228555002FD8A6 /* DashBoardVC.swift */,
-				8F131BA8231E8F9A00509249 /* Dashboard.storyboard */,
+				8F7271F4232618230030519A /* Dashboard.storyboard */,
+				8F7271EC232617CD0030519A /* CurrentDevicesCell.swift */,
+				8F7271ED232617CE0030519A /* LogoutCell.swift */,
+				8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */,
+				8F7271EE232617CE0030519A /* ProfileImageCell.swift */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -308,14 +317,14 @@
 				8F83BE0923211B7F00BA4428 /* GoogleService-Info.plist in Resources */,
 				8F73311B231E9C5B009D3083 /* EditProfile.storyboard in Resources */,
 				8F733117231E9C29009D3083 /* AvailableDevice.storyboard in Resources */,
+				8F7271F5232618230030519A /* Dashboard.storyboard in Resources */,
 				8F73311D231E9C86009D3083 /* HomeHistory.storyboard in Resources */,
+				8F7271F723263A050030519A /* Main.storyboard in Resources */,
 				8F131B8B231E7E3300509249 /* LaunchScreen.storyboard in Resources */,
 				8F131BA5231E860800509249 /* ForgotPassword.storyboard in Resources */,
 				8F131B88231E7E3300509249 /* Assets.xcassets in Resources */,
 				8F131BA7231E862400509249 /* InvalidPassword.storyboard in Resources */,
-				8F131BA9231E8F9A00509249 /* Dashboard.storyboard in Resources */,
 				8F131BB2231E9B4700509249 /* AdminDevice.storyboard in Resources */,
-				8F131B86231E7E3200509249 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,16 +411,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F7271F3232617CE0030519A /* NotificationPreferencesCell.swift in Sources */,
 				8FE824C8232226F9002FD8A6 /* FireBaseManager.swift in Sources */,
 				8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */,
 				8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */,
 				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
 				8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */,
+				8F7271F0232617CE0030519A /* CurrentDevicesCell.swift in Sources */,
 				8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
 				8F131BA1231E85A200509249 /* InvalidPasswordVC.swift in Sources */,
 				8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */,
 				8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */,
+				8F7271F2232617CE0030519A /* ProfileImageCell.swift in Sources */,
 				8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */,
 				8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
@@ -419,13 +431,13 @@
 				8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */,
 				8F131B95231E808E00509249 /* BaseVC.swift in Sources */,
 				8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */,
-				8FE824CC2322AB3E002FD8A6 /* Test.swift in Sources */,
 				8F131B9D231E853500509249 /* LoginVC.swift in Sources */,
 				8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */,
 				8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */,
 				8FE824CA23228555002FD8A6 /* DashBoardVC.swift in Sources */,
 				8F83BE102321466100BA4428 /* GoogleSignIn.swift in Sources */,
 				8F131B9F231E858300509249 /* ForgotPasswordVC.swift in Sources */,
+				8F7271F1232617CE0030519A /* LogoutCell.swift in Sources */,
 				8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */,
 				8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */,
 				8F07FD7A2320077400DC3634 /* BaseCVC.swift in Sources */,
@@ -435,14 +447,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8F131B84231E7E3200509249 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8F131B85231E7E3200509249 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8F131B89231E7E3300509249 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

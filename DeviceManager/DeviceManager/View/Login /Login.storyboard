@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOM-KE-34L">
-                                <rect key="frame" x="20" y="87" width="280" height="220"/>
+                                <rect key="frame" x="20" y="87" width="280" height="200"/>
                                 <color key="backgroundColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="M4C-k9-v2y"/>
+                                    <constraint firstAttribute="height" constant="200" id="M4C-k9-v2y"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="122.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPy-4i-pGq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LPy-4i-pGq">
                                                     <rect key="frame" x="25" y="64" width="42" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -75,7 +75,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1M-H9-Slh">
-                                <rect key="frame" x="120" y="312" width="80" height="0.0"/>
+                                <rect key="frame" x="120" y="264" width="80" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.034703119267767146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="vRS-Po-scy"/>
@@ -93,8 +93,8 @@
                                     <action selector="manualLogin:" destination="dDN-7r-jBX" eventType="touchUpInside" id="ipj-Wo-0fj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-5F-NDj">
-                                <rect key="frame" x="139.5" y="347" width="41" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-5F-NDj">
+                                <rect key="frame" x="139.5" y="343" width="41" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -106,15 +106,13 @@
                                     <constraint firstAttribute="width" constant="46" id="Rtf-KL-i2E"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="download (1)"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="googleSignIn:" destination="dDN-7r-jBX" eventType="touchUpInside" id="XtW-XQ-vLb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ks-SH-aJh">
-                                <rect key="frame" x="175" y="315" width="115" height="0.0"/>
-                                <state key="normal" title="Forgot Password"/>
-                                <connections>
-                                    <action selector="forgotPassword:" destination="dDN-7r-jBX" eventType="touchUpInside" id="pnJ-QF-8HJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,29 +120,27 @@
                         <constraints>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="width" secondItem="YE6-aN-taU" secondAttribute="width" multiplier="0.1" id="62Y-4k-jdA"/>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="top" secondItem="0Sr-BI-tRt" secondAttribute="top" constant="10" id="GHI-Pp-Z9l"/>
-                            <constraint firstItem="kU4-ZH-clg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k9m-5F-NDj" secondAttribute="bottom" constant="25" id="JPh-qf-JJF"/>
+                            <constraint firstItem="kU4-ZH-clg" firstAttribute="top" secondItem="k9m-5F-NDj" secondAttribute="bottom" constant="25" id="JPh-qf-JJF"/>
                             <constraint firstItem="EOM-KE-34L" firstAttribute="leading" secondItem="0Sr-BI-tRt" secondAttribute="leading" constant="20" id="LvB-nK-Kpm"/>
                             <constraint firstItem="0Sr-BI-tRt" firstAttribute="trailing" secondItem="EOM-KE-34L" secondAttribute="trailing" constant="20" id="Miq-Vd-39c"/>
-                            <constraint firstItem="1ks-SH-aJh" firstAttribute="top" secondItem="EOM-KE-34L" secondAttribute="bottom" constant="8" id="MsX-Kh-xhi"/>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="Nb9-FV-U5M"/>
-                            <constraint firstItem="0Sr-BI-tRt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kU4-ZH-clg" secondAttribute="bottom" constant="30" id="P3C-wR-1GJ"/>
+                            <constraint firstItem="0Sr-BI-tRt" firstAttribute="bottom" secondItem="kU4-ZH-clg" secondAttribute="bottom" constant="30" id="P3C-wR-1GJ"/>
                             <constraint firstItem="l1M-H9-Slh" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="PhI-8v-vG0"/>
                             <constraint firstItem="k9m-5F-NDj" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="jfh-CU-MZm"/>
-                            <constraint firstItem="0Sr-BI-tRt" firstAttribute="trailing" secondItem="1ks-SH-aJh" secondAttribute="trailing" constant="30" id="mP3-0I-j5g"/>
                             <constraint firstItem="EOM-KE-34L" firstAttribute="top" secondItem="wG8-uB-wGd" secondAttribute="bottom" constant="25" id="tYs-4C-h4M"/>
-                            <constraint firstItem="l1M-H9-Slh" firstAttribute="top" secondItem="1ks-SH-aJh" secondAttribute="bottom" constant="-3" id="xFI-Sj-PX9"/>
-                            <constraint firstItem="k9m-5F-NDj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="l1M-H9-Slh" secondAttribute="bottom" constant="35" id="xiX-R4-105"/>
+                            <constraint firstItem="k9m-5F-NDj" firstAttribute="top" secondItem="l1M-H9-Slh" secondAttribute="bottom" constant="35" id="xiX-R4-105"/>
                             <constraint firstItem="kU4-ZH-clg" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="yaM-Xv-hKC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Sr-BI-tRt"/>
                     </view>
                     <connections>
+                        <outlet property="manualLoginButton" destination="l1M-H9-Slh" id="Gir-6i-1Rt"/>
                         <outlet property="tableView" destination="EOM-KE-34L" id="UPF-ba-qoH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfx-gM-MJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123.75" y="134.1549295774648"/>
+            <point key="canvasLocation" x="123.75" y="133.75"/>
         </scene>
     </scenes>
     <resources>
