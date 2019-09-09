@@ -12,18 +12,18 @@ import GoogleSignIn
 
 class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldDelegate {
     let loginvm = LoginVM()
-    let emailverification = EmailVerification()
     var currentIndex : IndexPath?
     @IBOutlet weak var manualLoginButton: UIButton!
-    
     @IBAction private func manualLogin(_ sender: Any) {
-        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? LoginCell {
-            if cell.cellLabel.textColor == .blue {
-                emailverification.verifyemail(mail: loginvm.email)
+//        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? LoginCell {
+//            if cell.cellLabel.textColor == .blue {
+       // if loginvm.email ==
+        
+                loginvm.verifyemail(mail: loginvm.email,password: "4k97disc")
                 NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
                 NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
-            }
-        }
+//            }
+        
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -53,6 +53,7 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                        "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashBoardVC") as? DashBoardVC else { return }
+       
         self.present(dashBoard, animated: true, completion: nil)
     }
     @objc func wrongncredential() {
@@ -108,14 +109,17 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
         }
         if currentIndex == IndexPath(row: 1, section: 0) {
             if let index = currentIndex {
-                let cell = tableView.cellForRow(at: index) as? LoginCell
-                let text = cell?.cellTextField.text
+                if let cell = tableView.cellForRow(at: index) as? LoginCell{
+                let text = cell.cellTextField.text
                 if text!.isValid(.password) {
-                    cell?.cellLabel.textColor = .blue
+                    cell.cellLabel.textColor = .blue
+                    guard let pass = cell.cellTextField.text else { return }
+                    loginvm.password = pass
                 } else {
-                    cell?.cellLabel.textColor = .red
+                    cell.cellLabel.textColor = .red
                 }
             }
+        }
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

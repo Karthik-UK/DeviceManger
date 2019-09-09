@@ -4,10 +4,10 @@ import Firebase
 import GoogleSignIn
 
 class GoogleSignin :NSObject ,GIDSignInDelegate {
+    
     static let shared = GoogleSignin()
-    var emailverify = EmailVerification()
     let loginvm = LoginVM()
-
+    
     private override init() {
         super.init()
     }
@@ -35,21 +35,8 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
                     print(error)
                 } else {
                     self.loginvm.email = googlemail
-                    self.emailverify.verifyemail(mail :self.loginvm.email)
+                    self.loginvm.verifyemail(mail :self.loginvm.email)
                 }
             }}
-    }
-}
-
-class EmailVerification {
-    func verifyemail(mail :String) {
-        FireBaseManager.shared.getusers { (mailinfo) in
-            for currentmail in mailinfo where currentmail == mail {
-                FireBaseManager.shared.addUser(email: mail)
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
-                return
-            }
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
-        }
     }
 }

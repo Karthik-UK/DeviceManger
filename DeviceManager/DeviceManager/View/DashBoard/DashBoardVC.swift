@@ -9,7 +9,6 @@
 import UIKit
 
 class DashBoardVC: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .cyan

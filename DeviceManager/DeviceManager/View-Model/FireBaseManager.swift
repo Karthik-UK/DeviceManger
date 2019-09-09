@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+
 class FireBaseManager {
     static let shared = FireBaseManager()
     
@@ -32,8 +33,22 @@ class FireBaseManager {
             }
         }
     }
-    func getHomeDetails(){
-        ref.child("allDevices")
+    func getPassWord(emailforpassword : String , password : String) {
+        let existing  = ref.child("existingusers")
+        //let existing = ref.child("existingUsers")
+//        existing.observeSingleEvent(of: .value) {
+//
+//
+//            }}}
+        ref.child("existingUser").child("2").observeSingleEvent(of: .value, with: { (snapshot) in
+                let password = snapshot.childSnapshot(forPath: "password").value as? String
+                print(password)
+            })
+    }
+    
+    
+    func getHomeDetails() {
+        self.ref.child("allDevices")
         
     }
 }
