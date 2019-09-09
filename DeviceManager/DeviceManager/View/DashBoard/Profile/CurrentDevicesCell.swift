@@ -1,5 +1,5 @@
 //
-//  NotificationPreferencesCell.swift
+//  CurrentDevicesCell.swift
 //  DeviceManager
 //
 //  Created by Karthik UK on 09/09/19.
@@ -10,10 +10,11 @@ import Foundation
 
 import UIKit
 
-class NotificationPreferencesCell: BaseTVC {
+class CurrentDevicesCell: BaseTVC {
     
-   
-    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var currentDeviceLabel: UILabel!
+    
+    @IBOutlet weak var currentDeviceList: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

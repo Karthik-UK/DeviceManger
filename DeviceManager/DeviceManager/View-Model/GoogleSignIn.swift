@@ -7,6 +7,7 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
     static let shared = GoogleSignin()
     var emailverify = EmailVerification()
     var gmail : String = ""
+    
     private override init() {
         super.init()
     }

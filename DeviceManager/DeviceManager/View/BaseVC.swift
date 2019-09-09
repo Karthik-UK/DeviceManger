@@ -10,8 +10,8 @@ import UIKit
 
 struct  AlertAction {
     var title: String?
-    var style : UIAlertAction.Style
-    var handler :((UIAlertAction)->Void)?
+    var style: UIAlertAction.Style
+    var handler: ((UIAlertAction) -> Void)?
 }
 
 class BaseVC: UIViewController {

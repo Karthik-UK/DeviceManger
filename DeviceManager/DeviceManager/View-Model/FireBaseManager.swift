@@ -10,9 +10,11 @@ import Firebase
 import FirebaseDatabase
 
 class FireBaseManager {
-    static let shared  = FireBaseManager()
-    private  init(){
+    static let shared = FireBaseManager()
+    
+    private  init() {
     }
+    
     let ref = Database.database().reference()
     var mailinfo: [String] = []
     
@@ -25,12 +27,9 @@ class FireBaseManager {
             if let dict = DataSnapshot.value as? [[String: String]] {
                 for item in dict {
                     self.mailinfo.append(item["email"]!)
-                    print(self.mailinfo)
                 }
                 completion(self.mailinfo)
             }
         }
     }
 }
-
-

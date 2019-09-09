@@ -1,30 +1,28 @@
 //
-//  ProfileImageCell.swift
+//  HomeCell.swift
 //  DeviceManager
 //
 //  Created by Karthik UK on 09/09/19.
 //  Copyright © 2019 Karthik UK. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
-class ProfileImageCell: BaseTVC {
+class HomeCell: BaseTVC {
 
-    @IBOutlet weak var profileImage: UIImageView!
-  
-    @IBOutlet weak var profileDescription: UILabel!
+    @IBOutlet weak var deviceLabel: UILabel!
+    @IBOutlet weak var employeeName: UILabel!
+    @IBOutlet weak var entryTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
-    
+
 }

@@ -1,5 +1,5 @@
 //
-//  LogoutCell.swift
+//  ProfileImageCell.swift
 //  DeviceManager
 //
 //  Created by Karthik UK on 09/09/19.
@@ -10,11 +10,15 @@ import Foundation
 
 import UIKit
 
-class LogoutCell: BaseTVC {
+class ProfileImageCell: BaseTVC {
 
-    @IBAction func logOutButton(_ sender: Any) {
-        
-    }
+//    @IBOutlet weak var profileImage: UIImageView!
+//    @IBOutlet weak var profileDescription: UILabel!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileDescription: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

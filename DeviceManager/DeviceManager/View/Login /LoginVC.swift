@@ -15,6 +15,7 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
     let emailverification = EmailVerification()
     var currentIndex : IndexPath?
     @IBOutlet weak var manualLoginButton: UIButton!
+    
     @IBAction private func manualLogin(_ sender: Any) {
         if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? LoginCell {
             if cell.cellLabel.textColor == .blue {
@@ -24,7 +25,9 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
             }
         }
     }
+    
     @IBOutlet weak var tableView: UITableView!
+    
     @IBAction private func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()

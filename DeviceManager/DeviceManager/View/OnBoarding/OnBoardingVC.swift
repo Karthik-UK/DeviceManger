@@ -12,7 +12,8 @@ class OnBoardingVC: BaseVC {
     @IBOutlet weak var onClick: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
 
-        let onBoardingmodel = OnBoardingVM()
+    let onBoardingmodel = OnBoardingVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.currentPageIndicatorTintColor = .blue
