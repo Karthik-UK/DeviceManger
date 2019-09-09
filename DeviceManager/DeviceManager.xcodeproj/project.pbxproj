@@ -29,10 +29,10 @@
 		8F7271F1232617CE0030519A /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271ED232617CE0030519A /* LogoutCell.swift */; };
 		8F7271F2232617CE0030519A /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EE232617CE0030519A /* ProfileImageCell.swift */; };
 		8F7271F3232617CE0030519A /* NotificationPreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */; };
-		8F7271F5232618230030519A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7271F4232618230030519A /* Dashboard.storyboard */; };
 		8F7271F723263A050030519A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7271F623263A050030519A /* Main.storyboard */; };
 		8F7271FF23264D410030519A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271FE23264D410030519A /* HomeCell.swift */; };
 		8F72720123265A7E0030519A /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F72720023265A7E0030519A /* ProfileTVCell.swift */; };
+		8F72720323267B2E0030519A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F72720223267B2E0030519A /* Dashboard.storyboard */; };
 		8F73310F231E9B8D009D3083 /* AdminEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */; };
 		8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */; };
 		8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733112231E9BB9009D3083 /* AdminEmpVC.swift */; };
@@ -79,10 +79,10 @@
 		8F7271ED232617CE0030519A /* LogoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
 		8F7271EE232617CE0030519A /* ProfileImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPreferencesCell.swift; sourceTree = "<group>"; };
-		8F7271F4232618230030519A /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dashboard.storyboard; path = ../../../../../../Desktop/DeviceManager1/DeviceManager/View/DashBoard/Dashboard.storyboard; sourceTree = "<group>"; };
 		8F7271F623263A050030519A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8F7271FE23264D410030519A /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		8F72720023265A7E0030519A /* ProfileTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
+		8F72720223267B2E0030519A /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminEmployee.storyboard; sourceTree = "<group>"; };
 		8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDeviceVC.swift; sourceTree = "<group>"; };
 		8F733112231E9BB9009D3083 /* AdminEmpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEmpVC.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				8FE824C923228555002FD8A6 /* DashBoardVC.swift */,
-				8F7271F4232618230030519A /* Dashboard.storyboard */,
+				8F72720223267B2E0030519A /* Dashboard.storyboard */,
 				8F7271F823264B1E0030519A /* Profile */,
 			);
 			path = DashBoard;
@@ -325,9 +325,9 @@
 				8F73310F231E9B8D009D3083 /* AdminEmployee.storyboard in Resources */,
 				8F131B9B231E849000509249 /* Login.storyboard in Resources */,
 				8F83BE0923211B7F00BA4428 /* GoogleService-Info.plist in Resources */,
+				8F72720323267B2E0030519A /* Dashboard.storyboard in Resources */,
 				8F73311B231E9C5B009D3083 /* EditProfile.storyboard in Resources */,
 				8F733117231E9C29009D3083 /* AvailableDevice.storyboard in Resources */,
-				8F7271F5232618230030519A /* Dashboard.storyboard in Resources */,
 				8F73311D231E9C86009D3083 /* HomeHistory.storyboard in Resources */,
 				8F7271F723263A050030519A /* Main.storyboard in Resources */,
 				8F131B8B231E7E3300509249 /* LaunchScreen.storyboard in Resources */,
