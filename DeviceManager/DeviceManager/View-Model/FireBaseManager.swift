@@ -10,8 +10,10 @@ import FirebaseDatabase
 
 class FireBaseManager {
     static let shared = FireBaseManager()
+    
     private  init() {
     }
+    
     let ref = Database.database().reference()
     var mailinfo: [String] = []
     
@@ -33,7 +35,7 @@ class FireBaseManager {
         ref.child("existingUsers").child(String(index)).observeSingleEvent(of: .value, with: {  (snapshot) in
             if let pass = snapshot.childSnapshot(forPath: "password").value as? String {
                 if password == pass {
-                    print("valid user")
+
                     completionHandler(true)
                 } else {
                     completionHandler(false)}

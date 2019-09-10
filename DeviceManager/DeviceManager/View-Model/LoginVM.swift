@@ -28,8 +28,6 @@ class LoginVM {
                         }
                     } else {
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
-                        
-                        
                     }
                 } else {
                     if mailinfo.count - 1 == index {

@@ -9,7 +9,7 @@
 import UIKit
 
 class OnBoardingVC: BaseVC {
-    @IBOutlet weak var onClick: UIButton!
+    
     @IBOutlet weak var pageControl: UIPageControl!
 
     let onBoardingmodel = OnBoardingVM()

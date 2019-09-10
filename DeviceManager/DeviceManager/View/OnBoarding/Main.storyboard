@@ -134,7 +134,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="2cL-DK-ofa"/>
                     <connections>
-                        <outlet property="onClick" destination="PDV-Ne-Smt" id="La9-Pe-05r"/>
                         <outlet property="pageControl" destination="FPz-6v-2yh" id="WTD-RT-YNi"/>
                     </connections>
                 </viewController>
