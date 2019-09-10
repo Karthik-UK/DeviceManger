@@ -24,10 +24,8 @@ class LoginVM {
                                 
                             } else {
                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
-    
                             }
                         }
-                        
                     } else {
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
                         return

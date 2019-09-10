@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-5F-NDj">
-                                <rect key="frame" x="141" y="335" width="38" height="36"/>
+                                <rect key="frame" x="141" y="324" width="38" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
                                 <color key="textColor" red="0.22902995649999999" green="1" blue="0.91206065130000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -164,7 +164,7 @@
                             <constraint firstItem="0Sr-BI-tRt" firstAttribute="trailing" secondItem="7xS-89-qff" secondAttribute="trailing" id="C7z-lS-bWc"/>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="top" secondItem="0Sr-BI-tRt" secondAttribute="top" constant="35" id="GHI-Pp-Z9l"/>
                             <constraint firstAttribute="bottom" secondItem="FYu-4A-LDf" secondAttribute="bottom" constant="40" id="I4Y-JV-SpY"/>
-                            <constraint firstItem="FYu-4A-LDf" firstAttribute="top" secondItem="k9m-5F-NDj" secondAttribute="bottom" constant="19" id="ITB-ma-jvV"/>
+                            <constraint firstItem="FYu-4A-LDf" firstAttribute="top" secondItem="k9m-5F-NDj" secondAttribute="bottom" constant="30" id="ITB-ma-jvV"/>
                             <constraint firstItem="EOM-KE-34L" firstAttribute="leading" secondItem="0Sr-BI-tRt" secondAttribute="leading" constant="20" id="LvB-nK-Kpm"/>
                             <constraint firstItem="0Sr-BI-tRt" firstAttribute="trailing" secondItem="EOM-KE-34L" secondAttribute="trailing" constant="20" id="Miq-Vd-39c"/>
                             <constraint firstItem="wG8-uB-wGd" firstAttribute="centerX" secondItem="YE6-aN-taU" secondAttribute="centerX" id="Nb9-FV-U5M"/>

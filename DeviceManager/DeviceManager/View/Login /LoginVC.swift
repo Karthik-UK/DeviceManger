@@ -4,7 +4,6 @@
 //
 //  Created by Karthik UK on 03/09/19.
 //  Copyright © 2019 Karthik UK. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -62,15 +61,13 @@ class LoginVC: BaseVC {
     
     @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-           loginButtonBottomConstraint.constant = keyboardSize.height
+            loginButtonBottomConstraint.constant = keyboardSize.height
         }
         
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            loginButtonBottomConstraint.constant = 220
-        }
+        loginButtonBottomConstraint.constant = 220
     }
 }
 
@@ -106,7 +103,7 @@ extension LoginVC:  UITextFieldDelegate {
         currentIndex = IndexPath(row: textField.tag, section: 0)
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-       if currentIndex == IndexPath(row: 0, section: 0) {
+        if currentIndex == IndexPath(row: 0, section: 0) {
             if let index = currentIndex {
                 if let cell = tableView.cellForRow(at: index) as? LoginCell {
                     
@@ -154,44 +151,6 @@ extension LoginVC:  UITextFieldDelegate {
             manualLoginButton.backgroundColor = UIColor.gray
         }
     }
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        if currentIndex == IndexPath(row: 0, section: 0) {
-//            if let index = currentIndex {
-//                if let cell = tableView.cellForRow(at: index) as? LoginCell {
-//                    if let text = cell.cellTextField.text {
-//                        if text.isValid(.email) {
-//                            cell.cellLabel.textColor = .blue
-//                            //manualLoginButton.isHidden = false
-//                            guard let mail = cell.cellTextField.text else { return }
-//                            loginvm.email = mail
-//
-//                        } else {
-//                            cell.cellLabel.textColor = .red
-//
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        if currentIndex == IndexPath(row: 1, section: 0) {
-//            if let index = currentIndex {
-//                if let cell = tableView.cellForRow(at: index) as? LoginCell {
-//                    if let text = cell.cellTextField.text {
-//                        if text.isValid(.password) {
-//                            cell.cellLabel.textColor = .blue
-//                            guard let pass = cell.cellTextField.text else { return }
-//                            loginvm.password = pass
-//                            manualLoginButton.isEnabled = true
-//                            manualLoginButton.backgroundColor = UIColor.green
-//                        } else {
-//                            cell.cellLabel.textColor = .red
-//                        }
-//                    }
-//
-//                }
-//            }
-//        }
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
