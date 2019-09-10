@@ -11,19 +11,37 @@ class LoginVM {
         loginInfo = details
     }
     
-    func verifyemail(mail :String, password: String? = nil) {
+    func verifyemail(mail :String, password: String? = nil ) {
         FireBaseManager.shared.getusers { (mailinfo) in
-            for currentmail in mailinfo where currentmail == mail {
-                FireBaseManager.shared.addUser(email: mail)
-                if let password = password {
-                    FireBaseManager.shared.getPassWord(emailforpassword: self.email , password:password )
-                    
+            for (index,currentmail) in mailinfo.enumerated() {
+                if currentmail == mail {
+                    //FireBaseManager.shared.addUser(email: mail)
+                    let currentindex = index
+                    if let password = password {
+                        FireBaseManager.shared.getPassWord(emailforpassword: self.email, password: password, index: currentindex ) { (message) in
+                            if message {
+                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
+                            } else {
+                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+                            }
+                        }
+                        
+                    } else {
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
+                        return
+                        
+                    }
+                } else {
+                    if mailinfo.count - 1 == index {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+                    }
                 }
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
-                return
             }
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+            if mailinfo.isEmpty {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+            }
+            
         }
-    }
-    
+        }
+        
 }

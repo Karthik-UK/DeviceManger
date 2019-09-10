@@ -11,38 +11,38 @@ import Firebase
 import GoogleSignIn
 
 class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldDelegate {
-    let loginvm = LoginVM()
-    var currentIndex : IndexPath?
+  
     @IBOutlet weak var manualLoginButton: UIButton!
-    @IBAction private func manualLogin(_ sender: Any) {
-//        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? LoginCell {
-//            if cell.cellLabel.textColor == .blue {
-       // if loginvm.email ==
-        
-                loginvm.verifyemail(mail: loginvm.email,password: "4k97disc")
-                NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
-//            }
-        
-    }
-    
+ 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction private func googleSignIn(_ sender: Any) {
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.signIn()
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
-    }
+    
+    let loginvm = LoginVM()
+    var currentIndex : IndexPath?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginvm.login()
         manualLoginButton.isHidden = true
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+    
+    @IBAction private func manualLogin(_ sender: Any) {
+        loginvm.verifyemail(mail: loginvm.email,password: loginvm.password)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
+        //            }
+        
     }
+    @IBAction private func googleSignIn(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.signIn()
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
+    }
+  
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -61,6 +61,12 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
                                                        "STATUS": "False"])
         showAlert(message: "Wrong Credentials", title: "Email doesn't Exist ", type: .alert ,action :[AlertAction(title:"OK",style: .default ,handler: nil)])
     }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return loginvm.loginInfo.count
     }
@@ -122,6 +128,7 @@ class LoginVC: BaseVC, UITableViewDelegate, UITableViewDataSource , UITextFieldD
         }
         }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

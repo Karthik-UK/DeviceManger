@@ -33,20 +33,21 @@ class FireBaseManager {
             }
         }
     }
-    func getPassWord(emailforpassword : String , password : String) {
-        let existing  = ref.child("existingusers")
-        //let existing = ref.child("existingUsers")
-//        existing.observeSingleEvent(of: .value) {
-//
-//
-//            }}}
-        ref.child("existingUser").child("2").observeSingleEvent(of: .value, with: { (snapshot) in
-                let password = snapshot.childSnapshot(forPath: "password").value as? String
-                print(password)
+    func getPassWord(emailforpassword : String , password : String , index :Int, completionHandler: @escaping (Bool) -> Void) {
+        ref.child("existingUsers").child("2").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let pass = snapshot.childSnapshot(forPath: "password").value as? String{
+                print(pass)
+                if password == pass{
+                    print("valid user")
+                    completionHandler(true)
+                } else {
+                    completionHandler(false)}
+                    
+                }
             })
+
     }
-    
-    
+
     func getHomeDetails() {
         self.ref.child("allDevices")
         
