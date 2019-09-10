@@ -32,13 +32,13 @@ class LoginVC: BaseVC {
     
     @IBAction private func manualLogin(_ sender: Any) {
         loginvm.verifyemail(mail: loginvm.email,password: loginvm.password)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
     }
     @IBAction private func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateDashboard), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
     }
     
@@ -46,10 +46,10 @@ class LoginVC: BaseVC {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func navigateDashboard() {
+    @objc func navigateToTabBar() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
-        guard let dashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: String(describing: DashBoardVC.self)) as? DashBoardVC else { return }
+        guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
         self.present(dashBoard, animated: true, completion: nil)
     }
     

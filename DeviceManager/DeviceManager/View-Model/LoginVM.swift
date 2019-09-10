@@ -28,12 +28,12 @@ class LoginVM {
                         }
                     } else {
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
-                        return
+                        
                         
                     }
                 } else {
                     if mailinfo.count - 1 == index {
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
                     }
                 }
             }
@@ -42,6 +42,6 @@ class LoginVM {
             }
             
         }
-        }
-        
+    }
+    
 }

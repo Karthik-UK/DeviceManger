@@ -17,24 +17,23 @@ struct  AlertAction {
 class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    func showAlert( message: String, title : String, type : UIAlertController.Style, action :[AlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: type)
+        for item in action {
+            alert.addAction(UIAlertAction(title: item.title, style: item.style, handler: item.handler)
+            )
         }
-        func showAlert( message: String, title : String, type : UIAlertController.Style, action :[AlertAction]) {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: type)
-            for item in action {
-                alert.addAction(UIAlertAction(title: item.title, style: item.style, handler: item.handler)
-                )
-            }
-            self.present(alert, animated: true, completion: nil)
-        
+        self.present(alert, animated: true, completion: nil)
     }
 }
+
 extension BaseVC {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BaseVC.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }

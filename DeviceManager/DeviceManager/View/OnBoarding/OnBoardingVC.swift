@@ -18,7 +18,7 @@ class OnBoardingVC: BaseVC {
         super.viewDidLoad()
         pageControl.currentPageIndicatorTintColor = .blue
         pageControl.pageIndicatorTintColor = .white
-        onBoardingmodel.onBoarding()
+        onBoardingmodel.formInfoModel()
     }
 }
 
