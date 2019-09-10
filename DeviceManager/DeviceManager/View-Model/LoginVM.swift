@@ -5,6 +5,7 @@ class LoginVM {
     var loginInfo: [LoginFields] = []
     var email = ""
     var password = ""
+    
     func login() {
         let details: [LoginFields] = [LoginFields(title: "Email"), LoginFields(title: "Password" )]
         loginInfo = details

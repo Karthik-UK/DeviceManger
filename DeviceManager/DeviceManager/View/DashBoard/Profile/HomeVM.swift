@@ -18,6 +18,7 @@ class HomeVM {
         var deviceserialnumber: String?
         var employeename: String?
     }
+    
     var allDevices = [DeviceModel]()
 
     func getAllDevices(completionHandler: @escaping (Bool) -> Void) {

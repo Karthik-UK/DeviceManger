@@ -13,19 +13,19 @@ class DashBoardVC: UITabBarController {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .cyan
         UITabBar.appearance().barTintColor = .black
-        
-        guard let viewControllers = viewControllers else{
-            return
-        }
-        for viewcontroller in viewControllers
-        {
-            if let profilenavigator = viewcontroller as? ProfileVC{
-              //  profilenavigator.
-            }
-            
-        }
-        
     }
+//        guard let viewControllers = viewControllers else{
+//            return
+//        }
+//        for viewcontroller in viewControllers
+//        {
+//            if let profilenavigator = viewcontroller as? ProfileVC{
+//              //  profilenavigator.
+//            }
+//            
+//        }
+//        
+//    }
     /*
     // MARK: - Navigation
 

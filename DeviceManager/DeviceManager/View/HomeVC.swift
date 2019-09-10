@@ -12,6 +12,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     let homevm = HomeVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homevm.getAllDevices { isSuccess in
