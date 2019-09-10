@@ -14,7 +14,7 @@ class LoginVC: BaseVC {
     @IBOutlet weak var manualLoginButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
-    
+    let alertconstant = alertconstants()
     let loginvm = LoginVM()
     var currentIndex : IndexPath?
     var isEmailValid: Bool = false
@@ -56,7 +56,7 @@ class LoginVC: BaseVC {
     @objc func wrongncredential() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "False"])
-        showAlert(message: "Wrong Credentials", title: "Email doesn't Exist ", type: .alert ,action :[AlertAction(title:"OK",style: .default ,handler: nil)])
+        showAlert(message: alertconstant.messgae, title: alertconstant.title, type: .alert ,action :[AlertAction(title:alertconstant.alertactionmessage,style: .default ,handler: nil)])
     }
     
     @objc func keyboardWillShow(notification: Notification) {
