@@ -10,13 +10,12 @@ import Firebase
 import GoogleSignIn
 
 class LoginVC: BaseVC {
-    
     @IBOutlet weak var manualLoginButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
     let alertconstant = Alertconstants()
     let loginvm = LoginVM()
-    var currentIndex : IndexPath?
+    var currentIndex: IndexPath?
     var isEmailValid: Bool = false
     var isPasswordValid: Bool = false
     

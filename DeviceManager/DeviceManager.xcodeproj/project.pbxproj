@@ -14,6 +14,7 @@
 		8F07FD7A2320077400DC3634 /* BaseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD792320077400DC3634 /* BaseCVC.swift */; };
 		8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */; };
 		8F0AFA9D2327B920007689A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AFA9C2327B920007689A7 /* Constants.swift */; };
+		8F0AFAA12327C631007689A7 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AFAA02327C631007689A7 /* HomeVM.swift */; };
 		8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063742320D052001330AB /* OnBoardingVM.swift */; };
 		8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063762320D07A001330AB /* OnBoardingModel.swift */; };
 		8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B80231E7E3200509249 /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		8F07FD792320077400DC3634 /* BaseCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVC.swift; sourceTree = "<group>"; };
 		8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCVC.swift; sourceTree = "<group>"; };
 		8F0AFA9C2327B920007689A7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8F0AFAA02327C631007689A7 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		8F1063742320D052001330AB /* OnBoardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVM.swift; sourceTree = "<group>"; };
 		8F1063762320D07A001330AB /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		8F131B7D231E7E3200509249 /* DeviceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 		8F7271F823264B1E0030519A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8F0AFAA02327C631007689A7 /* HomeVM.swift */,
 				8F131BA2231E85B900509249 /* ProfileVC.swift */,
 				8F72720023265A7E0030519A /* ProfileTVCell.swift */,
 				8F7271ED232617CE0030519A /* LogoutCell.swift */,
@@ -445,6 +448,7 @@
 				8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */,
 				8F131B9D231E853500509249 /* LoginVC.swift in Sources */,
 				8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */,
+				8F0AFAA12327C631007689A7 /* HomeVM.swift in Sources */,
 				8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */,
 				8FE824CA23228555002FD8A6 /* DashBoardVC.swift in Sources */,
 				8F83BE102321466100BA4428 /* GoogleSignIn.swift in Sources */,

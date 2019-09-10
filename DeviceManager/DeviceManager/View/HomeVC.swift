@@ -11,18 +11,20 @@ import UIKit
 class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    let homevm = HomeVM()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        homevm.getAllDevices { isSuccess in
+            self.tableView.reloadData()
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return homevm.allDevices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
-           // cell.deviceLabel =
+            cell.deviceLabel.text = homevm.allDevices[indexPath.row].deviceId
            // cell.employeeName =
            // cell.entryTime =
             return cell
