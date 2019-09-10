@@ -25,7 +25,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
             cell.deviceLabel.text = homevm.allDevices[indexPath.row].deviceId
-           // cell.employeeName =
+             cell.employeeName.text = homevm.allDevices[indexPath.row].admincredential
            // cell.entryTime =
             return cell
         }

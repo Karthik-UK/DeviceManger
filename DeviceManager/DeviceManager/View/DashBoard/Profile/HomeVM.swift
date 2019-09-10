@@ -27,13 +27,14 @@ class HomeVM {
             var device = DeviceModel()
             for eachDevice in response ?? [] {
                 device.deviceId = eachDevice["yml_device_id"] as? String ?? ""
+                device.admincredential = eachDevice["admin_credentials"] as? String ?? ""
                 self.allDevices.append(device)
             }
-            for eachDevice in response ?? [] {
-                device.admincredential = eachDevice["yml_device_id"] as? String ?? ""
-                self.allDevices.append(device)
-                }
-                
+//            for eachDevice in response ?? [] {
+//                device.admincredential = eachDevice["admin_credentials"] as? String ?? ""
+//                self.allDevices.append(device)
+//                }
+                print(self.allDevices)
             completionHandler(true)
             }
             
