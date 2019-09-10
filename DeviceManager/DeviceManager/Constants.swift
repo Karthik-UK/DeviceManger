@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct alertconstants{
+struct Alertconstants{
      let title = " Email doesn't Exist "
      let messgae = "Wrong Credentials"
      let alertactionmessage = "OK"

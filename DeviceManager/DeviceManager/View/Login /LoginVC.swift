@@ -14,7 +14,7 @@ class LoginVC: BaseVC {
     @IBOutlet weak var manualLoginButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
-    let alertconstant = alertconstants()
+    let alertconstant = Alertconstants()
     let loginvm = LoginVM()
     var currentIndex : IndexPath?
     var isEmailValid: Bool = false

@@ -19,7 +19,7 @@ class CustomTextField: UITextField {
                 self.keyboardType = .emailAddress
             case 2:
                 super.placeholder = self.type.description
-                self.keyboardType = .emailAddress
+                self.keyboardType = .default
                 self.isSecureTextEntry = true
             default:
                 break
