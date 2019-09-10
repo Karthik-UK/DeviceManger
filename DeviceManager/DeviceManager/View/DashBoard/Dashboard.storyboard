@@ -191,7 +191,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VoY-8O-7LO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="AkQ-qm-GfJ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icon_about_us" id="AkQ-qm-GfJ">
+                        <color key="badgeColor" red="0.22902995649999999" green="1" blue="0.91206065130000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="profileTableView" destination="ooy-Vo-zmk" id="LJL-o8-SNe"/>
                     </connections>
@@ -270,7 +272,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dac-k1-CXg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="d3W-PW-NiT"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="icon_home_page" id="d3W-PW-NiT">
+                        <color key="badgeColor" red="0.22902995649999999" green="1" blue="0.91206065130000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="Vn6-wi-OIk" id="glp-Gu-R04"/>
                     </connections>
@@ -280,4 +284,8 @@
             <point key="canvasLocation" x="132" y="602"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_about_us" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="icon_home_page" width="16.666666030883789" height="16.666666030883789"/>
+    </resources>
 </document>

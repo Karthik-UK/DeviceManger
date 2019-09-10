@@ -13,6 +13,7 @@
 		8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD77231FF93300DC3634 /* Extension+String.swift */; };
 		8F07FD7A2320077400DC3634 /* BaseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD792320077400DC3634 /* BaseCVC.swift */; };
 		8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */; };
+		8F0AFA9B23279AB0007689A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AFA9A23279AB0007689A7 /* Constants.swift */; };
 		8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063742320D052001330AB /* OnBoardingVM.swift */; };
 		8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063762320D07A001330AB /* OnBoardingModel.swift */; };
 		8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131B80231E7E3200509249 /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		8F07FD77231FF93300DC3634 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8F07FD792320077400DC3634 /* BaseCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVC.swift; sourceTree = "<group>"; };
 		8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCVC.swift; sourceTree = "<group>"; };
+		8F0AFA9A23279AB0007689A7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F1063742320D052001330AB /* OnBoardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVM.swift; sourceTree = "<group>"; };
 		8F1063762320D07A001330AB /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		8F131B7D231E7E3200509249 /* DeviceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				8F131B96231E81AF00509249 /* Model */,
 				8F131B87231E7E3300509249 /* Assets.xcassets */,
 				8F131B8C231E7E3300509249 /* Info.plist */,
+				8F0AFA9A23279AB0007689A7 /* Constants.swift */,
 			);
 			path = DeviceManager;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				8F7271F0232617CE0030519A /* CurrentDevicesCell.swift in Sources */,
 				8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
+				8F0AFA9B23279AB0007689A7 /* Constants.swift in Sources */,
 				8F07FD78231FF93300DC3634 /* Extension+String.swift in Sources */,
 				8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */,
 				8F72720123265A7E0030519A /* ProfileTVCell.swift in Sources */,

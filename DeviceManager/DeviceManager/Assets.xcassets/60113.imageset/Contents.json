@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "60113.jpg",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "solid-blue-wallpaper-solid-color-wallpaper-solid-navy-blue-wallpaper-border-solid-light-blue-phone-wallpapers.jpg",
       "scale" : "3x"
     }
   ],

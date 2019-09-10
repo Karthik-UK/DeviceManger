@@ -9,7 +9,6 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-
 class FireBaseManager {
     static let shared = FireBaseManager()
     
@@ -35,9 +34,9 @@ class FireBaseManager {
     }
     func getPassWord(emailforpassword : String , password : String , index :Int, completionHandler: @escaping (Bool) -> Void) {
         ref.child("existingUsers").child("2").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let pass = snapshot.childSnapshot(forPath: "password").value as? String{
+            if let pass = snapshot.childSnapshot(forPath: "password").value as? String {
                 print(pass)
-                if password == pass{
+                if password == pass {
                     print("valid user")
                     completionHandler(true)
                 } else {

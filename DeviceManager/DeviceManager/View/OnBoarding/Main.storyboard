@@ -123,7 +123,7 @@
                             <constraint firstItem="EPA-Go-9h3" firstAttribute="top" secondItem="JG3-mI-JFP" secondAttribute="top" constant="20" id="5dA-dz-FgN"/>
                             <constraint firstItem="EPA-Go-9h3" firstAttribute="centerX" secondItem="tU6-wG-ubC" secondAttribute="centerX" id="Gv9-ZS-SPu"/>
                             <constraint firstItem="JG3-mI-JFP" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PDV-Ne-Smt" secondAttribute="bottom" constant="20" id="NzC-wd-boH"/>
-                            <constraint firstItem="PDV-Ne-Smt" firstAttribute="bottom" secondItem="JG3-mI-JFP" secondAttribute="bottom" priority="900" constant="-20" id="aHL-ci-RWA"/>
+                            <constraint firstItem="PDV-Ne-Smt" firstAttribute="bottom" secondItem="JG3-mI-JFP" secondAttribute="bottom" priority="900" constant="20" id="aHL-ci-RWA"/>
                             <constraint firstItem="MXu-qr-kcU" firstAttribute="trailing" secondItem="JG3-mI-JFP" secondAttribute="trailing" id="o6i-8h-DYw"/>
                             <constraint firstAttribute="bottom" secondItem="MXu-qr-kcU" secondAttribute="bottom" id="ry0-pB-Bah"/>
                             <constraint firstItem="EPA-Go-9h3" firstAttribute="width" secondItem="MXu-qr-kcU" secondAttribute="width" multiplier="0.15" id="tBE-yz-cfA"/>

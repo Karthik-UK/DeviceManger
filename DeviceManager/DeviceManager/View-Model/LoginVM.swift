@@ -21,8 +21,10 @@ class LoginVM {
                         FireBaseManager.shared.getPassWord(emailforpassword: self.email, password: password, index: currentindex ) { (message) in
                             if message {
                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
+                                
                             } else {
                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+    
                             }
                         }
                         

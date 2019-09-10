@@ -2,7 +2,6 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "download.png",
       "scale" : "1x"
     },
     {
@@ -11,6 +10,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "rejection__wallpaper__by_fkyhdino-d8dcc9g.png",
       "scale" : "3x"
     }
   ],
