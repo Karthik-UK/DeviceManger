@@ -12,13 +12,13 @@ class LoginVM {
     }
     
     func verifyemail(mail :String, password: String? = nil ) {
-        FireBaseManager.shared.getusers { (mailinfo) in
+        FireBaseManager.shared.getusers { [weak self ](mailinfo) in
             for (index,currentmail) in mailinfo.enumerated() {
                 if currentmail == mail {
                     //FireBaseManager.shared.addUser(email: mail)
                     let currentindex = index
                     if let password = password {
-                        FireBaseManager.shared.getPassWord(emailforpassword: self.email, password: password, index: currentindex ) { (message) in
+                        FireBaseManager.shared.getPassWord(emailforpassword: self?.email ?? "", password: password, index: currentindex ) { (message) in
                             if message {
                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
                                 

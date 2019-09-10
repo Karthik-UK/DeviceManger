@@ -49,7 +49,7 @@ class LoginVC: BaseVC {
     @objc func navigateDashboard() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
-        guard let dashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashBoardVC") as? DashBoardVC else { return }
+        guard let dashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: String(describing: DashBoardVC.self)) as? DashBoardVC else { return }
         self.present(dashBoard, animated: true, completion: nil)
     }
     

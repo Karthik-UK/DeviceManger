@@ -30,12 +30,12 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
         if let googlemail = user?.profile.email {
             guard let authentication = user?.authentication else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-            Auth.auth().signIn(with: credential) {( _ , error) in
+            Auth.auth().signIn(with: credential) {[weak self] ( _ , error) in
                 if let error = error {
                     print(error)
                 } else {
-                    self.loginvm.email = googlemail
-                    self.loginvm.verifyemail(mail :self.loginvm.email)
+                    self?.loginvm.email = googlemail
+                    self?.loginvm.verifyemail(mail: self?.loginvm.email ?? "")
                 }
             }}
     }

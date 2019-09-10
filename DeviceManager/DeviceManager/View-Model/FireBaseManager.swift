@@ -33,7 +33,7 @@ class FireBaseManager {
         }
     }
     func getPassWord(emailforpassword : String , password : String , index :Int, completionHandler: @escaping (Bool) -> Void) {
-        ref.child("existingUsers").child("2").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("existingUsers").child(String(index)).observeSingleEvent(of: .value, with: {  (snapshot) in
             if let pass = snapshot.childSnapshot(forPath: "password").value as? String {
                 print(pass)
                 if password == pass {
