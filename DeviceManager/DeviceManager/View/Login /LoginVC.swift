@@ -25,24 +25,28 @@ class LoginVC: BaseVC {
         loginvm.login()
         NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
         self.hideKeyboardWhenTappedAround() 
         tableView.tableFooterView = UIView()
         checkForValidity()
     }
     
     @IBAction private func manualLogin(_ sender: Any) {
+        startSpinning()
         loginvm.verifyemail(mail: loginvm.email,password: loginvm.password)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
+       
     }
     @IBAction private func googleSignIn(_ sender: Any) {
+    
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
+        startSpinning()
+       
     }
     
     deinit {
+        print("Dealloc \(self)")
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -50,12 +54,14 @@ class LoginVC: BaseVC {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
+        stopSpinning()
         self.present(dashBoard, animated: true, completion: nil)
     }
     
     @objc func wrongncredential() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "False"])
+        stopSpinning()
         showAlert(message: alertconstant.messgae, title: alertconstant.title, type: .alert ,action :[AlertAction(title:alertconstant.alertactionmessage,style: .default ,handler: nil)])
     }
     
