@@ -39,14 +39,18 @@ class FireBaseManager {
                     completionHandler(true)
                 } else {
                     completionHandler(false)}
-                    
                 }
             })
-
     }
 
-    func getHomeDetails() {
-        self.ref.child("allDevices")
-        
+    func fetchAllDevices(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
+        let deviceNode = self.ref.child("allDevices")
+        deviceNode.observeSingleEvent(of: .value) { (dataSnapshot) in
+            if let dict = dataSnapshot.value as? [[String: Any]] {
+                completionHandler(true, dict)
+            } else {
+                completionHandler(false, nil)
+            }
+        }
     }
 }
