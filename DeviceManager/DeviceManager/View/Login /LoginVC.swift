@@ -15,9 +15,6 @@ class LoginVC: BaseVC {
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
     let alertconstant = Alertconstants()
     let loginvm = LoginVM()
-    var currentIndex: IndexPath?
-    var isEmailValid: Bool = false
-    var isPasswordValid: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +46,8 @@ class LoginVC: BaseVC {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: String(describing: DashBoardVC.self)) as? DashBoardVC else { return }
+            dashBoard.email = loginvm.email
+        
         self.present(dashBoard, animated: true, completion: nil)
     }
     
@@ -80,7 +79,7 @@ extension LoginVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LoginCell.self), for: indexPath) as? LoginCell {
-            currentIndex = indexPath
+            loginvm.currentIndex = indexPath
             cell.selectionStyle = .none
             cell.cellTextField.tag = indexPath.row
             cell.cellLabel.text = loginvm.loginInfo[indexPath.row].title
@@ -88,7 +87,7 @@ extension LoginVC: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == 0 {
                 cell.cellTextField.type = .email
             } else {
-                currentIndex = indexPath
+                loginvm.currentIndex = indexPath
                 cell.cellTextField.type = .password
             }
             return cell
@@ -99,17 +98,17 @@ extension LoginVC: UITableViewDelegate, UITableViewDataSource {
 
 extension LoginVC:  UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        currentIndex = IndexPath(row: textField.tag, section: 0)
+        loginvm.currentIndex = IndexPath(row: textField.tag, section: 0)
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if currentIndex == IndexPath(row: 0, section: 0) {
-            if let index = currentIndex {
+        if loginvm.currentIndex == IndexPath(row: 0, section: 0) {
+            if let index = loginvm.currentIndex {
                 if let cell = tableView.cellForRow(at: index) as? LoginCell {
                     
                     if let text = cell.cellTextField.text {
                         let finalString = text + string
-                        isEmailValid = finalString.isValid(.email)
-                        if isEmailValid {
+                        loginvm.isEmailValid = finalString.isValid(.email)
+                        if loginvm.isEmailValid {
                             cell.cellLabel.textColor = .blue
                             loginvm.email = finalString
                         } else {
@@ -120,13 +119,13 @@ extension LoginVC:  UITextFieldDelegate {
                 }
             }
         }
-        if currentIndex == IndexPath(row: 1, section: 0) {
-            if let index = currentIndex {
+        if loginvm.currentIndex == IndexPath(row: 1, section: 0) {
+            if let index = loginvm.currentIndex {
                 if let cell = tableView.cellForRow(at: index) as? LoginCell {
                     if let text = cell.cellTextField.text {
                         let finalString = text + string
-                        isPasswordValid = finalString.isValid(.password)
-                        if isPasswordValid {
+                        loginvm.isPasswordValid = finalString.isValid(.password)
+                        if loginvm.isPasswordValid {
                             cell.cellLabel.textColor = .blue
                             loginvm.password = finalString
                         } else {
@@ -142,7 +141,7 @@ extension LoginVC:  UITextFieldDelegate {
     }
     
     private func checkForValidity() {
-        if isPasswordValid && isEmailValid {
+        if loginvm.isPasswordValid && loginvm.isEmailValid {
             manualLoginButton.isEnabled = true
             manualLoginButton.backgroundColor = UIColor.green
         } else {
