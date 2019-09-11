@@ -49,6 +49,7 @@
 		8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733122231EA9FF009D3083 /* LoginCell.swift */; };
 		8F83BE0923211B7F00BA4428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F83BE0823211B7F00BA4428 /* GoogleService-Info.plist */; };
 		8F83BE102321466100BA4428 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */; };
+		8F9282622328E8FC006F548E /* SpinnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9282612328E8FC006F548E /* SpinnerVC.swift */; };
 		8FE824C8232226F9002FD8A6 /* FireBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE824C7232226F9002FD8A6 /* FireBaseManager.swift */; };
 		8FE824CA23228555002FD8A6 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE824C923228555002FD8A6 /* TabBarVC.swift */; };
 		C2F9254F0D973FE7CF85AAF9 /* Pods_DeviceManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801D604D57D63D2C791D3F45 /* Pods_DeviceManager.framework */; };
@@ -102,6 +103,7 @@
 		8F733122231EA9FF009D3083 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		8F83BE0823211B7F00BA4428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
+		8F9282612328E8FC006F548E /* SpinnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerVC.swift; sourceTree = "<group>"; };
 		8FE824C7232226F9002FD8A6 /* FireBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseManager.swift; sourceTree = "<group>"; };
 		8FE824C923228555002FD8A6 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 				8F07FD77231FF93300DC3634 /* Extension+String.swift */,
 				8F07FD792320077400DC3634 /* BaseCVC.swift */,
 				8F131B94231E808E00509249 /* BaseVC.swift */,
+				8F9282612328E8FC006F548E /* SpinnerVC.swift */,
 				8F733120231EA9E4009D3083 /* BaseTVC.swift */,
 				8F83BE112321603800BA4428 /* OnBoarding */,
 				8F07140223221032007839C7 /* Login  */,
@@ -450,6 +453,7 @@
 				8F131B95231E808E00509249 /* BaseVC.swift in Sources */,
 				8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */,
 				8F131B9D231E853500509249 /* LoginVC.swift in Sources */,
+				8F9282622328E8FC006F548E /* SpinnerVC.swift in Sources */,
 				8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */,
 				8F0AFAA12327C631007689A7 /* HomeVM.swift in Sources */,
 				8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */,

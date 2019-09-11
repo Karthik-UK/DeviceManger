@@ -31,13 +31,16 @@ class LoginVC: BaseVC {
     }
     
     @IBAction private func manualLogin(_ sender: Any) {
+        startSpinning()
         loginvm.verifyemail(mail: loginvm.email,password: loginvm.password)
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
     }
     @IBAction private func googleSignIn(_ sender: Any) {
+    
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
+        startSpinning()
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
     }
@@ -50,12 +53,14 @@ class LoginVC: BaseVC {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
+        stopSpinning()
         self.present(dashBoard, animated: true, completion: nil)
     }
     
     @objc func wrongncredential() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "False"])
+        stopSpinning()
         showAlert(message: alertconstant.messgae, title: alertconstant.title, type: .alert ,action :[AlertAction(title:alertconstant.alertactionmessage,style: .default ,handler: nil)])
     }
     

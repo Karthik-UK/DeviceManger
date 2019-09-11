@@ -15,8 +15,27 @@ struct  AlertAction {
 }
 
 class BaseVC: UIViewController {
+    var spinnerVC: SpinnerVC?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // Creates an Activity Indicator
+    func startSpinning() {
+        spinnerVC = SpinnerVC()
+        guard let spinnerVC = spinnerVC else { return }
+        
+        addChild(spinnerVC)
+        spinnerVC.view.frame = view.frame
+        view.addSubview(spinnerVC.view)
+        spinnerVC.didMove(toParent: self)
+    }
+    
+    func stopSpinning() {
+        spinnerVC?.willMove(toParent: nil)
+        spinnerVC?.view.removeFromSuperview()
+        spinnerVC?.removeFromParent()
     }
     func showAlert( message: String, title : String, type : UIAlertController.Style, action :[AlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: type)
