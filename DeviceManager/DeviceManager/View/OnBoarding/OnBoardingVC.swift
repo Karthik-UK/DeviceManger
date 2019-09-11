@@ -9,7 +9,7 @@
 import UIKit
 
 class OnBoardingVC: BaseVC {
-    @IBOutlet weak var onClick: UIButton!
+    
     @IBOutlet weak var pageControl: UIPageControl!
 
     let onBoardingmodel = OnBoardingVM()
@@ -18,7 +18,7 @@ class OnBoardingVC: BaseVC {
         super.viewDidLoad()
         pageControl.currentPageIndicatorTintColor = .blue
         pageControl.pageIndicatorTintColor = .white
-        onBoardingmodel.onBoarding()
+        onBoardingmodel.formInfoModel()
     }
 }
 

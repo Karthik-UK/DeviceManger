@@ -8,24 +8,11 @@
 
 import UIKit
 
-class DashBoardVC: UITabBarController {
-    var email = ""
+class TabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .cyan
         UITabBar.appearance().barTintColor = .black
-    
-        guard let viewControllers = viewControllers else {
-            return
-        }
-        for viewcontroller in viewControllers
-        {
-            if let profilenavigator = viewcontroller as? ProfileVC{
-               profilenavigator.email = email
-            }
-    
-        }
-    
     }
     /*
     // MARK: - Navigation
@@ -36,5 +23,5 @@ class DashBoardVC: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
-}
 
+}

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Karthik UK. All rights reserved.
 
 import UIKit
-import Firebase
 import FirebaseDatabase
 
 class FireBaseManager {
@@ -35,9 +34,8 @@ class FireBaseManager {
     func getPassWord(emailforpassword : String , password : String , index :Int, completionHandler: @escaping (Bool) -> Void) {
         ref.child("existingUsers").child(String(index)).observeSingleEvent(of: .value, with: {  (snapshot) in
             if let pass = snapshot.childSnapshot(forPath: "password").value as? String {
-                print(pass)
                 if password == pass {
-                    print("valid user")
+
                     completionHandler(true)
                 } else {
                     completionHandler(false)}
