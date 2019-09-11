@@ -20,6 +20,11 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
             self?.tableView.reloadData()
             }
         }
+        homevm.getAllHistory { [weak self]isSuccess in
+            if isSuccess {
+                self?.tableView.reloadData()
+            }
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homevm.allDevices.count
