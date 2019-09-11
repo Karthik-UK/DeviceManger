@@ -1,42 +1,45 @@
-//
 import Foundation
 import UIKit
-//class LoginVM{
-//    var LoginInfo : [LoginFields] = []
-//    func Login(){
-//        let Details:[LoginFields] = [LoginFields(Title: "Email", textField: CustomTextField.init() ),LoginFields(Title: "Password", textField: CustomTextField.init() )]
-//        LoginInfo = Details
-//    }
-//}
 
-class CustomTextField: UITextField{
-    //var txtEmailfield = UITextField(frame: CGRect(x: 10.0, y: 20.0, width: 300.0,height: 40.0))
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        createBorder()
+class LoginVM {
+    var loginInfo: [LoginFields] = []
+    var email = ""
+    var password = ""
+    
+    func login() {
+        let details: [LoginFields] = [LoginFields(title: "Email"), LoginFields(title: "Password" )]
+        loginInfo = details
     }
-    func createBorder(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor(red: 55/255, green: 78/255, blue: 95/255, alpha: 1.0).cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height-width, width: self.frame.size.width, height: self.frame.size.height)
-        border.borderWidth = width
-        self.layer.addSublayer(border)
-        self.layer.masksToBounds = true}
-//    txtEmailfield.backgroundColor = UIColor.redColor()
-//    txtEmailfield.borderStyle = UITextBorderStyle.None
-//    txtEmailfield.font=UIFont.systemFontOfSize(12)
-//    txtEmailfield.placeholder="Email(Required)"
-//    txtEmailfield.autocorrectionType=UITextAutocorrectionType.No
-//    txtEmailfield.keyboardType=UIKeyboardType.Default
-//    txtEmailfield.returnKeyType=UIReturnKeyType.Done
-//    txtEmailfield.delegate = self
-//    txtEmailfield.clearButtonMode=UITextFieldViewMode.WhileEditing
-//    txtEmailfield.contentVerticalAlignment=UIControlContentVerticalAlignment.Center
-    //self.view.addSubview(txtEmailfield)
     
-    
-    
-    
+    func verifyemail(mail :String, password: String? = nil ) {
+        FireBaseManager.shared.getusers { [weak self ](mailinfo) in
+            for (index,currentmail) in mailinfo.enumerated() {
+                if currentmail == mail {
+                    //FireBaseManager.shared.addUser(email: mail)
+                    let currentindex = index
+                    if let password = password {
+                        FireBaseManager.shared.getPassWord(emailforpassword: self?.email ?? "", password: password, index: currentindex ) { (message) in
+                            if message {
+                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
+                                
+                            } else {
+                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+                            }
+                        }
+                    } else {
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)
+                    }
+                } else {
+                    if mailinfo.count - 1 == index {
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+                    }
+                }
+            }
+            if mailinfo.isEmpty {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Failure"), object: nil)
+            }
+            
+        }
+    }
     
 }

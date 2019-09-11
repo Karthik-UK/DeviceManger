@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>139598637779-oj4d4dp6gou5tijhb3m8sg1gs77rsuam.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.139598637779-oj4d4dp6gou5tijhb3m8sg1gs77rsuam</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-gnojieGg5kEZ5VxyVA50I6bcKBL5lc0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>139598637779</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yml.DeviceManager</string>
+	<key>PROJECT_ID</key>
+	<string>devicemanager-d841f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>devicemanager-d841f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:139598637779:ios:1b48fc7537ad5d72898226</string>
+	<key>DATABASE_URL</key>
+	<string>https://devicemanager-d841f.firebaseio.com</string>
+</dict>
+</plist>
