@@ -11,6 +11,7 @@ import UIKit
 class ProfileVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var profileTableView: UITableView!
      var email = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

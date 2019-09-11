@@ -12,7 +12,7 @@ class HomeVM {
     struct DeviceModel {
         var deviceId: String?
         var admincredential: String?
-        var datecreated: String?
+        var datecreated: Date?
         var deviceName: String?
         var devicemacaddress: String?
         var deviceserialnumber: String?
@@ -32,8 +32,9 @@ class HomeVM {
                         if let deviceid = eachDevice["yml_device_id"] as? String { device.deviceId = deviceid }
                         if let admincred = eachDevice["admin_credentials"] as? String { device.admincredential = admincred }
                         if let datecreated = eachDevice["created_date"] as? String {
-                            device.datecreated = datecreated
-                        }
+                            let converteddate = datecreated.toDate()
+                            device.datecreated = converteddate
+                            }
                         if let devicemacaddr = eachDevice["device_mac_addr"] as? String { device.devicemacaddress = devicemacaddr }
                         if let devicename = eachDevice["device_name"] as? String { device.deviceName = devicename }
                         if let employeename = eachDevice["name"] as? String { device.employeename = employeename }
