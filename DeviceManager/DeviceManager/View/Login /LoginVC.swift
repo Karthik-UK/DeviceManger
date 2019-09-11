@@ -25,6 +25,8 @@ class LoginVC: BaseVC {
         loginvm.login()
         NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
         self.hideKeyboardWhenTappedAround() 
         tableView.tableFooterView = UIView()
         checkForValidity()
@@ -33,19 +35,18 @@ class LoginVC: BaseVC {
     @IBAction private func manualLogin(_ sender: Any) {
         startSpinning()
         loginvm.verifyemail(mail: loginvm.email,password: loginvm.password)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
+       
     }
     @IBAction private func googleSignIn(_ sender: Any) {
     
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
         startSpinning()
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToTabBar), name: NSNotification.Name(rawValue: "Success"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(wrongncredential), name: NSNotification.Name(rawValue: "Failure"), object: nil)
+       
     }
     
     deinit {
+        print("Dealloc \(self)")
         NotificationCenter.default.removeObserver(self)
     }
     
