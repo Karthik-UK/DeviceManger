@@ -11,12 +11,12 @@ import Foundation
 class HomeVM {
     struct DeviceModel {
         var deviceId: String?
-        var admincredential: String?
-        var datecreated: Date?
+        var adminCredential: String?
+        var dateCreated: Double?
         var deviceName: String?
-        var devicemacaddress: String?
-        var deviceserialnumber: String?
-        var employeename: String?
+        var deviceMacaddress: String?
+        var deviceSerialnumber: String?
+        var employeeName: String?
         var id: String?
     }
     
@@ -30,15 +30,15 @@ class HomeVM {
                 if let response = response {
                     for eachDevice in response {
                         if let deviceid = eachDevice["yml_device_id"] as? String { device.deviceId = deviceid }
-                        if let admincred = eachDevice["admin_credentials"] as? String { device.admincredential = admincred }
+                        if let admincred = eachDevice["admin_credentials"] as? String { device.adminCredential = admincred }
                         if let datecreated = eachDevice["created_date"] as? String {
-                            let converteddate = datecreated.toDate()
-                            device.datecreated = converteddate
-                            }
-                        if let devicemacaddr = eachDevice["device_mac_addr"] as? String { device.devicemacaddress = devicemacaddr }
+                            let converteddate = Date.toDate(dateString: datecreated)
+                            device.dateCreated = converteddate
+                        }
+                        if let devicemacaddr = eachDevice["device_mac_addr"] as? String { device.deviceMacaddress = devicemacaddr }
                         if let devicename = eachDevice["device_name"] as? String { device.deviceName = devicename }
-                        if let employeename = eachDevice["name"] as? String { device.employeename = employeename }
-                        if let deviceserialnumber = eachDevice["device_serial_no"] as? String { device.deviceserialnumber = deviceserialnumber }
+                        if let employeename = eachDevice["name"] as? String { device.employeeName = employeename }
+                        if let deviceserialnumber = eachDevice["device_serial_no"] as? String { device.deviceSerialnumber = deviceserialnumber }
                         if let id = eachDevice["id"] as? String { device.id = id }
                         self?.allDevices.append(device)
                     }

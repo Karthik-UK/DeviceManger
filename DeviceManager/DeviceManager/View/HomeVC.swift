@@ -15,9 +15,9 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homevm.getAllDevices { isSuccess in
+        homevm.getAllDevices { [weak self]isSuccess in
             if isSuccess {
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
             }
         }
     }
@@ -28,7 +28,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
             cell.deviceLabel.text = homevm.allDevices[indexPath.row].deviceId
-             cell.employeeName.text = homevm.allDevices[indexPath.row].admincredential
+             cell.employeeName.text = homevm.allDevices[indexPath.row].adminCredential
            // cell.entryTime =
             return cell
         }
