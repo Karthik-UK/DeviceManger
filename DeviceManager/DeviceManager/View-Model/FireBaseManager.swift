@@ -26,7 +26,7 @@ class FireBaseManager {
         existing.observeSingleEvent(of: .value) { (dataSnapshot) in
             if let dict = dataSnapshot.value as? [[String: String]] {
                 for item in dict {
-                    self.mailinfo.append(item["email"]!)
+                    self.mailinfo.append(item["email"] ?? "")
                 }
                 completion(self.mailinfo)
             }

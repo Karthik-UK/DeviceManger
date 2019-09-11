@@ -16,7 +16,9 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         homevm.getAllDevices { isSuccess in
+            if isSuccess {
             self.tableView.reloadData()
+            }
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
