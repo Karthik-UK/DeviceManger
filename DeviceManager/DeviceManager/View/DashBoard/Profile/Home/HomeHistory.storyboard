@@ -13,11 +13,37 @@
         <!--Home HistoryVC-->
         <scene sceneID="V0j-nR-ujf">
             <objects>
-                <viewController id="nXH-vt-fG8" customClass="HomeHistoryVC" customModule="DeviceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeHistoryVC" id="nXH-vt-fG8" customClass="HomeHistoryVC" customModule="DeviceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h4a-TZ-dy2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y21-sq-goJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qya-Wg-b9J">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qya-Wg-b9J" id="S3w-81-gNA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nXH-vt-fG8" id="yqP-8k-m8k"/>
+                                    <outlet property="delegate" destination="nXH-vt-fG8" id="dIk-dH-mKi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aF9-mK-VEm" firstAttribute="trailing" secondItem="Y21-sq-goJ" secondAttribute="trailing" id="31X-lj-Fl8"/>
+                            <constraint firstItem="aF9-mK-VEm" firstAttribute="bottom" secondItem="Y21-sq-goJ" secondAttribute="bottom" id="cS2-SR-0UZ"/>
+                            <constraint firstItem="Y21-sq-goJ" firstAttribute="leading" secondItem="aF9-mK-VEm" secondAttribute="leading" id="uMQ-aZ-w11"/>
+                            <constraint firstItem="Y21-sq-goJ" firstAttribute="top" secondItem="aF9-mK-VEm" secondAttribute="top" id="wCT-UG-0PA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aF9-mK-VEm"/>
                     </view>
                 </viewController>

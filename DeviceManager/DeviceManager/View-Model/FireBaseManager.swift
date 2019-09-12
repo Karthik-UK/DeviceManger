@@ -63,6 +63,6 @@ class FireBaseManager {
          } else {
             completionHandler(false, nil)
          }
-    }
+       }
 }
 }

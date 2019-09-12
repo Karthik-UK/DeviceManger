@@ -10,8 +10,7 @@ import UIKit
 
 class ProfileVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var profileTableView: UITableView!
-     var email = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,7 +21,7 @@ class ProfileVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell else { fatalError() }
-            cell.emailLabel?.text = email
+            cell.emailLabel?.text = UserDefaults.standard.string(forKey: "email") ?? "boom"
             return cell
         } else if indexPath.row == 1 {
             if let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: NotificationPreferencesCell.self), for: indexPath) as? NotificationPreferencesCell {
