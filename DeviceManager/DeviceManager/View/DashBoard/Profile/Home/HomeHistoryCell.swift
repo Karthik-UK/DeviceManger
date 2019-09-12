@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 class HomeHistoryCell: BaseTVC {
 
+    @IBOutlet weak var assignedToLabel: UILabel!
+    @IBOutlet weak var assignedByLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var cableLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

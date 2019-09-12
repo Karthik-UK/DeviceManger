@@ -7,22 +7,32 @@
 //
 
 import UIKit
+import Foundation
+class HomeHistoryVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
+    weak var homeVM: HomeVM?
 
-class HomeHistoryVC: BaseVC {
-
+    @IBOutlet weak var historyTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        historyTableView.reloadData()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return homeVM?.historyData.fullHistory.count ?? 0
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeHistoryCell.self), for: indexPath) as? HomeHistoryCell {
+            cell.assignedByLabel.text = homeVM?.historyData.fullHistory[indexPath.row].assignedBy
+            return cell
+        }
+        return HomeCell()
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+
+        return view
+    }
 
 }
