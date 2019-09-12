@@ -13,3 +13,6 @@ struct Alertconstants {
      let alertactionmessage = "OK"
     
 }
+struct KeyConstants {
+    let key = "email"
+}

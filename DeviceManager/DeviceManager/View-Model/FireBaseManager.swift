@@ -35,14 +35,14 @@ class FireBaseManager {
         ref.child("existingUsers").child(String(index)).observeSingleEvent(of: .value, with: {  (snapshot) in
             if let pass = snapshot.childSnapshot(forPath: "password").value as? String {
                 if password == pass {
-
+                    
                     completionHandler(true)
                 } else {
                     completionHandler(false)}
-                }
-            })
+            }
+        })
     }
-
+    
     func fetchAllDevices(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
         let deviceNode = self.ref.child("allDevices")
         deviceNode.observeSingleEvent(of: .value) { (dataSnapshot) in
@@ -53,4 +53,16 @@ class FireBaseManager {
             }
         }
     }
+
+  func fetchHistory(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
+       let historicalData = self.ref.child("historicalData")
+       historicalData.observeSingleEvent(of: .value) { (dataSnapshot) in
+         if let dict = dataSnapshot.value as? [[String: Any]] {
+            print(dict)
+            completionHandler(true, dict)
+         } else {
+            completionHandler(false, nil)
+         }
+       }
+}
 }

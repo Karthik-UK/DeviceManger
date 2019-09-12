@@ -51,11 +51,11 @@ class LoginVC: BaseVC {
     }
     
     @objc func navigateToTabBar() {
+        stopSpinning()
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
-        stopSpinning()
-        self.present(dashBoard, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController = dashBoard
     }
     
     @objc func wrongncredential() {
