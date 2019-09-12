@@ -36,7 +36,7 @@ class HomeHistoryVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
             cell.assignedToLabel.text = homeVM?.historyData.fullHistory[indexPath.row].assignedTo
             cell.cableLabel.text = homeVM?.historyData.fullHistory[indexPath.row].cableCheck
             if let timeStamp = homeVM?.historyData.fullHistory[indexPath.row].createdDate {
-            cell.cableLabel.text = Date.getDate(timeStamp: timeStamp)
+            cell.dateLabel.text = Date.getDate(timeStamp: timeStamp)
             }
             return cell
         }

@@ -21,7 +21,6 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
         getAllDevices()
         getAllHistory()
 
-
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeVM.allDevices.count
@@ -72,6 +71,6 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
             if isSuccess {
                 self?.tableView.reloadData()
             }
-        }
+            }
     }
 }

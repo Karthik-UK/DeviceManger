@@ -124,7 +124,6 @@ class HomeVM {
                         if let id = eachDevice["id"] as? String { device.id = id }
                         self?.allDevices.append(device)
                     }
-                    //print(self?.allDevices as Any)
                     completionHandler(true)
                 }
             } else {

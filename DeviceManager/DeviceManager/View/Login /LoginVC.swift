@@ -41,8 +41,6 @@ class LoginVC: BaseVC {
         startSpinning()
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
-        
-       
     }
     
     deinit {
