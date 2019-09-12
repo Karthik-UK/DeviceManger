@@ -11,51 +11,57 @@ import UIKit
 class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let homevm = HomeVM()
+    
+    let homeVM = HomeVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 70
-        homevm.getAllDevices { [weak self] isSuccess in
+        homeVM.getAllDevices { [weak self] isSuccess in
             if isSuccess {
-            self?.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
-        homevm.getAllHistory { [weak self] isSuccess in
+        homeVM.getAllHistory { [weak self] isSuccess in
             if isSuccess {
                 self?.tableView.reloadData()
             }
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homevm.allDevices.count
+        return homeVM.allDevices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
-            cell.deviceLabel.text = homevm.allDevices[indexPath.row].deviceId
-            cell.employeeName.text = homevm.allDevices[indexPath.row].employeeName
-            //cell.entryTime.text = homevm.allDevices[indexPath.row].dateCreated
+            cell.deviceLabel.adjustsFontSizeToFitWidth = true
+            cell.entryTime.adjustsFontSizeToFitWidth = true
+            cell.employeeName.adjustsFontSizeToFitWidth = true
+            cell.deviceLabel.text = homeVM.allDevices[indexPath.row].deviceId
+            cell.employeeName.text = homeVM.allDevices[indexPath.row].employeeName
+            if let timeStamp = homeVM.allDevices[indexPath.row].dateCreated {
+                cell.entryTime.text = Date.getDate(timeStamp: timeStamp)
+            }
             return cell
         }
-            return HomeCell()
+        return HomeCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentDeviceHistory = homevm.historicalData.filter {
-            $0.deviceInfo?.deviceId == homevm.allDevices[indexPath.row].deviceId
+        let currentDeviceHistory = homeVM.historicalData.filter {
+            $0.deviceInfo?.deviceId == homeVM.allDevices[indexPath.row].deviceId
         }.first
         if let  currentDevice = currentDeviceHistory {
-            homevm.historyData = currentDevice
+            homeVM.historyData = currentDevice
         }
-    
+        
         guard let homeHistoryVC = UIStoryboard(name: "HomeHistory", bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
-        homeHistoryVC.homeVM = self.homevm
+        homeHistoryVC.homeVM = self.homeVM
         self.navigationController?.pushViewController(homeHistoryVC, animated: false)
-
+        
     }
     
-     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Current Phone Holders List"
     }
 }

@@ -38,10 +38,10 @@ class LoginVC: BaseVC {
        
     }
     @IBAction private func googleSignIn(_ sender: Any) {
-    
+        startSpinning()
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
-        startSpinning()
+        
        
     }
     
@@ -62,7 +62,9 @@ class LoginVC: BaseVC {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "False"])
         stopSpinning()
-        showAlert(message: alertconstant.messgae, title: alertconstant.title, type: .alert ,action :[AlertAction(title:alertconstant.alertactionmessage,style: .default ,handler: nil)])
+        showAlert(message: alertconstant.messgae, title: alertconstant.title, type: .alert ,action :[AlertAction(title:alertconstant.alertactionmessage,style: .default ,handler: { (_) in
+            self.stopSpinning()
+        })])
     }
     
     @objc func keyboardWillShow(notification: Notification) {

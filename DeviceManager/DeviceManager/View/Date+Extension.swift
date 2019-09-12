@@ -21,4 +21,15 @@ extension Date {
         }
         return dateDouble
     }
+    
+    static func getDate (timeStamp: Double , format: String? = defaultDateFormat) -> String? {
+        let date = Date(timeIntervalSince1970: timeStamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        let DateString = dateFormatter.string(from: date)
+        print(DateString)
+        return DateString
+       
+    }
 }
+
