@@ -21,7 +21,7 @@ class ProfileVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell else { fatalError() }
-            cell.emailLabel?.text = UserDefaults.standard.string(forKey: "email") ?? "boom"
+            cell.emailLabel?.text = UserDefaults.standard.string(forKey: "email") ?? ""
             return cell
         } else if indexPath.row == 1 {
             if let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: NotificationPreferencesCell.self), for: indexPath) as? NotificationPreferencesCell {

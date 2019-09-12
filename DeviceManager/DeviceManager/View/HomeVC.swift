@@ -17,16 +17,11 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 70
-        homeVM.getAllDevices { [weak self] isSuccess in
-            if isSuccess {
-                self?.tableView.reloadData()
-            }
-        }
-        homeVM.getAllHistory { [weak self] isSuccess in
-            if isSuccess {
-                self?.tableView.reloadData()
-            }
-        }
+
+        getAllDevices()
+        getAllHistory()
+
+
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeVM.allDevices.count
@@ -63,5 +58,20 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Current Phone Holders List"
+    }
+
+    func getAllDevices() {
+        homeVM.getAllDevices { [weak self] isSuccess in
+            if isSuccess {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+        func getAllHistory() {
+            homeVM.getAllHistory { [weak self] isSuccess in
+            if isSuccess {
+                self?.tableView.reloadData()
+            }
+        }
     }
 }
