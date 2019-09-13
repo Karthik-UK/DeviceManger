@@ -259,6 +259,11 @@
                                                 <constraint firstItem="gAg-fu-l83" firstAttribute="top" secondItem="0TV-Qb-45O" secondAttribute="bottom" constant="8" id="xqC-vv-Mcx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="deviceLabel" destination="vHJ-gZ-4wd" id="5M3-6m-UXa"/>
                                             <outlet property="employeeName" destination="k5U-hV-V0q" id="Vrf-vb-XoO"/>
@@ -281,7 +286,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dac-k1-CXg"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Phone Holders List" id="1gx-nI-ZVQ"/>
+                    <navigationItem key="navigationItem" title="Current Phone Holders List" id="1gx-nI-ZVQ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="TKS-A2-fl1"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Vn6-wi-OIk" id="glp-Gu-R04"/>
                     </connections>

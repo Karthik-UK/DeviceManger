@@ -22,12 +22,11 @@ extension Date {
         return dateDouble
     }
     
-    static func getDate (timeStamp: Double , format: String? = defaultDateFormat) -> String? {
+    static func getStringFromTimeStamp (timeStamp: Double , format: String? = "hh:mm a MMM dd YYYY") -> String? {
         let date = Date(timeIntervalSince1970: timeStamp)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         let DateString = dateFormatter.string(from: date)
-        print(DateString)
         return DateString
        
     }

@@ -30,7 +30,7 @@ struct DeviceInfo {
 struct FullHistory {
     var assignedTo: String?
     var assignedBy: String?
-    var cableCheck: String?
+    var cableCheck: Bool?
     var createdDate: Double?
     var deviceName: String?
 }
@@ -41,7 +41,7 @@ struct HistoricalData {
 }
 
 class HomeVM {
-    var historyData = HistoricalData()
+    var selectedHistoryData: HistoricalData?
    
     var historicalData = [HistoricalData]()
     var allDevices = [DeviceModel]()
@@ -51,10 +51,9 @@ class HomeVM {
             self?.historicalData = []
             if isSuccess == true {
                 if let response = response {
-                    
                     for eachValue in response {
                         var historyData = HistoricalData()
-
+                        
                         if let deviceInfo = eachValue["device_info"] as? [String: Any] {
                             var deviceInfoModel = DeviceInfo()
 
@@ -70,7 +69,6 @@ class HomeVM {
                                 deviceInfoModel.status = deviceStatus }
                              historyData.deviceInfo = deviceInfoModel
                         }
-                        
                         if let history = eachValue["fullHistory"] as? [[String: Any]] {
                             var listOfFullHistory = [FullHistory]()
                             for eachValue in history {
@@ -80,7 +78,12 @@ class HomeVM {
                                 if let assignedBy = eachValue["assignment_by"] as? String {
                                     fullHistory.assignedBy = assignedBy }
                                 if let cableCheck = eachValue["cableCheck"] as? String {
-                                    fullHistory.cableCheck = cableCheck }
+                                    if cableCheck == "1" {
+                                        fullHistory.cableCheck = true
+                                    } else if cableCheck == "0"{
+                                        fullHistory.cableCheck = false
+                                    }
+                                }
                                 if let deviceName = eachValue["device_name"] as? String {
                                     fullHistory.deviceName = deviceName }
                                 if let createdDate = eachValue["created_date"] as? String {
@@ -91,10 +94,8 @@ class HomeVM {
                             }
                             historyData.fullHistory.append(contentsOf: listOfFullHistory)
                         }
-                        
                         self?.historicalData.append(historyData)
                     }
-                    print(self?.historicalData as Any)
                     completionHandler(true)
                 }
             } else {

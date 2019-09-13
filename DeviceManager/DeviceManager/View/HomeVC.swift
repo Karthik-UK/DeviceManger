@@ -10,14 +10,13 @@ import UIKit
 
 class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     let homeVM = HomeVM()
     let constant = KeyConstants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.sectionHeaderHeight = 20
         getAllDevices()
         getAllHistory()
         
@@ -30,13 +29,11 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
-            cell.deviceLabel.adjustsFontSizeToFitWidth = true
-            cell.entryTime.adjustsFontSizeToFitWidth = true
-            cell.employeeName.adjustsFontSizeToFitWidth = true
+
             cell.deviceLabel.text = homeVM.allDevices[indexPath.row].deviceId
             cell.employeeName.text = homeVM.allDevices[indexPath.row].employeeName
             if let timeStamp = homeVM.allDevices[indexPath.row].dateCreated {
-                cell.entryTime.text = Date.getDate(timeStamp: timeStamp)
+                cell.entryTime.text = Date.getStringFromTimeStamp(timeStamp: timeStamp)
             }
             return cell
         }
@@ -46,15 +43,13 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentDeviceHistory = homeVM.historicalData.filter {
             $0.deviceInfo?.deviceId == homeVM.allDevices[indexPath.row].deviceId
-            }.first
+        }.first
         if let  currentDevice = currentDeviceHistory {
-            homeVM.historyData = currentDevice
+            homeVM.selectedHistoryData = currentDevice
+            guard let homeHistoryVC = UIStoryboard(name: "HomeHistory", bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
+            homeHistoryVC.homeVM = self.homeVM
+            self.navigationController?.pushViewController(homeHistoryVC, animated: false)
         }
-        
-        guard let homeHistoryVC = UIStoryboard(name: "HomeHistory", bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
-        homeHistoryVC.homeVM = self.homeVM
-        self.navigationController?.pushViewController(homeHistoryVC, animated: false)
-        
     }
     
     func getAllDevices() {
