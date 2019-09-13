@@ -13,19 +13,21 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     let homeVM = HomeVM()
+    let constant = KeyConstants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.sectionHeaderHeight = 70
-
+        self.tableView.sectionHeaderHeight = 20
         getAllDevices()
         getAllHistory()
-
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeVM.allDevices.count
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
             cell.deviceLabel.adjustsFontSizeToFitWidth = true
@@ -44,7 +46,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentDeviceHistory = homeVM.historicalData.filter {
             $0.deviceInfo?.deviceId == homeVM.allDevices[indexPath.row].deviceId
-        }.first
+            }.first
         if let  currentDevice = currentDeviceHistory {
             homeVM.historyData = currentDevice
         }
@@ -55,10 +57,6 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Current Phone Holders List"
-    }
-
     func getAllDevices() {
         homeVM.getAllDevices { [weak self] isSuccess in
             if isSuccess {
@@ -66,11 +64,11 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-        func getAllHistory() {
-            homeVM.getAllHistory { [weak self] isSuccess in
+    func getAllHistory() {
+        homeVM.getAllHistory { [weak self] isSuccess in
             if isSuccess {
                 self?.tableView.reloadData()
             }
-            }
+        }
     }
 }

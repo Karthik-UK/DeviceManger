@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RU-gm-pqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155.072463768116" y="-128.57142857142856"/>
+            <point key="canvasLocation" x="728" y="-127"/>
         </scene>
         <!--Home-->
         <scene sceneID="ZRv-nM-0BQ">
@@ -196,40 +196,67 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="191" id="QZm-aN-5fr" customClass="HomeCell" customModule="DeviceManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="191"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="110" id="QZm-aN-5fr" customClass="HomeCell" customModule="DeviceManager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZm-aN-5fr" id="I6T-ib-EcM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="190.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevName/Id" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHJ-gZ-4wd">
-                                                    <rect key="frame" x="30" y="85" width="94.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="114.5" y="11" width="270.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="emplyee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5U-hV-V0q">
-                                                    <rect key="frame" x="134.5" y="85" width="199.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="122" y="43" width="263" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="DeviceID " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TV-Qb-45O">
+                                                    <rect key="frame" x="28" y="11" width="78.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAg-fu-l83">
+                                                    <rect key="frame" x="28" y="43" width="86" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Entry Time " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juI-bb-CYx">
+                                                    <rect key="frame" x="29" y="75" width="92.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qe1-UQ-w0F">
-                                                    <rect key="frame" x="344" y="85" width="40" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="129.5" y="75" width="255.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="vHJ-gZ-4wd" firstAttribute="leading" secondItem="I6T-ib-EcM" secondAttribute="leadingMargin" constant="10" id="5dV-61-drh"/>
-                                                <constraint firstItem="k5U-hV-V0q" firstAttribute="leading" secondItem="vHJ-gZ-4wd" secondAttribute="trailing" constant="10" id="EPL-IY-1Cj"/>
-                                                <constraint firstItem="vHJ-gZ-4wd" firstAttribute="centerY" secondItem="I6T-ib-EcM" secondAttribute="centerY" id="Jts-ct-aGP"/>
-                                                <constraint firstItem="k5U-hV-V0q" firstAttribute="centerY" secondItem="I6T-ib-EcM" secondAttribute="centerY" id="KRm-P3-jIQ"/>
-                                                <constraint firstItem="qe1-UQ-w0F" firstAttribute="centerY" secondItem="I6T-ib-EcM" secondAttribute="centerY" id="Nfv-xF-kYk"/>
-                                                <constraint firstItem="qe1-UQ-w0F" firstAttribute="leading" secondItem="k5U-hV-V0q" secondAttribute="trailing" constant="10" id="PeN-It-USz"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="qe1-UQ-w0F" secondAttribute="trailing" constant="10" id="ciz-iq-6VU"/>
+                                                <constraint firstItem="k5U-hV-V0q" firstAttribute="top" secondItem="vHJ-gZ-4wd" secondAttribute="bottom" constant="8" id="HpQ-H8-aEy"/>
+                                                <constraint firstItem="k5U-hV-V0q" firstAttribute="leading" secondItem="gAg-fu-l83" secondAttribute="trailing" constant="8" id="IZO-sg-eJN"/>
+                                                <constraint firstItem="gAg-fu-l83" firstAttribute="leading" secondItem="I6T-ib-EcM" secondAttribute="leadingMargin" constant="8" id="L1s-xY-LGt"/>
+                                                <constraint firstItem="qe1-UQ-w0F" firstAttribute="top" secondItem="k5U-hV-V0q" secondAttribute="bottom" constant="8" id="LUT-4F-aoi"/>
+                                                <constraint firstItem="0TV-Qb-45O" firstAttribute="top" secondItem="I6T-ib-EcM" secondAttribute="topMargin" id="MVS-qj-PLZ"/>
+                                                <constraint firstItem="0TV-Qb-45O" firstAttribute="leading" secondItem="I6T-ib-EcM" secondAttribute="leadingMargin" constant="8" id="Rke-25-YAd"/>
+                                                <constraint firstItem="vHJ-gZ-4wd" firstAttribute="leading" secondItem="0TV-Qb-45O" secondAttribute="trailing" constant="8" id="Va8-lb-aXB"/>
+                                                <constraint firstItem="juI-bb-CYx" firstAttribute="top" secondItem="gAg-fu-l83" secondAttribute="bottom" constant="8" id="YiV-tC-J2x"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vHJ-gZ-4wd" secondAttribute="trailing" constant="9" id="eHc-JY-Zlu"/>
+                                                <constraint firstItem="qe1-UQ-w0F" firstAttribute="leading" secondItem="juI-bb-CYx" secondAttribute="trailing" constant="8" id="fxe-10-Q9w"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="k5U-hV-V0q" secondAttribute="trailing" constant="9" id="hzr-IX-5lr"/>
+                                                <constraint firstItem="juI-bb-CYx" firstAttribute="leading" secondItem="I6T-ib-EcM" secondAttribute="leadingMargin" constant="9" id="k8D-VJ-ieL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qe1-UQ-w0F" secondAttribute="trailing" constant="9" id="miE-SH-k6h"/>
+                                                <constraint firstItem="vHJ-gZ-4wd" firstAttribute="top" secondItem="I6T-ib-EcM" secondAttribute="topMargin" id="mpk-wz-Qrg"/>
+                                                <constraint firstItem="gAg-fu-l83" firstAttribute="top" secondItem="0TV-Qb-45O" secondAttribute="bottom" constant="8" id="xqC-vv-Mcx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -254,14 +281,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dac-k1-CXg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1gx-nI-ZVQ"/>
+                    <navigationItem key="navigationItem" title="Current Phone Holders List" id="1gx-nI-ZVQ"/>
                     <connections>
                         <outlet property="tableView" destination="Vn6-wi-OIk" id="glp-Gu-R04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CvK-DQ-L9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84.057971014492765" y="593.97321428571422"/>
+            <point key="canvasLocation" x="28" y="625"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nbo-Fq-HcT">
@@ -274,6 +301,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4kU-zB-w78">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textShadowColor" red="0.47753634610000001" green="0.93922233180000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -282,7 +312,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y93-sJ-s4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244.9275362318842" y="-128.57142857142856"/>
+            <point key="canvasLocation" x="28" y="-129"/>
         </scene>
         <!--Home-->
         <scene sceneID="gqr-x5-Z5j">
@@ -295,6 +325,15 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypA-iC-hij">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="barTintColor" red="0.35239198402192418" green="1" blue="0.89615321612981069" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.52507268969999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -303,7 +342,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFV-Vk-kxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826.08695652173924" y="593.97321428571422"/>
+            <point key="canvasLocation" x="-713" y="625"/>
         </scene>
     </scenes>
     <resources>

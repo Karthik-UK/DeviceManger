@@ -11,7 +11,10 @@ import UIKit
 class TabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarSetUp()
+    }
+    
+    func tabBarSetUp() {
         UITabBar.appearance().tintColor = .cyan
         UITabBar.appearance().barTintColor = .black }
-
 }

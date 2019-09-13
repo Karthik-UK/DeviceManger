@@ -15,4 +15,7 @@ struct Alertconstants {
 }
 struct KeyConstants {
     let key = "email"
+    let cableGiven  = "Cable Given"
+    let cableNotGiven = "Cable Not Given"
+    let currentPhoneHolders = "Current Phone Holders List"
 }
