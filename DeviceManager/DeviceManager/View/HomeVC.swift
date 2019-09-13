@@ -12,14 +12,14 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    let homeVM = HomeVM()
+    var homeVM = HomeVM()
     let constant = KeyConstants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllDevices()
         getAllHistory()
-        
+  
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeVM.allDevices.count
@@ -48,7 +48,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
             homeVM.selectedHistoryData = currentDevice
             guard let homeHistoryVC = UIStoryboard(name: "HomeHistory", bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
             homeHistoryVC.homeVM = self.homeVM
-            self.navigationController?.pushViewController(homeHistoryVC, animated: false)
+            self.navigationController?.pushViewController(homeHistoryVC, animated: true)
         }
     }
     

@@ -10,6 +10,7 @@
 		8F0125712328B9C6008CED93 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0125702328B9C6008CED93 /* ProfileVM.swift */; };
 		8F0546E3232B6FC9000CF4F6 /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0546E2232B6FC9000CF4F6 /* HistoryHeaderView.swift */; };
 		8F0546E5232B6FDA000CF4F6 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0546E4232B6FDA000CF4F6 /* HistoryHeaderView.xib */; };
+		8F0546E7232B9CBB000CF4F6 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0546E6232B9CBB000CF4F6 /* HomeModel.swift */; };
 		8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD71231F7CFF00DC3634 /* LoginModel.swift */; };
 		8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD73231F7D3C00DC3634 /* LoginVM.swift */; };
 		8F07FD76231FF8FE00DC3634 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */; };
@@ -66,6 +67,7 @@
 		8F0125702328B9C6008CED93 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		8F0546E2232B6FC9000CF4F6 /* HistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
 		8F0546E4232B6FDA000CF4F6 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		8F0546E6232B9CBB000CF4F6 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8F07FD71231F7CFF00DC3634 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8F07FD73231F7D3C00DC3634 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8F07FD71231F7CFF00DC3634 /* LoginModel.swift */,
+				8F0546E6232B9CBB000CF4F6 /* HomeModel.swift */,
 				8F1063762320D07A001330AB /* OnBoardingModel.swift */,
 			);
 			path = Model;
@@ -237,9 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */,
-				8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */,
 				8F131BAA231E92AB00509249 /* HomeVC.swift */,
 				8F7271FE23264D410030519A /* HomeCell.swift */,
+				8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */,
 				8F73311C231E9C86009D3083 /* HomeHistory.storyboard */,
 				8F0546E2232B6FC9000CF4F6 /* HistoryHeaderView.swift */,
 				8F0546E4232B6FDA000CF4F6 /* HistoryHeaderView.xib */,
@@ -448,6 +451,7 @@
 				8FE824C8232226F9002FD8A6 /* FireBaseManager.swift in Sources */,
 				8F0546E3232B6FC9000CF4F6 /* HistoryHeaderView.swift in Sources */,
 				8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */,
+				8F0546E7232B9CBB000CF4F6 /* HomeModel.swift in Sources */,
 				8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */,
 				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
 				8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */,
