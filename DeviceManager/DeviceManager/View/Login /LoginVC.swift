@@ -44,7 +44,6 @@ class LoginVC: BaseVC {
     }
     
     deinit {
-        print("Dealloc \(self)")
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -53,7 +52,8 @@ class LoginVC: BaseVC {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
-        UIApplication.shared.keyWindow?.rootViewController = dashBoard
+        self.present(dashBoard, animated: true, completion: nil)
+//        UIApplication.shared.keyWindow?.rootViewController = dashBoard
     }
     
     @objc func wrongncredential() {

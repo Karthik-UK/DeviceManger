@@ -7,6 +7,9 @@
 //
 
 import Foundation
-struct ProfileVM {
-    var email = ""
+
+class ProfileVM {
+    var currentOwnerDevice = [DeviceModel]()
+    var email: String = ""
+    var totalDevicecount: Int = 0
 }

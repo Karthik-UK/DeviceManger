@@ -9,6 +9,8 @@
 import Foundation
 
 class HomeVM {
+    
+    var currentDevices: [DeviceModel]?
     var selectedHistoryData: HistoricalData?
     var historicalData = [HistoricalData]()
     var allDevices = [DeviceModel]()

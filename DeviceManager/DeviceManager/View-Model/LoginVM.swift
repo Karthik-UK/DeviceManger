@@ -16,13 +16,16 @@ class LoginVM {
         FireBaseManager.shared.getusers { [weak self ](mailinfo) in
             for (index,currentmail) in mailinfo.enumerated() {
                 if currentmail == mail {
+                    FireBaseManager.shared.getName(index: index ,mail: currentmail)
                      UserDefaults.standard.set(currentmail, forKey: "email")
                      UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                     //FireBaseManager.shared.addUser(email: mail)
                     let currentindex = index
                     if let password = password {
+                        FireBaseManager.shared.getName(index: index ,mail: self?.email ?? "")
                         FireBaseManager.shared.getPassWord(emailforpassword: self?.email ?? "", password: password, index: currentindex ) { (message) in
                             if message {
+                                
                                 UserDefaults.standard.set(self?.email, forKey: self?.constants.key ?? "")
                                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)

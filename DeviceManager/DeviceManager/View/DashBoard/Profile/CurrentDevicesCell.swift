@@ -11,9 +11,7 @@ import Foundation
 import UIKit
 
 class CurrentDevicesCell: BaseTVC {
-    
-    @IBOutlet weak var currentDeviceLabel: UILabel!
-    
+
     @IBOutlet weak var currentDeviceList: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {

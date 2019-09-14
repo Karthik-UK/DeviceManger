@@ -14,30 +14,31 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         tabBarSetUp()
     }
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
-        
-        
-//        if viewController is ProfileVC {
-//            guard let homeVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeVC.self)) as? HomeVC else { return }
-//            ProfileVC.homeVM = homeVC.homeVM
 
-        
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.title == "Profile" {
+            if let home = tabBarController?.viewControllers?.first as? HomeVC {
+                print(home.homeVM.allDevices)
+            }
         }
-//        var a:HomeVM
-//        if let firstVC = viewController as? HomeVC {
-//            var a = firstVC.homeVM        }
-//
-//        if viewController is ProfileVC {
-//            viewController.viewDidLoad()
-//        } else if viewController is SecondViewController {
-//            print("Second tab")
-//        }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let navVC = viewController as? UINavigationController {
+            if let profileVC = navVC.viewControllers.first as? ProfileVC {
+                if let navVC2 = tabBarController.viewControllers?.first as? UINavigationController {
+                    if let homeVC = navVC2.viewControllers.first as? HomeVC {
+                        profileVC.homeVM = homeVC.homeVM
+                    }
+                }
+            }
+        }
         
-    
-       
-    
+    }
     func tabBarSetUp() {
         UITabBar.appearance().tintColor = .cyan
-        UITabBar.appearance().barTintColor = .black }
+        UITabBar.appearance().barTintColor = .black
+        
+    }
+ 
 }

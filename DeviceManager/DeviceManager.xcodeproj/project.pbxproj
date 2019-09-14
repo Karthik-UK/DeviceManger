@@ -19,6 +19,9 @@
 		8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */; };
 		8F0AFA9D2327B920007689A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AFA9C2327B920007689A7 /* Constants.swift */; };
 		8F0AFAA12327C631007689A7 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AFAA02327C631007689A7 /* HomeVM.swift */; };
+		8F0B4F61232CE6390059685F /* CurrentDeviceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B4F60232CE6390059685F /* CurrentDeviceListVC.swift */; };
+		8F0B4F63232CE6640059685F /* CurrentDeviceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B4F62232CE6640059685F /* CurrentDeviceListCell.swift */; };
+		8F0B4F65232CE67C0059685F /* CurrentDeviceList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0B4F64232CE67C0059685F /* CurrentDeviceList.storyboard */; };
 		8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063742320D052001330AB /* OnBoardingVM.swift */; };
 		8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063762320D07A001330AB /* OnBoardingModel.swift */; };
 		8F11A825232A130D00AC3F3D /* HomeHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */; };
@@ -76,6 +79,9 @@
 		8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCVC.swift; sourceTree = "<group>"; };
 		8F0AFA9C2327B920007689A7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F0AFAA02327C631007689A7 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		8F0B4F60232CE6390059685F /* CurrentDeviceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDeviceListVC.swift; sourceTree = "<group>"; };
+		8F0B4F62232CE6640059685F /* CurrentDeviceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDeviceListCell.swift; sourceTree = "<group>"; };
+		8F0B4F64232CE67C0059685F /* CurrentDeviceList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentDeviceList.storyboard; sourceTree = "<group>"; };
 		8F1063742320D052001330AB /* OnBoardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVM.swift; sourceTree = "<group>"; };
 		8F1063762320D07A001330AB /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHistoryCell.swift; sourceTree = "<group>"; };
@@ -222,6 +228,9 @@
 				8F7271ED232617CE0030519A /* LogoutCell.swift */,
 				8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */,
 				8F7271EE232617CE0030519A /* ProfileImageCell.swift */,
+				8F0B4F60232CE6390059685F /* CurrentDeviceListVC.swift */,
+				8F0B4F64232CE67C0059685F /* CurrentDeviceList.storyboard */,
+				8F0B4F62232CE6640059685F /* CurrentDeviceListCell.swift */,
 				8F7271EC232617CD0030519A /* CurrentDevicesCell.swift */,
 				8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */,
 				8F131BB1231E9B4700509249 /* AdminDevice.storyboard */,
@@ -354,6 +363,7 @@
 				8F131B9B231E849000509249 /* Login.storyboard in Resources */,
 				8F83BE0923211B7F00BA4428 /* GoogleService-Info.plist in Resources */,
 				8F72720523267BFE0030519A /* TabBar.storyboard in Resources */,
+				8F0B4F65232CE67C0059685F /* CurrentDeviceList.storyboard in Resources */,
 				8F73311B231E9C5B009D3083 /* EditProfile.storyboard in Resources */,
 				8F733117231E9C29009D3083 /* AvailableDevice.storyboard in Resources */,
 				8F73311D231E9C86009D3083 /* HomeHistory.storyboard in Resources */,
@@ -451,6 +461,7 @@
 				8FE824C8232226F9002FD8A6 /* FireBaseManager.swift in Sources */,
 				8F0546E3232B6FC9000CF4F6 /* HistoryHeaderView.swift in Sources */,
 				8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */,
+				8F0B4F61232CE6390059685F /* CurrentDeviceListVC.swift in Sources */,
 				8F0546E7232B9CBB000CF4F6 /* HomeModel.swift in Sources */,
 				8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */,
 				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
@@ -459,6 +470,7 @@
 				8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
 				8F9282642328F206006F548E /* Date+Extension.swift in Sources */,
+				8F0B4F63232CE6640059685F /* CurrentDeviceListCell.swift in Sources */,
 				8F0AFA9D2327B920007689A7 /* Constants.swift in Sources */,
 				8F07FD78231FF93300DC3634 /* String+Extension.swift in Sources */,
 				8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */,

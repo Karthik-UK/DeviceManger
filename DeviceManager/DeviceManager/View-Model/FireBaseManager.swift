@@ -16,6 +16,7 @@ class FireBaseManager {
     
     let ref = Database.database().reference()
     var mailinfo: [String] = []
+    var userName: String = ""
     
     func addUser(email: String) {
         ref.child("currentUser").setValue(email)}
@@ -31,38 +32,51 @@ class FireBaseManager {
             }
         }
     }
-    func getPassWord(emailforpassword : String , password : String , index :Int, completionHandler: @escaping (Bool) -> Void) {
-        ref.child("existingUsers").child(String(index)).observeSingleEvent(of: .value, with: {  (snapshot) in
-            if let pass = snapshot.childSnapshot(forPath: "password").value as? String {
-                if password == pass {
-                    
-                    completionHandler(true)
-                } else {
-                    completionHandler(false)}
-            }
-        })
-    }
-    
-    func fetchAllDevices(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
-        let deviceNode = self.ref.child("allDevices")
-        deviceNode.observeSingleEvent(of: .value) { (dataSnapshot) in
-            if let dict = dataSnapshot.value as? [[String: Any]] {
-                completionHandler(true, dict)
-            } else {
-                completionHandler(false, nil)
+    func getName(index: Int ,mail: String) {
+        let existing = ref.child("existingUsers").child(String(index))
+        existing.observeSingleEvent(of: .value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for child in snapshot where child.key == "name" {
+                if let NameField = child.value as? String {
+                    self.userName = NameField
+                }
             }
         }
-    }
+}
 
-  func fetchHistory(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
-       let historicalData = self.ref.child("historicalData")
-       historicalData.observeSingleEvent(of: .value) { (dataSnapshot) in
-         if let dict = dataSnapshot.value as? [[String: Any]] {
+func getPassWord(emailforpassword : String , password : String , index :Int, completionHandler: @escaping (Bool) -> Void) {
+    ref.child("existingUsers").child(String(index)).observeSingleEvent(of: .value, with: {  (snapshot) in
+        if let pass = snapshot.childSnapshot(forPath: "password").value as? String {
+            if password == pass {
+                
+                completionHandler(true)
+            } else {
+                completionHandler(false)}
+        }
+    })
+}
+
+func fetchAllDevices(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
+    let deviceNode = self.ref.child("allDevices")
+    deviceNode.observeSingleEvent(of: .value) { (dataSnapshot) in
+        if let dict = dataSnapshot.value as? [[String: Any]] {
+            completionHandler(true, dict)
+        } else {
+            completionHandler(false, nil)
+        }
+    }
+}
+
+func fetchHistory(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
+    let historicalData = self.ref.child("historicalData")
+    historicalData.observeSingleEvent(of: .value) { (dataSnapshot) in
+        if let dict = dataSnapshot.value as? [[String: Any]] {
             print(dict)
             completionHandler(true, dict)
-         } else {
+        } else {
             completionHandler(false, nil)
-         }
-       }
+        }
+    }
 }
 }

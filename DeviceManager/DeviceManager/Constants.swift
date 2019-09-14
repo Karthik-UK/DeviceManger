@@ -18,6 +18,7 @@ struct KeyConstants {
     let cableGiven  = "Cable Given"
     let cableNotGiven = "Cable Not Given"
     let currentPhoneHolders = "Current Phone Holders List"
+    let existingDevices = "Existing Devices"
+    let okAction = "OK"
+    let noCurrentDevices = "NO DEVICES FOUND"
 }
-
-

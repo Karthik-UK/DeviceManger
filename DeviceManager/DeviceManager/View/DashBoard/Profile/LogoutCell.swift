@@ -12,7 +12,9 @@ import UIKit
 
 class LogoutCell: BaseTVC {
 
-    @IBAction private func logOutButton(_ sender: Any) {
+    @IBAction private func logOut(_ sender: Any) {
+          UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoardingVC")
     }
     override func awakeFromNib() {
         super.awakeFromNib()

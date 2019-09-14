@@ -19,7 +19,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         getAllDevices()
         getAllHistory()
-  
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeVM.allDevices.count
@@ -65,5 +65,11 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
                 self?.tableView.reloadData()
             }
         }
+    }
+}
+
+extension HomeVC: UITabBarDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("sdfbvjkds")
     }
 }
