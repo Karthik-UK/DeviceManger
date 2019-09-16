@@ -17,8 +17,10 @@ class LoginVM {
             for (index,currentmail) in mailinfo.enumerated() {
                 if currentmail == mail {
                     FireBaseManager.shared.getName(index: index ,mail: currentmail)
-                     UserDefaults.standard.set(currentmail, forKey: "email")
-                     UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                    UserDefaults.standard.set(currentmail, forKey: "email")
+                    FireBaseManager.shared.allOtherUsers = mailinfo
+                    FireBaseManager.shared.allOtherUsers.removeAll { $0 == UserDefaults.standard.string(forKey: "email") ?? "" }
+                    UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                     //FireBaseManager.shared.addUser(email: mail)
                     let currentindex = index
                     if let password = password {

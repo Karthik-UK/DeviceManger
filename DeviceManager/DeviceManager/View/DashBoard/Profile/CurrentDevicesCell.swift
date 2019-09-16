@@ -13,9 +13,9 @@ import UIKit
 class CurrentDevicesCell: BaseTVC {
 
     @IBOutlet weak var currentDeviceList: UILabel!
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
     }
-    
 }

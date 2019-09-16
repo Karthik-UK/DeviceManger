@@ -18,7 +18,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "HomeCell", bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: "HomeCellView")
+        self.tableView.register(nib, forCellReuseIdentifier: "HomeTableCell")
         getAllDevices()
         getAllHistory()
         
@@ -31,7 +31,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCellView.self)) as? HomeCellView {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableCell.self)) as? HomeTableCell {
             cell.firstLabelTitle.text = constant.deviceName
             cell.secondLabelTitle.text = constant.employeeName
             cell.thirdLabelTitle.text = constant.entryTime
@@ -42,7 +42,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         }
-        return HomeCellView()
+        return HomeTableCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -51,7 +51,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
         }.first
         if let  currentDeviceHistory = currentDeviceHistory {
             homeVM.selectedHistoryData = currentDeviceHistory
-            guard let homeHistoryVC = UIStoryboard(name: "HomeHistory", bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
+            guard let homeHistoryVC = UIStoryboard(name: constant.homeHistory, bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
             homeHistoryVC.homeVM = self.homeVM
             self.navigationController?.pushViewController(homeHistoryVC, animated: true)
         } else {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCellView: BaseTVC {
+class HomeTableCell: BaseTVC {
 
     @IBOutlet weak var firstLabelTitle: UILabel!
     @IBOutlet weak var firstLabel: UILabel!

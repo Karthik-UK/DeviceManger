@@ -23,6 +23,14 @@ extension Date {
         return dateDouble
     }
     
+    static func currentDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = defaultDateFormat
+        let result = formatter.string(from: date)
+        return result
+    }
+    
     static func getStringFromTimeStamp (timeStamp: Double , format: String? = requiredDateFormat) -> String? {
         let date = Date(timeIntervalSince1970: timeStamp)
         let dateFormatter = DateFormatter()

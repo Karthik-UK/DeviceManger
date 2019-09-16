@@ -26,4 +26,5 @@ struct KeyConstants {
     let deviceId = "Device Id"
     let employeeName = "Employee Name"
     let entryTime = "Entrty Time"
+    let homeHistory = "HomeHistory"
 }

@@ -20,7 +20,7 @@ class HomeHistoryVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
         historyTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         let nib = UINib(nibName: "HistoryHeaderView", bundle: nil)
-        self.historyTableView.register(nib, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
+        self.historyTableView.register(nib, forHeaderFooterViewReuseIdentifier: String(describing: HistoryHeaderView.self))
         
         historyTableView.reloadData()
     }
@@ -39,10 +39,7 @@ class HomeHistoryVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
             cell.assignedByLabel.text = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].assignedBy
             cell.assignedToLabel.text = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].assignedTo
             if let cableCheck = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].cableCheck {
-
-                let cable = cableCheck ? constants.cableGiven : constants.cableNotGiven
-                cell.cableLabel.text = cable
-
+                cell.cableLabel.text = cableCheck ? constants.cableGiven : constants.cableNotGiven
             }
             if let timeStamp = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].createdDate {
                 cell.dateLabel.text = Date.getStringFromTimeStamp(timeStamp: timeStamp)
@@ -53,7 +50,7 @@ class HomeHistoryVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HistoryHeaderView") as? HistoryHeaderView {
+        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: HistoryHeaderView.self)) as? HistoryHeaderView {
             headerView.ymlDeviceId.text = homeVM?.selectedHistoryData?.deviceInfo?.deviceId
             headerView.deviceModel.text = homeVM?.selectedHistoryData?.deviceInfo?.deviceName
             headerView.serialNumber.text = homeVM?.selectedHistoryData?.deviceInfo?.deviceMacaddress

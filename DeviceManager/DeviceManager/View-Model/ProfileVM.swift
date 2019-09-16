@@ -12,4 +12,5 @@ class ProfileVM {
     var currentOwnerDevice = [DeviceModel]()
     var email: String = ""
     var totalDevicecount: Int = 0
+    var index: Int = 0
 }
