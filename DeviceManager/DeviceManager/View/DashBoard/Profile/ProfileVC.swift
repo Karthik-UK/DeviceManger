@@ -13,12 +13,6 @@ class ProfileVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var profileName: UINavigationItem!
     @IBOutlet weak var profileTableView: UITableView!
     
-    @IBAction private func logOut(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        guard let dashBoard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: OnBoardingVC.self)) as? OnBoardingVC else { return }
-        self.tabBarController?.present(dashBoard, animated: true, completion: nil)
-        //        UIApplication.shared.keyWindow?.rootViewController = dashBoard
-    }
     let constants = KeyConstants()
     var profilevm = ProfileVM()
     weak var homeVM: HomeVM?
@@ -28,6 +22,13 @@ class ProfileVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
         profileName.title = FireBaseManager.shared.userName
         
     }
+    @IBAction private func logOut(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        guard let dashBoard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: OnBoardingVC.self)) as? OnBoardingVC else { return }
+        self.tabBarController?.present(dashBoard, animated: false, completion: nil)
+        //        UIApplication.shared.keyWindow?.rootViewController = dashBoard
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 2 {
             profilevm.currentOwnerDevice = []
@@ -57,9 +58,10 @@ class ProfileVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell else { fatalError() }
+            if let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell {
             cell.emailLabel?.text = UserDefaults.standard.string(forKey: "email") ?? ""
             return cell
+            }
         } else if indexPath.row == 1 {
             if let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: NotificationPreferencesCell.self), for: indexPath) as? NotificationPreferencesCell {
                 cell.notificationLabel.text = "frfrf"

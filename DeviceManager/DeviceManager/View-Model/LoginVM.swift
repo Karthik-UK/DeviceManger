@@ -25,7 +25,6 @@ class LoginVM {
                         FireBaseManager.shared.getName(index: index ,mail: self?.email ?? "")
                         FireBaseManager.shared.getPassWord(emailforpassword: self?.email ?? "", password: password, index: currentindex ) { (message) in
                             if message {
-                                
                                 UserDefaults.standard.set(self?.email, forKey: self?.constants.key ?? "")
                                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Success"), object: nil)

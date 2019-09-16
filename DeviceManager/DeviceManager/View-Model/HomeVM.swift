@@ -47,11 +47,7 @@ class HomeVM {
                                 if let assignedBy = eachValue["assignment_by"] as? String {
                                     fullHistory.assignedBy = assignedBy }
                                 if let cableCheck = eachValue["cableCheck"] as? String {
-                                    if cableCheck == "1" {
-                                        fullHistory.cableCheck = true
-                                    } else if cableCheck == "0"{
-                                        fullHistory.cableCheck = false
-                                    }
+                                   fullHistory.cableCheck = cableCheck == "1"
                                 }
                                 if let deviceName = eachValue["device_name"] as? String {
                                     fullHistory.deviceName = deviceName }

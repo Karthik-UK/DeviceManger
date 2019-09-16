@@ -39,11 +39,10 @@ class HomeHistoryVC: BaseVC ,UITableViewDelegate, UITableViewDataSource {
             cell.assignedByLabel.text = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].assignedBy
             cell.assignedToLabel.text = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].assignedTo
             if let cableCheck = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].cableCheck {
-                if  cableCheck {
-                    cell.cableLabel.text = constants.cableGiven
-                } else {
-                    cell.cableLabel.text = constants.cableNotGiven
-                }
+
+                let cable = cableCheck ? constants.cableGiven : constants.cableNotGiven
+                cell.cableLabel.text = cable
+
             }
             if let timeStamp = homeVM?.selectedHistoryData?.fullHistory[indexPath.row].createdDate {
                 cell.dateLabel.text = Date.getStringFromTimeStamp(timeStamp: timeStamp)

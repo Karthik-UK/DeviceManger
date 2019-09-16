@@ -21,4 +21,9 @@ struct KeyConstants {
     let existingDevices = "Existing Devices"
     let okAction = "OK"
     let noCurrentDevices = "NO DEVICES FOUND"
+    let noDeviceHistoryAvailable = "No device History Available"
+    let deviceName = "Device Name"
+    let deviceId = "Device Id"
+    let employeeName = "Employee Name"
+    let entryTime = "Entrty Time"
 }

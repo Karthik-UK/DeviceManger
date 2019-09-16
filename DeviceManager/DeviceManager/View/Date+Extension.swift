@@ -9,6 +9,7 @@
 import Foundation
 
 let defaultDateFormat: String = "yyyy-MM-dd HH:mm:ss"
+let requiredDateFormat: String = "hh:mm a MMM dd YYYY"
 
 extension Date {
     static func toDate(dateString: String , format: String? = defaultDateFormat) -> Double? {
@@ -22,7 +23,7 @@ extension Date {
         return dateDouble
     }
     
-    static func getStringFromTimeStamp (timeStamp: Double , format: String? = "hh:mm a MMM dd YYYY") -> String? {
+    static func getStringFromTimeStamp (timeStamp: Double , format: String? = requiredDateFormat) -> String? {
         let date = Date(timeIntervalSince1970: timeStamp)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
