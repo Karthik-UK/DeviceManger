@@ -10,4 +10,5 @@ target 'DeviceManager' do
    pod 'Firebase/Analytics'
     pod 'GoogleSignIn'
     pod 'Firebase/Database'
+    pod 'Firebase/Storage'
 end

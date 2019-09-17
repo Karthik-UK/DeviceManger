@@ -8,8 +8,7 @@
 
 import UIKit
 import Foundation
-class CurrentDeviceListVC
-: BaseVC , UITableViewDataSource , UITableViewDelegate {
+class CurrentDeviceListVC: BaseVC {
     
     @IBOutlet weak var currentDeviceTableView: UITableView!
     
@@ -19,12 +18,34 @@ class CurrentDeviceListVC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.currentDeviceTableView.reloadData()
+        self.currentDeviceTableView.reloadData()
         let nib = UINib(nibName: "HomeCell", bundle: nil)
         self.currentDeviceTableView.register(nib, forCellReuseIdentifier: String(describing: HomeTableCell.self))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getAllDevices()
+    }
+    
+    func getAllDevices() {
+        homeVM?.getAllDevices { [weak self] isSuccess in
+            if isSuccess {
+                self?.profileVM.getMyDevices(allDevices: self?.homeVM?.allDevices ?? [])
+                self?.currentDeviceTableView.reloadData()
+            }
+        }
+    }
+}
+
+extension CurrentDeviceListVC:  UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if profileVM.currentOwnerDevice.isEmpty {
+            self.currentDeviceTableView.setEmptyMessage(constant.noDevciesFound)
+        } else {
+            self.currentDeviceTableView.restore()
+        }
+        
         return profileVM.currentOwnerDevice.count
     }
     
@@ -34,17 +55,17 @@ class CurrentDeviceListVC
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-         guard let transferDeviceVC = UIStoryboard(name: "TransferDevice", bundle: nil).instantiateViewController(withIdentifier: String(describing: TransferDeviceVC.self)) as? TransferDeviceVC else { return }
+        guard let transferDeviceVC = UIStoryboard(name: "TransferDevice", bundle: nil).instantiateViewController(withIdentifier: String(describing: TransferDeviceVC.self)) as? TransferDeviceVC else { return }
         
-            transferDeviceVC.profileVM = profileVM
-      //  let navController = UINavigationController(rootViewController: transferDeviceVC)
+        transferDeviceVC.profileVM = profileVM
+        //  let navController = UINavigationController(rootViewController: transferDeviceVC)
         transferDeviceVC.profileVM?.index = indexPath.row
         navigationController?.pushViewController(transferDeviceVC, animated: false)
-      //present(navController, animated: true, completion: nil)
+        //present(navController, animated: true, completion: nil)
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableCell.self)) as? HomeTableCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableCell.self)) as? HomeTableCell {
             cell.firstLabelTitle.text = constant.deviceName
             cell.secondLabelTitle.text = constant.deviceId
             cell.thirdLabelTitle.text = constant.entryTime

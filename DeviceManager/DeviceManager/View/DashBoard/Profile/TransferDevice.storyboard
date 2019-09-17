@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-t4-F5o">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-t4-F5o">
                                 <rect key="frame" x="135" y="118" width="249" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SmI-1s-AMH"/>
@@ -28,9 +28,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFy-Rn-aY7">
-                                <rect key="frame" x="113.5" y="328" width="187" height="46"/>
+                                <rect key="frame" x="107" y="328" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.52507268969999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="3q4-lk-15l"/>
+                                    <constraint firstAttribute="height" constant="60" id="fzr-98-0Bb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Transfer Device"/>
+                                <state key="normal" title="Transfer Device">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="TransferDevice:" destination="SvU-6r-EO9" eventType="touchUpInside" id="hLa-AF-2DZ"/>
                                     <action selector="transferDevice:" destination="SvU-6r-EO9" eventType="touchUpInside" id="AUb-Ay-mNe"/>
@@ -45,13 +57,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DeviceID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx7-bw-QmJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx7-bw-QmJ">
                                 <rect key="frame" x="20" y="118" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aYi-sF-lDm"/>
                                     <constraint firstAttribute="width" constant="100" id="ph8-mq-ovW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -82,6 +94,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mMu-5s-fhs"/>
                     <connections>
+                        <outlet property="TransferButton" destination="LFy-Rn-aY7" id="fUS-Bf-Q7h"/>
                         <outlet property="deviceModelNameLabel" destination="0NW-t4-F5o" id="PrU-If-YYG"/>
                         <outlet property="transferTextField" destination="4eE-cH-Di1" id="g1e-kX-mOx"/>
                     </connections>

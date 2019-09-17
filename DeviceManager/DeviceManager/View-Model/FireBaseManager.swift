@@ -25,6 +25,7 @@ class FireBaseManager {
     func getusers(completion: @escaping (([String]) -> Void)) {
         let existing = ref.child("existingUsers")
         existing.observeSingleEvent(of: .value) { (dataSnapshot) in
+            self.mailinfo = []
             if let dict = dataSnapshot.value as? [[String: String]] {
                 for item in dict {
                     self.mailinfo.append(item["email"] ?? "")
@@ -63,7 +64,7 @@ class FireBaseManager {
         deviceNode.observeSingleEvent(of: .value) { (dataSnapshot) in
             print(dataSnapshot)
             if let dict = dataSnapshot.value as? [[String: Any]] {
-                print(dict)
+                
                 completionHandler(true, dict)
             } else {
                 completionHandler(false, nil)
@@ -71,15 +72,15 @@ class FireBaseManager {
         }
     }
     
-    func updateCurrentUser(deviceId: String ) {
+    func updateCurrentUser(deviceId: String ,mail: String ) {
         ref.child("allDevices").observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [[String: Any]] {
                 for (index,item) in dict.enumerated() {
                     if let ymlDeviceId = item["yml_device_id"] as? String {
                         if deviceId == ymlDeviceId {
-                          self.ref.child("allDevices").child(String(index)).updateChildValues(
-                                ["name" : FireBaseManager.shared.userName,
-                                    "created_date" : Date.currentDate()]
+                            self.ref.child("allDevices").child(String(index)).updateChildValues(
+                                ["name" : mail,
+                                 "created_date" : Date.currentDate()]
                             )
                         }
                     }
@@ -89,27 +90,47 @@ class FireBaseManager {
         )
     }
     
-    func addHistory(deviceId: String, mail: String) {
+    func getUserImage(emailforpassword : String, index :Int, completionHandler: @escaping (Bool ,Any) -> Void)  {
+        ref.child("existingUsers").child(String(index)).observeSingleEvent(of: .value, with: {  (snapshot) in
+            if let image = snapshot.childSnapshot(forPath: "imageUrl").value {
+                 completionHandler(true,image)
+            }
+            completionHandler(false,(Any).self)
+        })
+    }
+    
+    func addHistory(deviceId: String, mail: String, deviceName: String, completionHandler: @escaping (Bool) -> Void) {
         ref.child("historicalData").observeSingleEvent(of: .value) { (snapshot) in
             if let dict = snapshot.value as? [[String: Any]] {
                 for (index,item) in dict.enumerated() {
-                    for i in item.keys {
-                            print(i)
+                    if let deviceinfo = item["device_info"] {
+                        print(deviceinfo)
+                        if let deviceInfo = deviceinfo as? [String:String] {
+                            print(deviceInfo)
+                            if deviceInfo["yml_device_id"] == deviceId {
+                                if let dict2 = dict[index]["fullHistory"] as? [[String: String]] {
+                                    let reff = self.ref.child("historicalData").child(String(index)).child("fullHistory").child(String(dict2.count))
+                                    reff.setValue(["assigned_to" : mail ,
+                                                   "assignment_by" : FireBaseManager.shared.userName,
+                                                   "cableCheck" : "1",
+                                                   "created_date" : Date.currentDate(),
+                                                   "device_name" : deviceName])
+                                    completionHandler(true)
+                                }
+                            }
                         }
                     }
+                    
                 }
-        
+                completionHandler(false)
             }
         }
-        
-    
-    
+    }
     
     func fetchHistory(completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
         let historicalData = self.ref.child("historicalData")
         historicalData.observeSingleEvent(of: .value) { (dataSnapshot) in
             if let dict = dataSnapshot.value as? [[String: Any]] {
-                print(dict)
                 completionHandler(true, dict)
             } else {
                 completionHandler(false, nil)

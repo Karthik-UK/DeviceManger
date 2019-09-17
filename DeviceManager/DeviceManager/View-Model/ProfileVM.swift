@@ -13,4 +13,12 @@ class ProfileVM {
     var email: String = ""
     var totalDevicecount: Int = 0
     var index: Int = 0
+    
+    func getMyDevices(allDevices: [DeviceModel]) {
+        currentOwnerDevice = []
+        for i in 0..<allDevices.count where allDevices[i].employeeName == FireBaseManager.shared.userName {
+            totalDevicecount += 1
+            currentOwnerDevice.append(allDevices[i])
+        }
+    }
 }

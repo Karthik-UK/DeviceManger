@@ -13,23 +13,58 @@ class ProfileVC: BaseVC {
     @IBOutlet weak var profileName: UINavigationItem!
     @IBOutlet weak var profileTableView: UITableView!
     
+    let loginVM = LoginVM()
     let constants = KeyConstants()
     var profilevm = ProfileVM()
     weak var homeVM: HomeVM?
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginVM.getProfileDetails()
+        imagePicker.delegate = self
         profileName.title = FireBaseManager.shared.userName
     }
     
-    @IBAction private func logOut(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        // show alert and then logout.
-        guard let dashBoard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: OnBoardingVC.self)) as? OnBoardingVC else { return }
-        self.tabBarController?.present(dashBoard, animated: false, completion: nil)
-        //        UIApplication.shared.keyWindow?.rootViewController = dashBoard
+    @objc func oneTapped(_ sender: Any?) {
+        showAlert(message: "SEelct image", type: .actionSheet, action: [AlertAction(title: "Camera", style: .default, handler: { (_) in
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker , animated: true, completion: nil)
+        }),AlertAction(title: "PhotoLib", style: .default, handler: { (_) in
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker , animated: true, completion: nil)
+        }),AlertAction(title: "cancel", style: .cancel, handler: nil)])
+        
+        imagePicker.allowsEditing = false
     }
+    
+    @IBAction private func logOut(_ sender: Any) {
+        showAlert(message: constants.logOut, type: .alert, action :[AlertAction(title: constants.no,style: .cancel ,handler: nil),AlertAction(title: constants.yes, style: .default, handler: { (_) in
+            UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+            guard let dashBoard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: OnBoardingVC.self)) as? OnBoardingVC else { return }
+            //        UIApplication.shared.keyWindow?.rootViewController = dashBoard
+            self.tabBarController?.present(dashBoard, animated: false, completion: nil)
+        }
+            )])
+    }
+    
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            if let cell = profileTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ProfileTVCell {
+            cell.buttonImage.setImage(image, for: .normal)
+            
+        }
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+}
 }
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
@@ -56,21 +91,11 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 2 {
             profilevm.currentOwnerDevice = []
-            if let allDeviceCount = homeVM?.allDevices.count {
-                for i in 0..<allDeviceCount where homeVM?.allDevices[i].employeeName == FireBaseManager.shared.userName {
-                    profilevm.totalDevicecount += 1
-                    if let allDevices = homeVM?.allDevices[i] {
-                        profilevm.currentOwnerDevice.append(allDevices)
-                    }
-                }
-                if profilevm.totalDevicecount != 0 {
-                    guard let currentList = UIStoryboard(name: "CurrentDeviceList", bundle: nil).instantiateViewController(withIdentifier: String(describing: CurrentDeviceListVC.self)) as? CurrentDeviceListVC else { return }
-                    currentList.profileVM = self.profilevm
-                    self.navigationController?.pushViewController(currentList, animated: true)
-                    
-                } else {
-                    showAlert(message: constants.noCurrentDevices, type: .alert, action :[AlertAction(title:constants.okAction,style: .default ,handler: nil)])
-                }
+            if homeVM?.allDevices.count != nil {
+                guard let currentList = UIStoryboard(name: "CurrentDeviceList", bundle: nil).instantiateViewController(withIdentifier: String(describing: CurrentDeviceListVC.self)) as? CurrentDeviceListVC else { return }
+                currentList.profileVM = self.profilevm
+                currentList.homeVM = self.homeVM
+                self.navigationController?.pushViewController(currentList, animated: true)
             }
         }
     }
@@ -83,6 +108,12 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         var cell: ProfileTVCell?
         if let profileCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell {
             profileCell.emailLabel?.text = UserDefaults.standard.string(forKey: constants.key) ?? ""
+            if let decodedData = Data(base64Encoded: loginVM.image, options: .ignoreUnknownCharacters) {
+                let userImage = UIImage(data: decodedData)
+                profileCell.buttonImage.setImage(userImage, for: .normal)
+            }
+            
+            profileCell.buttonImage.addTarget(self, action: #selector(oneTapped(_:)), for: .touchUpInside)
             cell = profileCell
         }
         return cell
@@ -91,7 +122,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     private func getNotificationCell(indexPath: IndexPath) -> NotificationPreferencesCell? {
         var cell: NotificationPreferencesCell?
         if let notificationCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: NotificationPreferencesCell.self), for: indexPath) as? NotificationPreferencesCell {
-            notificationCell.notificationLabel.text = "frfrf"
+            notificationCell.notificationLabel.text = "Notification Preferences"
             cell = notificationCell
         }
         return cell

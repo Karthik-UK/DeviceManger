@@ -14,7 +14,7 @@ class LoginVC: BaseVC {
     @IBOutlet weak var manualLoginButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
-    let alertconstant = Alertconstants()
+    let constants = KeyConstants()
     let loginvm = LoginVM()
     var currentIndex : IndexPath?
     var isEmailValid: Bool = false
@@ -60,7 +60,7 @@ class LoginVC: BaseVC {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "False"])
         stopSpinning()
-        showAlert(message: alertconstant.messgae, title: alertconstant.title, type: .alert ,action :[AlertAction(title:alertconstant.alertactionmessage,style: .default ,handler: { (_) in
+        showAlert(message: constants.message, type: .alert ,action :[AlertAction(title: constants.okAction,style: .default ,handler: { (_) in
             self.stopSpinning()
         })])
     }

@@ -39,6 +39,7 @@
 		8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BA2231E85B900509249 /* ProfileVC.swift */; };
 		8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BAA231E92AB00509249 /* HomeVC.swift */; };
 		8F131BB2231E9B4700509249 /* AdminDevice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BB1231E9B4700509249 /* AdminDevice.storyboard */; };
+		8F6F839C2330E7C1002ABE54 /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F839B2330E7C1002ABE54 /* TableView+Extension.swift */; };
 		8F7271F1232617CE0030519A /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271ED232617CE0030519A /* LogoutCell.swift */; };
 		8F7271F2232617CE0030519A /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EE232617CE0030519A /* ProfileImageCell.swift */; };
 		8F7271F3232617CE0030519A /* NotificationPreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */; };
@@ -103,6 +104,7 @@
 		8F131BA2231E85B900509249 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		8F131BAA231E92AB00509249 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ../../../HomeVC.swift; sourceTree = "<group>"; };
 		8F131BB1231E9B4700509249 /* AdminDevice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminDevice.storyboard; sourceTree = "<group>"; };
+		8F6F839B2330E7C1002ABE54 /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		8F7271ED232617CE0030519A /* LogoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
 		8F7271EE232617CE0030519A /* ProfileImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPreferencesCell.swift; sourceTree = "<group>"; };
@@ -145,7 +147,6 @@
 			children = (
 				8F131B9A231E849000509249 /* Login.storyboard */,
 				8F733122231EA9FF009D3083 /* LoginCell.swift */,
-				8F131B9C231E853500509249 /* LoginVC.swift */,
 			);
 			path = "Login ";
 			sourceTree = "<group>";
@@ -172,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				8F83BE0823211B7F00BA4428 /* GoogleService-Info.plist */,
-				8F0AFA9C2327B920007689A7 /* Constants.swift */,
 				8F131B80231E7E3200509249 /* AppDelegate.swift */,
+				8F0AFA9C2327B920007689A7 /* Constants.swift */,
 				8F131B98231E81C500509249 /* View-Model */,
 				8F131B97231E81BD00509249 /* View */,
 				8F131B96231E81AF00509249 /* Model */,
@@ -199,6 +200,7 @@
 				8F131B89231E7E3300509249 /* LaunchScreen.storyboard */,
 				8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */,
 				8F07FD77231FF93300DC3634 /* String+Extension.swift */,
+				8F6F839B2330E7C1002ABE54 /* TableView+Extension.swift */,
 				8F9282632328F206006F548E /* Date+Extension.swift */,
 				8F07FD792320077400DC3634 /* BaseCVC.swift */,
 				8F131B94231E808E00509249 /* BaseVC.swift */,
@@ -278,6 +280,7 @@
 		8FAF4DB0232394A200CA3BA2 /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				8F131B9C231E853500509249 /* LoginVC.swift */,
 				8FE824C923228555002FD8A6 /* TabBarVC.swift */,
 				8F72720423267BFE0030519A /* TabBar.storyboard */,
 				8F7271F823264B1E0030519A /* Profile */,
@@ -504,6 +507,7 @@
 				8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */,
 				8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */,
 				8F07FD7A2320077400DC3634 /* BaseCVC.swift in Sources */,
+				8F6F839C2330E7C1002ABE54 /* TableView+Extension.swift in Sources */,
 				8F11A825232A130D00AC3F3D /* HomeHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

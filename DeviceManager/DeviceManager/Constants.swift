@@ -7,17 +7,12 @@
 //
 
 import Foundation
-struct Alertconstants {
-     let title = " Email doesn't Exist "
-     let messgae = "Wrong Credentials"
-     let alertactionmessage = "OK"
-    
-}
+
 struct KeyConstants {
     let key = "email"
     let cableGiven  = "Cable Given"
     let cableNotGiven = "Cable Not Given"
-    let currentPhoneHolders = "Current Phone Holders List"
+    let currentPhoneHolders = "Current Phones  List"
     let existingDevices = "Existing Devices"
     let okAction = "OK"
     let noCurrentDevices = "NO DEVICES FOUND"
@@ -27,4 +22,11 @@ struct KeyConstants {
     let employeeName = "Employee Name"
     let entryTime = "Entrty Time"
     let homeHistory = "HomeHistory"
+    let logOut = "Are you sure you want to logout"
+    let yes = "Yes"
+    let no = "No"
+    let message = "Wrong Credentials"
+    let noDevciesFound = "Sorry You Dont Have any Device"
+    let deviceTransfer = "Device Transfered Successfully"
+    let setEmail = "Pick 1 Email"
 }
