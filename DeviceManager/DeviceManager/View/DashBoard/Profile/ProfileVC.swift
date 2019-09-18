@@ -15,25 +15,28 @@ class ProfileVC: BaseVC {
     
     let loginVM = LoginVM()
     let constants = KeyConstants()
+    let pickerConstant = PickerConstants()
     var profilevm = ProfileVM()
     weak var homeVM: HomeVM?
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginVM.getProfileDetails()
         imagePicker.delegate = self
         profileName.title = FireBaseManager.shared.userName
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+       
+    }
     @objc func oneTapped(_ sender: Any?) {
-        showAlert(message: "SEelct image", type: .actionSheet, action: [AlertAction(title: "Camera", style: .default, handler: { (_) in
+        showAlert(message: pickerConstant.selectImage, type: .actionSheet, action: [AlertAction(title: pickerConstant.camera, style: .default, handler: { (_) in
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker , animated: true, completion: nil)
-        }),AlertAction(title: "PhotoLib", style: .default, handler: { (_) in
+        }),AlertAction(title: pickerConstant.library, style: .default, handler: { (_) in
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker , animated: true, completion: nil)
-        }),AlertAction(title: "cancel", style: .cancel, handler: nil)])
+        }),AlertAction(title: pickerConstant.cancel, style: .cancel, handler: nil)])
         
         imagePicker.allowsEditing = false
     }
@@ -42,7 +45,6 @@ class ProfileVC: BaseVC {
         showAlert(message: constants.logOut, type: .alert, action :[AlertAction(title: constants.no,style: .cancel ,handler: nil),AlertAction(title: constants.yes, style: .default, handler: { (_) in
             UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
             guard let dashBoard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: OnBoardingVC.self)) as? OnBoardingVC else { return }
-            //        UIApplication.shared.keyWindow?.rootViewController = dashBoard
             self.tabBarController?.present(dashBoard, animated: false, completion: nil)
         }
             )])
@@ -108,11 +110,16 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         var cell: ProfileTVCell?
         if let profileCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell {
             profileCell.emailLabel?.text = UserDefaults.standard.string(forKey: constants.key) ?? ""
-            if let decodedData = Data(base64Encoded: loginVM.image, options: .ignoreUnknownCharacters) {
-                let userImage = UIImage(data: decodedData)
-                profileCell.buttonImage.setImage(userImage, for: .normal)
-            }
-            
+            loginVM.getProfileDetails(emailId: UserDefaults.standard.string(forKey: "email") ?? "", completionHandler: { (isSuccess, ImageValue) in
+                if isSuccess {
+                    self.loginVM.image = ImageValue
+                    if let decodedData = Data(base64Encoded:self.loginVM.image, options: .ignoreUnknownCharacters) {
+                        let userImage = UIImage(data: decodedData)
+                        profileCell.buttonImage.setImage(userImage, for: .normal)
+                    }
+                }
+            })
+           
             profileCell.buttonImage.addTarget(self, action: #selector(oneTapped(_:)), for: .touchUpInside)
             cell = profileCell
         }

@@ -30,3 +30,9 @@ struct KeyConstants {
     let deviceTransfer = "Device Transfered Successfully"
     let setEmail = "Pick 1 Email"
 }
+struct PickerConstants {
+    let selectImage = "Select Image"
+    let library = "Library"
+    let camera = "Camera"
+    let cancel = "Cancel"
+}

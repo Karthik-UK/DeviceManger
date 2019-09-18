@@ -11,8 +11,8 @@ import UIKit
 class ProfileTVCell: BaseTVC {
     
     @IBOutlet weak var emailLabel: UILabel!
-    
     @IBOutlet weak var buttonImage: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -31,13 +31,13 @@ class BaseVC: UIViewController {
         view.addSubview(spinnerVC.view)
         spinnerVC.didMove(toParent: self)
     }
-    
+    //Stops Indicator
     func stopSpinning() {
         spinnerVC?.willMove(toParent: nil)
         spinnerVC?.view.removeFromSuperview()
         spinnerVC?.removeFromParent()
     }
-    
+    //Alert Function
     func showAlert( message: String, title: String? = nil, type: UIAlertController.Style, action: [AlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: type)
         for item in action {
@@ -49,6 +49,7 @@ class BaseVC: UIViewController {
 }
 
 extension BaseVC {
+    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BaseVC.dismissKeyboard))
         tap.cancelsTouchesInView = false

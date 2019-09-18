@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Firebase
 
 class LoginVM {
     var loginInfo: [LoginFields] = []
@@ -13,23 +14,38 @@ class LoginVM {
         loginInfo = details
     }
     
-    func getProfileDetails() {
-        // fetch the details and assign it to variables
-//        email = object["email"]
-//        image =
+    func getProfileDetails(emailId: String , completionHandler: @escaping (Bool ,String) -> Void) {
+        let ref = Database.database().reference()
+        let user = ref.child("existingUsers")
+        user.observeSingleEvent(of: .value) { (snapShot) in
+            if let dict = snapShot.value as? [[String: Any]] {
+                for item in dict {
+                    if let email = item["email"] as? String {
+                        if email == emailId {
+                            if let userDetails = snapShot.value as? [[String: Any]] {
+                                for item in userDetails {
+                                    if let imageURL = item["imageUrl"] as? String {
+                                        completionHandler(true ,imageURL)
+                                    }
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+                }
+                
+            }
+            
+        }
     }
     
-    // Verify Email is for Login
+    //Verify Email for logging In
     func verifyemail(mail :String, password: String? = nil ) {
         FireBaseManager.shared.getusers { [weak self ](mailinfo) in
             for (index,currentmail) in mailinfo.enumerated() {
                 if currentmail == mail {
-                    FireBaseManager.shared.getUserImage(emailforpassword: currentmail, index: index, completionHandler: { (isSuccess, ImageValue) in
-                        if isSuccess {
-                            self?.image = ImageValue as? String ?? ""
-                        }
-                        
-                    })
+                    
                     FireBaseManager.shared.getName(index: index ,mail: currentmail)
                     UserDefaults.standard.set(currentmail, forKey: "email")
                     UserDefaults.standard.set(true, forKey: "isUserLoggedIn")

@@ -32,7 +32,7 @@ class TransferDeviceVC: BaseVC {
         if let mailText = transferTextField.text {
             if let index = profileVM?.index {
                 FireBaseManager.shared.updateCurrentUser(deviceId: profileVM?.currentOwnerDevice[index].deviceId ?? "" ,mail: mailText)
-                FireBaseManager.shared.addHistory(deviceId: profileVM?.currentOwnerDevice[index].deviceId ?? "", mail: mailText, deviceName: profileVM?.currentOwnerDevice[index].deviceName ?? ""){ [weak self] isSuccess in
+                FireBaseManager.shared.addHistory(deviceId: profileVM?.currentOwnerDevice[index].deviceId ?? "", mail: mailText, deviceName: profileVM?.currentOwnerDevice[index].deviceName ?? "") { [weak self] isSuccess in
                     if isSuccess {
                         self?.showAlert(message: self?.constants.deviceTransfer ?? "", type: .alert, action :[AlertAction(title: self?.constants.okAction,style: .cancel ,handler: nil)])
                     }

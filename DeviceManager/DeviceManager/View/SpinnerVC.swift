@@ -9,6 +9,7 @@
 import UIKit
 
 class SpinnerVC: BaseVC {
+    
         var spinner: UIActivityIndicatorView?
     
         override func viewDidLoad() {

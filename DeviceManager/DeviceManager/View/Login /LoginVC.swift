@@ -53,7 +53,6 @@ class LoginVC: BaseVC {
                                                  "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
         self.present(dashBoard, animated: true, completion: nil)
-//        UIApplication.shared.keyWindow?.rootViewController = dashBoard
     }
     
     @objc func wrongncredential() {
