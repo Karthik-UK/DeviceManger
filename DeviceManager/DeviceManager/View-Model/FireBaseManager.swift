@@ -34,6 +34,23 @@ class FireBaseManager {
             }
         }
     }
+    func updateImage(image: String ,emailId: String) {
+        ref.child("existingUsers").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict = snapshot.value as? [[String: Any]] {
+                for (index,item) in dict.enumerated() {
+                    if let email = item["email"] as? String {
+                        if email == emailId {
+                            self.ref.child("existingUsers").child(String(index)).updateChildValues(
+                                ["imageUrl" : image ]
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        )
+
+    }
     
     func getName(index: Int ,mail: String) {
         let existing = ref.child("existingUsers").child(String(index))

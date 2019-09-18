@@ -58,6 +58,9 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if let cell = profileTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ProfileTVCell {
             cell.buttonImage.setImage(image, for: .normal)
+                let data = image.jpegData(compressionQuality: 1)
+                let imageStr = data?.base64EncodedString(options: .lineLength64Characters) ?? ""
+                FireBaseManager.shared.updateImage(image: imageStr, emailId: UserDefaults.standard.string(forKey: "email") ?? "")
             
         }
         dismiss(animated: true)
