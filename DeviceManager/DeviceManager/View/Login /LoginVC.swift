@@ -35,7 +35,7 @@ class LoginVC: BaseVC {
     @IBAction private func manualLogin(_ sender: Any) {
         startSpinning()
         loginvm.verifyemail(mail: loginvm.email,password: loginvm.password)
-       
+        
     }
     @IBAction private func googleSignIn(_ sender: Any) {
         startSpinning()

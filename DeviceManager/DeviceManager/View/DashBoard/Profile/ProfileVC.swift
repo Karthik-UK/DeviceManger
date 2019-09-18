@@ -28,7 +28,7 @@ class ProfileVC: BaseVC {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       
+        
     }
     // To change Profile Picture
     @objc func oneTapped(_ sender: Any?) {
@@ -60,19 +60,19 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if let cell = profileTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ProfileTVCell {
-            cell.buttonImage.setImage(image, for: .normal)
+                cell.buttonImage.setImage(image, for: .normal)
                 let data = image.jpegData(compressionQuality: 0.2)
                 let imageStr = data?.base64EncodedString(options: .lineLength64Characters) ?? ""
                 FireBaseManager.shared.updateImage(image: imageStr, emailId: UserDefaults.standard.string(forKey: "email") ?? "")
-            
+                
+            }
+            dismiss(animated: true)
         }
-        dismiss(animated: true)
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true)
+        }
     }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true)
-    }
-}
 }
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
@@ -127,7 +127,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             })
-
+            
             profileCell.buttonImage.addTarget(self, action: #selector(oneTapped(_:)), for: .touchUpInside)
             cell = profileCell
         }
