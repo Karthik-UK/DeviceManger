@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import UserNotifications
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
