@@ -22,6 +22,7 @@ class ProfileVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileTableView.tableFooterView = UIView()
         imagePicker.delegate = self
         profileName.title = FireBaseManager.shared.userName
     }
@@ -29,6 +30,7 @@ class ProfileVC: BaseVC {
         super.viewWillAppear(true)
        
     }
+    // To change Profile Picture
     @objc func oneTapped(_ sender: Any?) {
         showAlert(message: pickerConstant.selectImage, type: .actionSheet, action: [AlertAction(title: pickerConstant.camera, style: .default, handler: { (_) in
             self.imagePicker.sourceType = .camera
@@ -41,6 +43,7 @@ class ProfileVC: BaseVC {
         imagePicker.allowsEditing = false
     }
     
+    //logout Action
     @IBAction private func logOut(_ sender: Any) {
         showAlert(message: constants.logOut, type: .alert, action :[AlertAction(title: constants.no,style: .cancel ,handler: nil),AlertAction(title: constants.yes, style: .default, handler: { (_) in
             UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
@@ -58,7 +61,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if let cell = profileTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ProfileTVCell {
             cell.buttonImage.setImage(image, for: .normal)
-                let data = image.jpegData(compressionQuality: 1)
+                let data = image.jpegData(compressionQuality: 0.2)
                 let imageStr = data?.base64EncodedString(options: .lineLength64Characters) ?? ""
                 FireBaseManager.shared.updateImage(image: imageStr, emailId: UserDefaults.standard.string(forKey: "email") ?? "")
             
@@ -75,7 +78,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,6 +106,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(currentList, animated: true)
             }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -119,10 +123,11 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                     if let decodedData = Data(base64Encoded:self.loginVM.image, options: .ignoreUnknownCharacters) {
                         let userImage = UIImage(data: decodedData)
                         profileCell.buttonImage.setImage(userImage, for: .normal)
+                        
                     }
                 }
             })
-           
+
             profileCell.buttonImage.addTarget(self, action: #selector(oneTapped(_:)), for: .touchUpInside)
             cell = profileCell
         }

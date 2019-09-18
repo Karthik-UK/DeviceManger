@@ -82,7 +82,7 @@
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Computer-Hardware-Device-Manager-icon" translatesAutoresizingMaskIntoConstraints="NO" id="EPA-Go-9h3">
-                                <rect key="frame" x="159.5" y="40" width="56" height="56.5"/>
+                                <rect key="frame" x="169" y="40" width="37.5" height="37.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EPA-Go-9h3" secondAttribute="height" multiplier="100:100" id="G8m-X3-YUD"/>
                                 </constraints>
@@ -126,7 +126,7 @@
                             <constraint firstItem="PDV-Ne-Smt" firstAttribute="bottom" secondItem="JG3-mI-JFP" secondAttribute="bottom" priority="900" constant="20" id="aHL-ci-RWA"/>
                             <constraint firstItem="MXu-qr-kcU" firstAttribute="trailing" secondItem="JG3-mI-JFP" secondAttribute="trailing" id="o6i-8h-DYw"/>
                             <constraint firstAttribute="bottom" secondItem="MXu-qr-kcU" secondAttribute="bottom" id="ry0-pB-Bah"/>
-                            <constraint firstItem="EPA-Go-9h3" firstAttribute="width" secondItem="MXu-qr-kcU" secondAttribute="width" multiplier="0.15" id="tBE-yz-cfA"/>
+                            <constraint firstItem="EPA-Go-9h3" firstAttribute="width" secondItem="MXu-qr-kcU" secondAttribute="width" multiplier="0.1" id="tBE-yz-cfA"/>
                             <constraint firstItem="PDV-Ne-Smt" firstAttribute="top" secondItem="FPz-6v-2yh" secondAttribute="bottom" constant="30" id="uyK-vb-xhr"/>
                             <constraint firstItem="PDV-Ne-Smt" firstAttribute="centerX" secondItem="tU6-wG-ubC" secondAttribute="centerX" id="z9S-5l-Qsr"/>
                         </constraints>

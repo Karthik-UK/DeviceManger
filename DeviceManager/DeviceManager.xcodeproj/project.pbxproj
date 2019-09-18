@@ -223,12 +223,12 @@
 			isa = PBXGroup;
 			children = (
 				8F131BA2231E85B900509249 /* ProfileVC.swift */,
+				8F72720023265A7E0030519A /* ProfileTVCell.swift */,
 				8F0B4F64232CE67C0059685F /* CurrentDeviceList.storyboard */,
 				8F0B4F60232CE6390059685F /* CurrentDeviceListVC.swift */,
 				8F087A48232F72DA0012A481 /* CurrentDevicesCell.swift */,
 				8F087A4C232F81C90012A481 /* TransferDevice.storyboard */,
 				8F087A4A232F818B0012A481 /* TransferDeviceVC.swift */,
-				8F72720023265A7E0030519A /* ProfileTVCell.swift */,
 				8F7271ED232617CE0030519A /* LogoutCell.swift */,
 				8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */,
 				8F7271EE232617CE0030519A /* ProfileImageCell.swift */,

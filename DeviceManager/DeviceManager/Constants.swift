@@ -20,7 +20,7 @@ struct KeyConstants {
     let deviceName = "Device Name"
     let deviceId = "Device Id"
     let employeeName = "Employee Name"
-    let entryTime = "Entrty Time"
+    let entryTime = "Entry Time"
     let homeHistory = "HomeHistory"
     let logOut = "Are you sure you want to logout"
     let yes = "Yes"
