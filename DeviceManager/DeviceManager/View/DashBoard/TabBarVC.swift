@@ -1,5 +1,5 @@
 //
-//  DashBoardVC.swift
+//  TabBarVC.swift
 //  DeviceManager
 //
 //  Created by Karthik UK on 06/09/19.
@@ -8,10 +8,31 @@
 
 import UIKit
 
-class TabBarVC: UITabBarController {
+class TabBarVC: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        UITabBar.appearance().tintColor = .cyan
-        UITabBar.appearance().barTintColor = .black }
+        self.delegate = self
+        tabBarSetUp()
+    }
 
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let navVC = viewController as? UINavigationController {
+            if let profileVC = navVC.viewControllers.first as? ProfileVC {
+                if let navVC2 = tabBarController.viewControllers?.first as? UINavigationController {
+                    if let homeVC = navVC2.viewControllers.first as? HomeVC {
+                        profileVC.homeVM = homeVC.homeVM
+                
+                    }
+                }
+            }
+        }
+        
+    }
+    func tabBarSetUp() {
+        UITabBar.appearance().tintColor = .cyan
+        UITabBar.appearance().barTintColor = .black
+        
+    }
+ 
 }

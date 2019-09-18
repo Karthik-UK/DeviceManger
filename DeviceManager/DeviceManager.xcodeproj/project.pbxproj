@@ -8,14 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8F0125712328B9C6008CED93 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0125702328B9C6008CED93 /* ProfileVM.swift */; };
+		8F0546E3232B6FC9000CF4F6 /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0546E2232B6FC9000CF4F6 /* HistoryHeaderView.swift */; };
+		8F0546E5232B6FDA000CF4F6 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0546E4232B6FDA000CF4F6 /* HistoryHeaderView.xib */; };
+		8F0546E7232B9CBB000CF4F6 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0546E6232B9CBB000CF4F6 /* HomeModel.swift */; };
 		8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD71231F7CFF00DC3634 /* LoginModel.swift */; };
 		8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD73231F7D3C00DC3634 /* LoginVM.swift */; };
 		8F07FD76231FF8FE00DC3634 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */; };
 		8F07FD78231FF93300DC3634 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD77231FF93300DC3634 /* String+Extension.swift */; };
 		8F07FD7A2320077400DC3634 /* BaseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD792320077400DC3634 /* BaseCVC.swift */; };
 		8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */; };
+		8F087A45232F55E30012A481 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F087A44232F55E30012A481 /* HomeCell.xib */; };
+		8F087A47232F59DC0012A481 /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F087A46232F59DC0012A481 /* HomeTableCell.swift */; };
+		8F087A49232F72DA0012A481 /* CurrentDevicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F087A48232F72DA0012A481 /* CurrentDevicesCell.swift */; };
+		8F087A4B232F818B0012A481 /* TransferDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F087A4A232F818B0012A481 /* TransferDeviceVC.swift */; };
+		8F087A4D232F81C90012A481 /* TransferDevice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F087A4C232F81C90012A481 /* TransferDevice.storyboard */; };
 		8F0AFA9D2327B920007689A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AFA9C2327B920007689A7 /* Constants.swift */; };
 		8F0AFAA12327C631007689A7 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AFAA02327C631007689A7 /* HomeVM.swift */; };
+		8F0B4F61232CE6390059685F /* CurrentDeviceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B4F60232CE6390059685F /* CurrentDeviceListVC.swift */; };
+		8F0B4F65232CE67C0059685F /* CurrentDeviceList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0B4F64232CE67C0059685F /* CurrentDeviceList.storyboard */; };
 		8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063742320D052001330AB /* OnBoardingVM.swift */; };
 		8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1063762320D07A001330AB /* OnBoardingModel.swift */; };
 		8F11A825232A130D00AC3F3D /* HomeHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */; };
@@ -29,21 +39,16 @@
 		8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BA2231E85B900509249 /* ProfileVC.swift */; };
 		8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F131BAA231E92AB00509249 /* HomeVC.swift */; };
 		8F131BB2231E9B4700509249 /* AdminDevice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F131BB1231E9B4700509249 /* AdminDevice.storyboard */; };
-		8F7271F0232617CE0030519A /* CurrentDevicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EC232617CD0030519A /* CurrentDevicesCell.swift */; };
+		8F6F839C2330E7C1002ABE54 /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F839B2330E7C1002ABE54 /* TableView+Extension.swift */; };
 		8F7271F1232617CE0030519A /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271ED232617CE0030519A /* LogoutCell.swift */; };
 		8F7271F2232617CE0030519A /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EE232617CE0030519A /* ProfileImageCell.swift */; };
 		8F7271F3232617CE0030519A /* NotificationPreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */; };
 		8F7271F723263A050030519A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7271F623263A050030519A /* Main.storyboard */; };
-		8F7271FF23264D410030519A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7271FE23264D410030519A /* HomeCell.swift */; };
 		8F72720123265A7E0030519A /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F72720023265A7E0030519A /* ProfileTVCell.swift */; };
 		8F72720523267BFE0030519A /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F72720423267BFE0030519A /* TabBar.storyboard */; };
-		8F73310F231E9B8D009D3083 /* AdminEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */; };
 		8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */; };
-		8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733112231E9BB9009D3083 /* AdminEmpVC.swift */; };
 		8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733114231E9C14009D3083 /* AvailableDeviceVC.swift */; };
 		8F733117231E9C29009D3083 /* AvailableDevice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F733116231E9C29009D3083 /* AvailableDevice.storyboard */; };
-		8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733118231E9C43009D3083 /* EditProfileVC.swift */; };
-		8F73311B231E9C5B009D3083 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F73311A231E9C5A009D3083 /* EditProfile.storyboard */; };
 		8F73311D231E9C86009D3083 /* HomeHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F73311C231E9C86009D3083 /* HomeHistory.storyboard */; };
 		8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */; };
 		8F733121231EA9E4009D3083 /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F733120231EA9E4009D3083 /* BaseTVC.swift */; };
@@ -62,14 +67,24 @@
 		801D604D57D63D2C791D3F45 /* Pods_DeviceManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeviceManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82904A0F6CC37A7C6B0CB400 /* Pods-DeviceManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviceManager.debug.xcconfig"; path = "Target Support Files/Pods-DeviceManager/Pods-DeviceManager.debug.xcconfig"; sourceTree = "<group>"; };
 		8F0125702328B9C6008CED93 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		8F0546E2232B6FC9000CF4F6 /* HistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
+		8F0546E4232B6FDA000CF4F6 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		8F0546E6232B9CBB000CF4F6 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8F07FD71231F7CFF00DC3634 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8F07FD73231F7D3C00DC3634 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8F07FD77231FF93300DC3634 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8F07FD792320077400DC3634 /* BaseCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVC.swift; sourceTree = "<group>"; };
 		8F07FD7B2320079700DC3634 /* OnBoardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCVC.swift; sourceTree = "<group>"; };
+		8F087A44232F55E30012A481 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		8F087A46232F59DC0012A481 /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		8F087A48232F72DA0012A481 /* CurrentDevicesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDevicesCell.swift; sourceTree = "<group>"; };
+		8F087A4A232F818B0012A481 /* TransferDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDeviceVC.swift; sourceTree = "<group>"; };
+		8F087A4C232F81C90012A481 /* TransferDevice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransferDevice.storyboard; sourceTree = "<group>"; };
 		8F0AFA9C2327B920007689A7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F0AFAA02327C631007689A7 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		8F0B4F60232CE6390059685F /* CurrentDeviceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDeviceListVC.swift; sourceTree = "<group>"; };
+		8F0B4F64232CE67C0059685F /* CurrentDeviceList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentDeviceList.storyboard; sourceTree = "<group>"; };
 		8F1063742320D052001330AB /* OnBoardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVM.swift; sourceTree = "<group>"; };
 		8F1063762320D07A001330AB /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHistoryCell.swift; sourceTree = "<group>"; };
@@ -85,21 +100,16 @@
 		8F131BA2231E85B900509249 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		8F131BAA231E92AB00509249 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ../../../HomeVC.swift; sourceTree = "<group>"; };
 		8F131BB1231E9B4700509249 /* AdminDevice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminDevice.storyboard; sourceTree = "<group>"; };
-		8F7271EC232617CD0030519A /* CurrentDevicesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDevicesCell.swift; sourceTree = "<group>"; };
+		8F6F839B2330E7C1002ABE54 /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		8F7271ED232617CE0030519A /* LogoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
 		8F7271EE232617CE0030519A /* ProfileImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPreferencesCell.swift; sourceTree = "<group>"; };
 		8F7271F623263A050030519A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8F7271FE23264D410030519A /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		8F72720023265A7E0030519A /* ProfileTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
 		8F72720423267BFE0030519A /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
-		8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminEmployee.storyboard; sourceTree = "<group>"; };
 		8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDeviceVC.swift; sourceTree = "<group>"; };
-		8F733112231E9BB9009D3083 /* AdminEmpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEmpVC.swift; sourceTree = "<group>"; };
 		8F733114231E9C14009D3083 /* AvailableDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDeviceVC.swift; sourceTree = "<group>"; };
 		8F733116231E9C29009D3083 /* AvailableDevice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AvailableDevice.storyboard; sourceTree = "<group>"; };
-		8F733118231E9C43009D3083 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
-		8F73311A231E9C5A009D3083 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		8F73311C231E9C86009D3083 /* HomeHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeHistory.storyboard; sourceTree = "<group>"; };
 		8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHistoryVC.swift; sourceTree = "<group>"; };
 		8F733120231EA9E4009D3083 /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -156,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				8F83BE0823211B7F00BA4428 /* GoogleService-Info.plist */,
-				8F0AFA9C2327B920007689A7 /* Constants.swift */,
 				8F131B80231E7E3200509249 /* AppDelegate.swift */,
+				8F0AFA9C2327B920007689A7 /* Constants.swift */,
 				8F131B98231E81C500509249 /* View-Model */,
 				8F131B97231E81BD00509249 /* View */,
 				8F131B96231E81AF00509249 /* Model */,
@@ -171,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				8F07FD71231F7CFF00DC3634 /* LoginModel.swift */,
-				8F0125702328B9C6008CED93 /* ProfileVM.swift */,
+				8F0546E6232B9CBB000CF4F6 /* HomeModel.swift */,
 				8F1063762320D07A001330AB /* OnBoardingModel.swift */,
 			);
 			path = Model;
@@ -183,6 +193,7 @@
 				8F131B89231E7E3300509249 /* LaunchScreen.storyboard */,
 				8F07FD75231FF8FE00DC3634 /* CustomTextField.swift */,
 				8F07FD77231FF93300DC3634 /* String+Extension.swift */,
+				8F6F839B2330E7C1002ABE54 /* TableView+Extension.swift */,
 				8F9282632328F206006F548E /* Date+Extension.swift */,
 				8F07FD792320077400DC3634 /* BaseCVC.swift */,
 				8F131B94231E808E00509249 /* BaseVC.swift */,
@@ -200,6 +211,8 @@
 			children = (
 				8F07FD73231F7D3C00DC3634 /* LoginVM.swift */,
 				8F1063742320D052001330AB /* OnBoardingVM.swift */,
+				8F0AFAA02327C631007689A7 /* HomeVM.swift */,
+				8F0125702328B9C6008CED93 /* ProfileVM.swift */,
 				8FE824C7232226F9002FD8A6 /* FireBaseManager.swift */,
 				8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */,
 			);
@@ -209,21 +222,20 @@
 		8F7271F823264B1E0030519A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				8F0AFAA02327C631007689A7 /* HomeVM.swift */,
 				8F131BA2231E85B900509249 /* ProfileVC.swift */,
+				8F0B4F64232CE67C0059685F /* CurrentDeviceList.storyboard */,
+				8F0B4F60232CE6390059685F /* CurrentDeviceListVC.swift */,
+				8F087A48232F72DA0012A481 /* CurrentDevicesCell.swift */,
+				8F087A4C232F81C90012A481 /* TransferDevice.storyboard */,
+				8F087A4A232F818B0012A481 /* TransferDeviceVC.swift */,
 				8F72720023265A7E0030519A /* ProfileTVCell.swift */,
 				8F7271ED232617CE0030519A /* LogoutCell.swift */,
 				8F7271EF232617CE0030519A /* NotificationPreferencesCell.swift */,
 				8F7271EE232617CE0030519A /* ProfileImageCell.swift */,
-				8F7271EC232617CD0030519A /* CurrentDevicesCell.swift */,
 				8F733110231E9BA2009D3083 /* AdminDeviceVC.swift */,
 				8F131BB1231E9B4700509249 /* AdminDevice.storyboard */,
-				8F733118231E9C43009D3083 /* EditProfileVC.swift */,
 				8F733114231E9C14009D3083 /* AvailableDeviceVC.swift */,
 				8F733116231E9C29009D3083 /* AvailableDevice.storyboard */,
-				8F733112231E9BB9009D3083 /* AdminEmpVC.swift */,
-				8F73310E231E9B8D009D3083 /* AdminEmployee.storyboard */,
-				8F73311A231E9C5A009D3083 /* EditProfile.storyboard */,
 				8F7271FB23264BC60030519A /* Home */,
 			);
 			path = Profile;
@@ -233,10 +245,13 @@
 			isa = PBXGroup;
 			children = (
 				8F73311E231E9CD0009D3083 /* HomeHistoryVC.swift */,
-				8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */,
 				8F131BAA231E92AB00509249 /* HomeVC.swift */,
-				8F7271FE23264D410030519A /* HomeCell.swift */,
+				8F11A824232A130D00AC3F3D /* HomeHistoryCell.swift */,
 				8F73311C231E9C86009D3083 /* HomeHistory.storyboard */,
+				8F0546E2232B6FC9000CF4F6 /* HistoryHeaderView.swift */,
+				8F087A44232F55E30012A481 /* HomeCell.xib */,
+				8F087A46232F59DC0012A481 /* HomeTableCell.swift */,
+				8F0546E4232B6FDA000CF4F6 /* HistoryHeaderView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -340,11 +355,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F73310F231E9B8D009D3083 /* AdminEmployee.storyboard in Resources */,
+				8F087A45232F55E30012A481 /* HomeCell.xib in Resources */,
+				8F0546E5232B6FDA000CF4F6 /* HistoryHeaderView.xib in Resources */,
 				8F131B9B231E849000509249 /* Login.storyboard in Resources */,
+				8F087A4D232F81C90012A481 /* TransferDevice.storyboard in Resources */,
 				8F83BE0923211B7F00BA4428 /* GoogleService-Info.plist in Resources */,
 				8F72720523267BFE0030519A /* TabBar.storyboard in Resources */,
-				8F73311B231E9C5B009D3083 /* EditProfile.storyboard in Resources */,
+				8F0B4F65232CE67C0059685F /* CurrentDeviceList.storyboard in Resources */,
 				8F733117231E9C29009D3083 /* AvailableDevice.storyboard in Resources */,
 				8F73311D231E9C86009D3083 /* HomeHistory.storyboard in Resources */,
 				8F7271F723263A050030519A /* Main.storyboard in Resources */,
@@ -439,21 +456,24 @@
 			files = (
 				8F7271F3232617CE0030519A /* NotificationPreferencesCell.swift in Sources */,
 				8FE824C8232226F9002FD8A6 /* FireBaseManager.swift in Sources */,
+				8F0546E3232B6FC9000CF4F6 /* HistoryHeaderView.swift in Sources */,
 				8F131B83231E7E3200509249 /* OnBoardingVC.swift in Sources */,
+				8F0B4F61232CE6390059685F /* CurrentDeviceListVC.swift in Sources */,
+				8F0546E7232B9CBB000CF4F6 /* HomeModel.swift in Sources */,
 				8F131BAB231E92AB00509249 /* HomeVC.swift in Sources */,
 				8F733123231EA9FF009D3083 /* LoginCell.swift in Sources */,
 				8F07FD7C2320079700DC3634 /* OnBoardingCVC.swift in Sources */,
-				8F7271F0232617CE0030519A /* CurrentDevicesCell.swift in Sources */,
 				8F1063772320D07A001330AB /* OnBoardingModel.swift in Sources */,
 				8F733115231E9C14009D3083 /* AvailableDeviceVC.swift in Sources */,
 				8F9282642328F206006F548E /* Date+Extension.swift in Sources */,
+				8F087A4B232F818B0012A481 /* TransferDeviceVC.swift in Sources */,
 				8F0AFA9D2327B920007689A7 /* Constants.swift in Sources */,
 				8F07FD78231FF93300DC3634 /* String+Extension.swift in Sources */,
 				8F1063752320D052001330AB /* OnBoardingVM.swift in Sources */,
 				8F72720123265A7E0030519A /* ProfileTVCell.swift in Sources */,
 				8F7271F2232617CE0030519A /* ProfileImageCell.swift in Sources */,
+				8F087A47232F59DC0012A481 /* HomeTableCell.swift in Sources */,
 				8F07FD72231F7CFF00DC3634 /* LoginModel.swift in Sources */,
-				8F733113231E9BB9009D3083 /* AdminEmpVC.swift in Sources */,
 				8F131BA3231E85B900509249 /* ProfileVC.swift in Sources */,
 				8F07FD76231FF8FE00DC3634 /* CustomTextField.swift in Sources */,
 				8F733111231E9BA2009D3083 /* AdminDeviceVC.swift in Sources */,
@@ -463,15 +483,15 @@
 				8F9282622328E8FC006F548E /* SpinnerVC.swift in Sources */,
 				8F131B81231E7E3200509249 /* AppDelegate.swift in Sources */,
 				8F0AFAA12327C631007689A7 /* HomeVM.swift in Sources */,
-				8F733119231E9C43009D3083 /* EditProfileVC.swift in Sources */,
 				8FE824CA23228555002FD8A6 /* TabBarVC.swift in Sources */,
 				8F83BE102321466100BA4428 /* GoogleSignIn.swift in Sources */,
+				8F087A49232F72DA0012A481 /* CurrentDevicesCell.swift in Sources */,
 				8F7271F1232617CE0030519A /* LogoutCell.swift in Sources */,
 				8F0125712328B9C6008CED93 /* ProfileVM.swift in Sources */,
-				8F7271FF23264D410030519A /* HomeCell.swift in Sources */,
 				8F73311F231E9CD0009D3083 /* HomeHistoryVC.swift in Sources */,
 				8F07FD74231F7D3C00DC3634 /* LoginVM.swift in Sources */,
 				8F07FD7A2320077400DC3634 /* BaseCVC.swift in Sources */,
+				8F6F839C2330E7C1002ABE54 /* TableView+Extension.swift in Sources */,
 				8F11A825232A130D00AC3F3D /* HomeHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

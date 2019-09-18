@@ -9,53 +9,23 @@
 import Foundation
 
 class HomeVM {
-    struct DeviceModel {
-        var deviceId: String?
-        var adminCredential: String?
-        var dateCreated: Double?
-        var deviceName: String?
-        var deviceMacaddress: String?
-        var deviceSerialnumber: String?
-        var employeeName: String?
-        var id: String?
-    }
     
-    var allDevices = [DeviceModel]()
-    
-    struct DeviceInfo {
-        var deviceName: String?
-        var deviceMacaddress: String?
-        var id: String?
-        var status: String?
-        var deviceId: String?
-    }
-    
-    struct FullHistory {
-        var assignedTo: String?
-        var assignedBy: String?
-        var cableCheck: String?
-        var createdDate: Double?
-        var deviceName: String?
-    }
-    
-    struct HistoricalData {
-        var deviceInfo: DeviceInfo?
-        var fullHistory: [FullHistory]?
-    }
-    
+    var currentDevices: [DeviceModel]?
+    var selectedHistoryData: HistoricalData?
     var historicalData = [HistoricalData]()
+    var allDevices = [DeviceModel]()
     
     func getAllHistory(completionHandler: @escaping (Bool) -> Void) {
         FireBaseManager.shared.fetchHistory { [ weak self ](isSuccess, response) in
             self?.historicalData = []
             if isSuccess == true {
                 if let response = response {
-                    var historyData = HistoricalData()
-                    var deviceInfoModel = DeviceInfo()
-                    var fullHistory = FullHistory()
-                    
                     for eachValue in response {
+                        var historyData = HistoricalData()
+                        
                         if let deviceInfo = eachValue["device_info"] as? [String: Any] {
+                            var deviceInfoModel = DeviceInfo()
+
                             if let deviceYmlId = deviceInfo["yml_device_id"] as? String {
                                 deviceInfoModel.deviceId = deviceYmlId }
                             if let deviceName = deviceInfo["device_name"] as? String {
@@ -66,31 +36,31 @@ class HomeVM {
                                 deviceInfoModel.deviceMacaddress = deviceMacAddress }
                             if let deviceStatus = deviceInfo["status"] as? String {
                                 deviceInfoModel.status = deviceStatus }
+                             historyData.deviceInfo = deviceInfoModel
                         }
-                        
                         if let history = eachValue["fullHistory"] as? [[String: Any]] {
+                            var listOfFullHistory = [FullHistory]()
                             for eachValue in history {
+                                var fullHistory = FullHistory()
                                 if let assignedTo = eachValue["assigned_to"] as? String {
                                     fullHistory.assignedTo = assignedTo }
                                 if let assignedBy = eachValue["assignment_by"] as? String {
                                     fullHistory.assignedBy = assignedBy }
                                 if let cableCheck = eachValue["cableCheck"] as? String {
-                                    fullHistory.cableCheck = cableCheck }
+                                   fullHistory.cableCheck = cableCheck == "1"
+                                }
                                 if let deviceName = eachValue["device_name"] as? String {
                                     fullHistory.deviceName = deviceName }
                                 if let createdDate = eachValue["created_date"] as? String {
                                     let converteddate = Date.toDate(dateString: createdDate)
                                     fullHistory.createdDate = converteddate
                                 }
+                                listOfFullHistory.append(fullHistory)
                             }
+                            historyData.fullHistory.append(contentsOf: listOfFullHistory)
                         }
-                        
-                        historyData.deviceInfo = deviceInfoModel
-                        historyData.fullHistory = [fullHistory]
-                        
+                        self?.historicalData.append(historyData)
                     }
-                    self?.historicalData.append(historyData)
-                    print(self?.historicalData as Any)
                     completionHandler(true)
                 }
             } else {
@@ -120,7 +90,6 @@ class HomeVM {
                         if let id = eachDevice["id"] as? String { device.id = id }
                         self?.allDevices.append(device)
                     }
-                    //print(self?.allDevices as Any)
                     completionHandler(true)
                 }
             } else {

@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 class HomeHistoryCell: BaseTVC {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var assignedToLabel: UILabel!
+    @IBOutlet weak var assignedByLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var cableLabel: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

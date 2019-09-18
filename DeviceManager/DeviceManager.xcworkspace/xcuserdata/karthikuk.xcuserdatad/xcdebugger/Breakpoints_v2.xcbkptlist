@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DeviceManager/View/GoogleSignIn.swift"
-            timestampString = "589475307.266476"
+            filePath = "DeviceManager/View/DashBoard/Profile/TransferDevice.swift"
+            timestampString = "590318292.716535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "sign(_:didSignInFor:withError:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DeviceManager/View/GoogleSignIn.swift"
-            timestampString = "589475307.266826"
+            filePath = "DeviceManager/View/DashBoard/Profile/TransferDeviceVC.swift"
+            timestampString = "590481088.039124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "sign(_:didSignInFor:withError:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "TransferDevice(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
-            timestampString = "589959830.545087"
+            filePath = "DeviceManager/View/DashBoard/Profile/CurrentDeviceListVC.swift"
+            timestampString = "590481088.039203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getAllDevices()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

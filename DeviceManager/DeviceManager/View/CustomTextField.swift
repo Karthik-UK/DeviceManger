@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 class CustomTextField: UITextField {
     var type: KeyType = .email {
         didSet {

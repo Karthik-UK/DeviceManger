@@ -12,9 +12,6 @@ import UIKit
 
 class ProfileImageCell: BaseTVC {
 
-//    @IBOutlet weak var profileImage: UIImageView!
-//    @IBOutlet weak var profileDescription: UILabel!
-    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileDescription: UILabel!
     

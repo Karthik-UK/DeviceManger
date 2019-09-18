@@ -14,7 +14,7 @@ class LoginVC: BaseVC {
     @IBOutlet weak var manualLoginButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
-    let alertconstant = Alertconstants()
+    let constants = KeyConstants()
     let loginvm = LoginVM()
     var currentIndex : IndexPath?
     var isEmailValid: Bool = false
@@ -38,15 +38,12 @@ class LoginVC: BaseVC {
        
     }
     @IBAction private func googleSignIn(_ sender: Any) {
-    
+        startSpinning()
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
-        startSpinning()
-       
     }
     
     deinit {
-        print("Dealloc \(self)")
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -55,14 +52,16 @@ class LoginVC: BaseVC {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "TRUE"])
         guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
-        UIApplication.shared.keyWindow?.rootViewController = dashBoard
+        self.present(dashBoard, animated: true, completion: nil)
     }
     
     @objc func wrongncredential() {
         Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                  "STATUS": "False"])
         stopSpinning()
-        showAlert(message: alertconstant.messgae, title: alertconstant.title, type: .alert ,action :[AlertAction(title:alertconstant.alertactionmessage,style: .default ,handler: nil)])
+        showAlert(message: constants.message, type: .alert ,action :[AlertAction(title: constants.okAction,style: .default ,handler: { (_) in
+            self.stopSpinning()
+        })])
     }
     
     @objc func keyboardWillShow(notification: Notification) {

@@ -10,48 +10,65 @@ import UIKit
 
 class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
-    let homevm = HomeVM()
+    @IBOutlet private weak var tableView: UITableView!
+    
+    var homeVM = HomeVM()
+    let constant = KeyConstants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.sectionHeaderHeight = 70
+        let nib = UINib(nibName: "HomeCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "HomeTableCell")
         getAllDevices()
         getAllHistory()
-
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homevm.allDevices.count
+        return homeVM.allDevices.count
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeCell.self), for: indexPath) as? HomeCell {
-            cell.deviceLabel.text = homevm.allDevices[indexPath.row].deviceId
-            cell.employeeName.text = homevm.allDevices[indexPath.row].adminCredential
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableCell.self)) as? HomeTableCell {
+            cell.firstLabelTitle.text = constant.deviceName
+            cell.secondLabelTitle.text = constant.employeeName
+            cell.thirdLabelTitle.text = constant.entryTime
+            cell.firstLabel.text = homeVM.allDevices[indexPath.row].deviceId
+            cell.secondLabel.text = homeVM.allDevices[indexPath.row].employeeName
+            if let timeStamp = homeVM.allDevices[indexPath.row].dateCreated {
+                cell.thirdLabel.text = Date.getStringFromTimeStamp(timeStamp: timeStamp)
+            }
             return cell
         }
-            return HomeCell()
+        return HomeTableCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let homeHistory = UIStoryboard(name: "HomeHistory", bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
-        
-        self.navigationController?.pushViewController(homeHistory, animated: true)
+        let currentDeviceHistory = homeVM.historicalData.filter {
+            $0.deviceInfo?.deviceId == homeVM.allDevices[indexPath.row].deviceId
+        }.first
+        if let  currentDeviceHistory = currentDeviceHistory {
+            homeVM.selectedHistoryData = currentDeviceHistory
+            guard let homeHistoryVC = UIStoryboard(name: constant.homeHistory, bundle: nil).instantiateViewController(withIdentifier: String(describing: HomeHistoryVC.self)) as? HomeHistoryVC else { return }
+            homeHistoryVC.homeVM = self.homeVM
+            self.navigationController?.pushViewController(homeHistoryVC, animated: true)
+        } else {
+            showAlert(message: constant.noDeviceHistoryAvailable, type: .alert, action :[AlertAction(title:constant.okAction,style: .default ,handler: nil)])
+    
+        }
     }
-        
-     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Current Phone Holders List"
-    }
-
+    
     func getAllDevices() {
-        homevm.getAllDevices { [weak self] isSuccess in
+        homeVM.getAllDevices { [weak self] isSuccess in
             if isSuccess {
                 self?.tableView.reloadData()
             }
         }
     }
-        func getAllHistory() {
-        homevm.getAllHistory { [weak self] isSuccess in
+    func getAllHistory() {
+        homeVM.getAllHistory { [weak self] isSuccess in
             if isSuccess {
                 self?.tableView.reloadData()
             }
