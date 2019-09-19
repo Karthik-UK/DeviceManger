@@ -209,8 +209,8 @@
 				8F1063742320D052001330AB /* OnBoardingVM.swift */,
 				8F0AFAA02327C631007689A7 /* HomeVM.swift */,
 				8F0125702328B9C6008CED93 /* ProfileVM.swift */,
-				8FE824C7232226F9002FD8A6 /* FireBaseManager.swift */,
 				8F83BE0F2321466100BA4428 /* GoogleSignIn.swift */,
+				8FE824C7232226F9002FD8A6 /* FireBaseManager.swift */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";

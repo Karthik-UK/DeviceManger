@@ -117,16 +117,16 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         var cell: ProfileTVCell?
         if let profileCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell {
             profileCell.emailLabel?.text = UserDefaults.standard.string(forKey: constants.key) ?? ""
-            loginVM.getProfileDetails(emailId: UserDefaults.standard.string(forKey: "email") ?? "", completionHandler: { (isSuccess, ImageValue) in
-                if isSuccess {
-                    self.loginVM.image = ImageValue
-                    if let decodedData = Data(base64Encoded:self.loginVM.image, options: .ignoreUnknownCharacters) {
-                        let userImage = UIImage(data: decodedData)
-                        profileCell.buttonImage.setImage(userImage, for: .normal)
+            //loginVM.getProfileDetails(emailId: UserDefaults.standard.string(forKey: "email") ?? "", completionHandler: { (isSuccess, ImageValue) in
+               // if isSuccess {
+                 //   self.loginVM.image = ImageValue
+                   // if let decodedData = Data(base64Encoded:self.loginVM.image, options: .ignoreUnknownCharacters) {
+                     //   let userImage = UIImage(data: decodedData)
+                      //  profileCell.buttonImage.setImage(userImage, for: .normal)
                         
-                    }
-                }
-            })
+                 //   }
+               // }
+            //})
             
             profileCell.buttonImage.addTarget(self, action: #selector(oneTapped(_:)), for: .touchUpInside)
             cell = profileCell

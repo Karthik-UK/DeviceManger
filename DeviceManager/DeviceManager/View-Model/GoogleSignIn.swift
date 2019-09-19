@@ -9,7 +9,8 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
     private override init() {
         super.init()
     }
-    
+    var googleSignInHandler: (( _ error: Error? , _ mail: String) -> Void)?
+    var googleSignInCancelHandler : (( _ error: Error?) -> Void )?
     func googleCredential() {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -19,9 +20,9 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
               withError error: Error!) {
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                print("The user has not signed in before or they have since signed out.")
+                
             } else {
-                print("\(error.localizedDescription)")
+                self.googleSignInCancelHandler?(error)
             }
             return
         }
@@ -30,10 +31,10 @@ class GoogleSignin :NSObject ,GIDSignInDelegate {
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
             Auth.auth().signIn(with: credential) {[weak self] ( _ , error) in
                 if let error = error {
-                    print(error)
+                     self?.googleSignInHandler?(error , "")
                 } else {
-                    self?.loginvm.email = googlemail
-                    self?.loginvm.verifyemail(mail: self?.loginvm.email ?? "")
+                    self?.googleSignInHandler?(nil , googlemail)
+                   
                 }
             }}
     }
