@@ -4,13 +4,15 @@ import GoogleSignIn
 class GoogleSignin :NSObject ,GIDSignInDelegate {
     
     static let shared = GoogleSignin()
-    let loginvm = LoginVM()
+    
     
     private override init() {
         super.init()
     }
+    
     var googleSignInHandler: (( _ error: Error? , _ mail: String) -> Void)?
     var googleSignInCancelHandler : (( _ error: Error?) -> Void )?
+    
     func googleCredential() {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self

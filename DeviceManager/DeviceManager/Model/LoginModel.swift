@@ -13,15 +13,6 @@ struct UserDetails {
     var ymlID: String?
 
 }
-struct CurrentUserDetails {
-    var username: String?
-    var passWord: String?
-    var email: String?
-    var profileImage: String?
-    var role: String?
-    var ymlID: String?
-    
-}
 
 //For label Field
 struct LoginFields {

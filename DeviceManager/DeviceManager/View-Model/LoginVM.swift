@@ -6,9 +6,10 @@ class LoginVM {
     var loginInfo: [LoginFields] = []
     var constants = KeyConstants()
     var allUserDetails = [UserDetails]()
-    var currentUserDetails = CurrentUserDetails()
+    var currentUserDetails = UserDetails()
     var email: String = ""
     var password: String = ""
+    
     func login() {
         let details: [LoginFields] = [LoginFields(title: "Email"), LoginFields(title: "Password" )]
         loginInfo = details
@@ -79,7 +80,7 @@ class LoginVM {
         }
     }
     
-    func verifyEmail(mail :String, password: String? = nil, type: String ,completionHandler: @escaping (String ,Bool) -> Void) {
+    func verifyEmail(mail :String, password: String? = nil, type: String, completionHandler: @escaping (String ,Bool) -> Void) {
         
         for user in allUserDetails {
             if let userEmail = user.email {

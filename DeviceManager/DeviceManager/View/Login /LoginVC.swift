@@ -23,53 +23,53 @@ class LoginVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            GIDSignIn.sharedInstance()?.presentingViewController = self
-            GoogleSignin.shared.googleSignInCancelHandler = { [weak self] (error) in
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GoogleSignin.shared.googleSignInCancelHandler = { [weak self] (error) in
             if (error != nil) {
                 self?.stopSpinning()
             }
         }
-            GoogleSignin.shared.googleSignInHandler = { [weak self] (error , mailID) in
-                DispatchQueue.main.async {
-                    if error != nil {
-                        self?.showAlert(message: self?.constants.message ?? "", type: .alert ,action :[AlertAction(title: self?.constants.okAction,style: .default ,handler: { (_) in
+        GoogleSignin.shared.googleSignInHandler = { [weak self] (error , mailID) in
+            DispatchQueue.main.async {
+                if error != nil {
+                    self?.showAlert(message: self?.constants.message ?? "", type: .alert ,action :[AlertAction(title: self?.constants.okAction,style: .default ,handler: { (_) in
+                        self?.stopSpinning()
+                    })])
+                } else {
+                    self?.loginvm.verifyEmail(mail: mailID , type: "GoogleLogin" ) { [weak self] (login, isSuccess) in
+                        if login == "GoogleLogin" && isSuccess == true {
                             self?.stopSpinning()
-                        })])
-                    } else {
-                        self?.loginvm.verifyEmail(mail: mailID , type: "GoogleLogin" ) { [weak self] (login, isSuccess) in
-                            if login == "GoogleLogin" && isSuccess == true {
-                                self?.stopSpinning()
-                                self?.loginvm.getCurrentUserDetails(emailID: UserDefaults.standard.string(forKey: "email") ?? "") { (Success) in
-                                    if Success { print("Added SuccessFuly") }
-                                    else { print("Failed to add ")}
-                                }
-                                Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
-                                                                         "STATUS": "TRUE"])
-                                guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
-                                self?.present(dashBoard, animated: true, completion: nil)
-                                
+                            self?.loginvm.getCurrentUserDetails(emailID: UserDefaults.standard.string(forKey: "email") ?? "") { (Success) in
+                                if Success {
+                                    Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
+                                                                             "STATUS": "TRUE"])
+                                    guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
+                                    dashBoard.loginVM = self?.loginvm
+                                    self?.present(dashBoard, animated: true, completion: nil)
+                                    print("Added SuccessFuly")
+                                } else {
+                                    print("Failed to add ")}
                             }
-                            else if login == "GoogleLogin" && isSuccess == false {
-                                Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
-                                                                         "STATUS": "False"])
+                            
+                        } else if login == "GoogleLogin" && isSuccess == false {
+                            Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
+                                                                     "STATUS": "False"])
+                            self?.stopSpinning()
+                            self?.showAlert(message: self?.constants.message ?? "", type: .alert ,action :[AlertAction(title: self?.constants.okAction,style: .default ,handler: { (_) in
                                 self?.stopSpinning()
-                                self?.showAlert(message: self?.constants.message ?? "", type: .alert ,action :[AlertAction(title: self?.constants.okAction,style: .default ,handler: { (_) in
-                                    self?.stopSpinning()
-                                })])
-                                
-                            }
+                            })])
+                            
                         }
                     }
                 }
             }
-
+        }
         
         loginvm.login()
         loginvm.getAllUserDetails { (isSuccess) in
             if isSuccess {
                 print("Fetched All Users data")
-            }
-            else {
+            } else {
                 print("Failed to Fetch All Users data")
             }
         }
@@ -84,16 +84,16 @@ class LoginVC: BaseVC {
             if login == "Login" && isSuccess == true {
                 self?.stopSpinning()
                 self?.loginvm.getCurrentUserDetails(emailID: UserDefaults.standard.string(forKey: "email") ?? "") { (Success) in
-                    if Success { print("Added SuccessFuly") }
-                    else { print("Failed to add ")}
+                    if Success { print("Added SuccessFuly")
+                    } else {
+                        print("Failed to add ")}
                 }
                 Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                          "STATUS": "TRUE"])
                 guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
+                dashBoard.loginVM = self?.loginvm
                 self?.present(dashBoard, animated: true, completion: nil)
-                
-            }
-            else if login == "Login" && isSuccess == false {
+            } else if login == "Login" && isSuccess == false {
                 Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                          "STATUS": "False"])
                 self?.stopSpinning()

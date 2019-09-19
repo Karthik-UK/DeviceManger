@@ -13,11 +13,10 @@ class ProfileVC: BaseVC {
     @IBOutlet weak var profileName: UINavigationItem!
     @IBOutlet weak var profileTableView: UITableView!
     
-    let loginVM = LoginVM()
+   
     let constants = KeyConstants()
     let pickerConstant = PickerConstants()
     var profilevm = ProfileVM()
-    weak var homeVM: HomeVM?
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -99,10 +98,10 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 2 {
             profilevm.currentOwnerDevice = []
-            if homeVM?.allDevices.count != nil {
+            if profilevm.homeVM?.allDevices.count != nil {
                 guard let currentList = UIStoryboard(name: "CurrentDeviceList", bundle: nil).instantiateViewController(withIdentifier: String(describing: CurrentDeviceListVC.self)) as? CurrentDeviceListVC else { return }
                 currentList.profileVM = self.profilevm
-                currentList.homeVM = self.homeVM
+                currentList.homeVM = self.profilevm.homeVM
                 self.navigationController?.pushViewController(currentList, animated: true)
             }
         }
@@ -117,17 +116,10 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         var cell: ProfileTVCell?
         if let profileCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell {
             profileCell.emailLabel?.text = UserDefaults.standard.string(forKey: constants.key) ?? ""
-            //loginVM.getProfileDetails(emailId: UserDefaults.standard.string(forKey: "email") ?? "", completionHandler: { (isSuccess, ImageValue) in
-               // if isSuccess {
-                 //   self.loginVM.image = ImageValue
-                   // if let decodedData = Data(base64Encoded:self.loginVM.image, options: .ignoreUnknownCharacters) {
-                     //   let userImage = UIImage(data: decodedData)
-                      //  profileCell.buttonImage.setImage(userImage, for: .normal)
-                        
-                 //   }
-               // }
-            //})
-            
+            if let decodedData = Data(base64Encoded: profilevm.loginVM?.currentUserDetails.profileImage ?? "", options: .ignoreUnknownCharacters) {
+                        let userImage = UIImage(data: decodedData)
+                        profileCell.buttonImage.setImage(userImage, for: .normal)
+                    }
             profileCell.buttonImage.addTarget(self, action: #selector(oneTapped(_:)), for: .touchUpInside)
             cell = profileCell
         }

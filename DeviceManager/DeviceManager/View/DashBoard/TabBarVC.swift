@@ -9,8 +9,9 @@
 import UIKit
 
 class TabBarVC: UITabBarController, UITabBarControllerDelegate {
+    weak var loginVM: LoginVM?
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.delegate = self
         tabBarSetUp()
@@ -21,13 +22,12 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
             if let profileVC = navVC.viewControllers.first as? ProfileVC {
                 if let navVC2 = tabBarController.viewControllers?.first as? UINavigationController {
                     if let homeVC = navVC2.viewControllers.first as? HomeVC {
-                        profileVC.homeVM = homeVC.homeVM
-                
+                        profileVC.profilevm.homeVM = homeVC.homeVM
+                        profileVC.profilevm.loginVM = loginVM
                     }
                 }
             }
         }
-        
     }
     func tabBarSetUp() {
         UITabBar.appearance().tintColor = .cyan
