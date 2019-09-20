@@ -9,6 +9,10 @@
 import Foundation
 
 class ProfileVM {
+    
+    weak var homeVM: HomeVM?
+    weak var loginVM: LoginVM?
+    
     var currentOwnerDevice = [DeviceModel]()
     var email: String = ""
     var totalDevicecount: Int = 0

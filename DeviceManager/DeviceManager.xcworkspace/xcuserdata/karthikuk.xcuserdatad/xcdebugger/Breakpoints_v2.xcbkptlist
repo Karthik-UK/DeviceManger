@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DeviceManager/View/DashBoard/Profile/TransferDeviceVC.swift"
-            timestampString = "590481088.039124"
+            filePath = "DeviceManager/View/Login /LoginVC.swift"
+            timestampString = "590597013.440002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "TransferDevice(_:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "manualLogin(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,184 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DeviceManager/View/DashBoard/Profile/CurrentDeviceListVC.swift"
-            timestampString = "590481088.039203"
+            filePath = "DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
+            timestampString = "590597013.440079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "getAllDevices()"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ProfileVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.ProfileVC.loginVM.getter : Swift.Optional&lt;DeviceManager.LoginVM&gt;"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
+                  timestampString = "590596152.41587"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.ProfileVC.loginVM.setter : Swift.Optional&lt;DeviceManager.LoginVM&gt;"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
+                  timestampString = "590596152.434142"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.ProfileVC.loginVM.modify : Swift.Optional&lt;DeviceManager.LoginVM&gt;"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
+                  timestampString = "590596152.438844"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.ProfileVC.loginVM.modify : Swift.Optional&lt;DeviceManager.LoginVM&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
+                  timestampString = "590596152.441439"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.ProfileVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; DeviceManager.ProfileVC"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
+                  timestampString = "590596152.443323"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "458">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.ProfileVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;DeviceManager.ProfileVC&gt;"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/DashBoard/Profile/ProfileVC.swift"
+                  timestampString = "590596152.445524"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "369">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeviceManager/View/Login /LoginVC.swift"
+            timestampString = "590597013.440448"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "LoginVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.LoginVC.loginvm.getter : DeviceManager.LoginVM"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/Login%20/LoginVC.swift"
+                  timestampString = "590596152.45647"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.LoginVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; DeviceManager.LoginVC"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/Login%20/LoginVC.swift"
+                  timestampString = "590596152.4593771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "634">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeviceManager.LoginVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;DeviceManager.LoginVC&gt;"
+                  moduleName = "DeviceManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikuk/Documents/DM-MiniProj/DeviceManager/DeviceManager/View/Login%20/LoginVC.swift"
+                  timestampString = "590596152.461226"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "580">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeviceManager/View/Login /LoginVC.swift"
+            timestampString = "590597013.440501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

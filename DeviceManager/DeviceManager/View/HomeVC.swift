@@ -27,7 +27,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
         return homeVM.allDevices.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

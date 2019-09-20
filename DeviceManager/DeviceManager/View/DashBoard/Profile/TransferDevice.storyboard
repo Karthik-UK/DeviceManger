@@ -23,12 +23,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SmI-1s-AMH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFy-Rn-aY7">
-                                <rect key="frame" x="107" y="328" width="200" height="60"/>
+                                <rect key="frame" x="107" y="308" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.52507268969999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="3q4-lk-15l"/>
@@ -53,7 +53,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="v2k-PL-rI7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -88,7 +88,7 @@
                             <constraint firstItem="Jx7-bw-QmJ" firstAttribute="leading" secondItem="2qF-8i-Xfb" secondAttribute="leading" constant="20" id="hXM-W9-p7b"/>
                             <constraint firstItem="MOG-MV-AvB" firstAttribute="top" secondItem="0NW-t4-F5o" secondAttribute="bottom" constant="40" id="kfO-I5-zDn"/>
                             <constraint firstItem="2qF-8i-Xfb" firstAttribute="trailing" secondItem="4eE-cH-Di1" secondAttribute="trailing" constant="30" id="knG-mL-9pQ"/>
-                            <constraint firstItem="LFy-Rn-aY7" firstAttribute="top" secondItem="4eE-cH-Di1" secondAttribute="bottom" constant="50" id="zp7-Om-3pc"/>
+                            <constraint firstItem="LFy-Rn-aY7" firstAttribute="top" secondItem="4eE-cH-Di1" secondAttribute="bottom" constant="30" id="zp7-Om-3pc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2qF-8i-Xfb"/>
                     </view>

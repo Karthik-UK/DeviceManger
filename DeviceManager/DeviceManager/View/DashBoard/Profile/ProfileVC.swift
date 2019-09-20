@@ -13,22 +13,23 @@ class ProfileVC: BaseVC {
     @IBOutlet weak var profileName: UINavigationItem!
     @IBOutlet weak var profileTableView: UITableView!
     
-    let loginVM = LoginVM()
+   
     let constants = KeyConstants()
     let pickerConstant = PickerConstants()
     var profilevm = ProfileVM()
-    weak var homeVM: HomeVM?
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileTableView.tableFooterView = UIView()
         imagePicker.delegate = self
         profileName.title = FireBaseManager.shared.userName
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       
+        
     }
+    // To change Profile Picture
     @objc func oneTapped(_ sender: Any?) {
         showAlert(message: pickerConstant.selectImage, type: .actionSheet, action: [AlertAction(title: pickerConstant.camera, style: .default, handler: { (_) in
             self.imagePicker.sourceType = .camera
@@ -41,6 +42,7 @@ class ProfileVC: BaseVC {
         imagePicker.allowsEditing = false
     }
     
+    //logout Action
     @IBAction private func logOut(_ sender: Any) {
         showAlert(message: constants.logOut, type: .alert, action :[AlertAction(title: constants.no,style: .cancel ,handler: nil),AlertAction(title: constants.yes, style: .default, handler: { (_) in
             UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
@@ -57,25 +59,25 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if let cell = profileTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ProfileTVCell {
-            cell.buttonImage.setImage(image, for: .normal)
-                let data = image.jpegData(compressionQuality: 1)
+                cell.buttonImage.setImage(image, for: .normal)
+                let data = image.jpegData(compressionQuality: 0.2)
                 let imageStr = data?.base64EncodedString(options: .lineLength64Characters) ?? ""
                 FireBaseManager.shared.updateImage(image: imageStr, emailId: UserDefaults.standard.string(forKey: "email") ?? "")
-            
+                
+            }
+            dismiss(animated: true)
         }
-        dismiss(animated: true)
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true)
+        }
     }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true)
-    }
-}
 }
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,33 +98,28 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 2 {
             profilevm.currentOwnerDevice = []
-            if homeVM?.allDevices.count != nil {
+            if profilevm.homeVM?.allDevices.count != nil {
                 guard let currentList = UIStoryboard(name: "CurrentDeviceList", bundle: nil).instantiateViewController(withIdentifier: String(describing: CurrentDeviceListVC.self)) as? CurrentDeviceListVC else { return }
                 currentList.profileVM = self.profilevm
-                currentList.homeVM = self.homeVM
+                currentList.homeVM = self.profilevm.homeVM
                 self.navigationController?.pushViewController(currentList, animated: true)
             }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return UITableView.automaticDimension
     }
     
     private func getProfileCell(indexPath: IndexPath) -> ProfileTVCell? {
         var cell: ProfileTVCell?
         if let profileCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileTVCell.self), for: indexPath) as? ProfileTVCell {
             profileCell.emailLabel?.text = UserDefaults.standard.string(forKey: constants.key) ?? ""
-            loginVM.getProfileDetails(emailId: UserDefaults.standard.string(forKey: "email") ?? "", completionHandler: { (isSuccess, ImageValue) in
-                if isSuccess {
-                    self.loginVM.image = ImageValue
-                    if let decodedData = Data(base64Encoded:self.loginVM.image, options: .ignoreUnknownCharacters) {
+            if let decodedData = Data(base64Encoded: profilevm.loginVM?.currentUserDetails.profileImage ?? "", options: .ignoreUnknownCharacters) {
                         let userImage = UIImage(data: decodedData)
                         profileCell.buttonImage.setImage(userImage, for: .normal)
                     }
-                }
-            })
-           
             profileCell.buttonImage.addTarget(self, action: #selector(oneTapped(_:)), for: .touchUpInside)
             cell = profileCell
         }

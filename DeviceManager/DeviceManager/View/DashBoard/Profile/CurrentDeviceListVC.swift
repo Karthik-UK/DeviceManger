@@ -50,7 +50,7 @@ extension CurrentDeviceListVC:  UITableViewDataSource , UITableViewDelegate {
     }
     
     func  tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 115
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -58,10 +58,8 @@ extension CurrentDeviceListVC:  UITableViewDataSource , UITableViewDelegate {
         guard let transferDeviceVC = UIStoryboard(name: "TransferDevice", bundle: nil).instantiateViewController(withIdentifier: String(describing: TransferDeviceVC.self)) as? TransferDeviceVC else { return }
         
         transferDeviceVC.profileVM = profileVM
-        //  let navController = UINavigationController(rootViewController: transferDeviceVC)
         transferDeviceVC.profileVM?.index = indexPath.row
         navigationController?.pushViewController(transferDeviceVC, animated: false)
-        //present(navController, animated: true, completion: nil)
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
