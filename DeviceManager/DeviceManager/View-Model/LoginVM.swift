@@ -46,6 +46,7 @@ class LoginVM {
             }
             
         }
+       
     }
     
     func getAllUserDetails(completionHandler: @escaping (Bool) -> Void) {

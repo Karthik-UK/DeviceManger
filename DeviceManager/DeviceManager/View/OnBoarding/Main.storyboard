@@ -105,7 +105,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Jhk-co-Cjz" kind="presentation" id="xtQ-bx-Ggn"/>
+                                    <action selector="goNext:" destination="6qu-xp-pmr" eventType="touchUpInside" id="9Ou-vC-j2j"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FPz-6v-2yh">
@@ -149,7 +149,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7f-CI-AOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="48.575712143928037"/>
+            <point key="canvasLocation" x="409" y="28"/>
         </scene>
     </scenes>
     <resources>

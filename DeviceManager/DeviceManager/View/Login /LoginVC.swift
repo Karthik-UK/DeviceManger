@@ -20,9 +20,16 @@ class LoginVC: BaseVC {
     var currentIndex : IndexPath?
     var isEmailValid: Bool = false
     var isPasswordValid: Bool = false
-    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GoogleSignin.shared.googleSignInCancelHandler = { [weak self] (error) in
             if (error != nil) {
@@ -42,7 +49,7 @@ class LoginVC: BaseVC {
                             self?.loginvm.getCurrentUserDetails(emailID: UserDefaults.standard.string(forKey: "email") ?? "") { (Success) in
                                 if Success {
                                     Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
-                                                                             "STATUS": "TRUE"])
+                                                                    "STATUS": "TRUE"])
                                     guard let dashBoard = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: String(describing: TabBarVC.self)) as? TabBarVC else { return }
                                     dashBoard.loginVM = self?.loginvm
                                     self?.present(dashBoard, animated: true, completion: nil)
@@ -97,10 +104,10 @@ class LoginVC: BaseVC {
                 Analytics.logEvent("Login", parameters: ["MODULE": "LoginVC",
                                                          "STATUS": "False"])
                 self?.stopSpinning()
-                self?.showAlert(message: self?.constants.message ?? "", type: .alert ,action :[AlertAction(title: self?.constants.okAction,style: .default ,handler: { (_) in
-                    self?.stopSpinning()
-                })])
-                
+//                self?.showAlert(message: self?.constants.message ?? "", type: .alert ,action :[AlertAction(title: self?.constants.okAction,style: .default ,handler: { (_) in
+//                    self?.stopSpinning()
+//                })])
+//                self?.showAlerts(message: "e", title: "dff", arrofBtns: [BaseVC.BtnAction(title: "d", actionType: <#T##BaseVC.ActionType#>)], type: .alert)
             }
         }
     }
@@ -112,14 +119,20 @@ class LoginVC: BaseVC {
     }
     
     @objc func keyboardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            loginButtonBottomConstraint.constant = keyboardSize.height
+        UIView.animate(withDuration: 1.5) {
+            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                self.loginButtonBottomConstraint.constant = keyboardSize.height
+            }
+
         }
-        
+       
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        loginButtonBottomConstraint.constant = 220
+        UIView.animate(withDuration: 12.5) {
+            self.loginButtonBottomConstraint.constant = 220
+        }
+       
     }
 }
 

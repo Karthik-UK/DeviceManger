@@ -14,6 +14,10 @@ class OnBoardingVC: BaseVC {
 
     let onBoardingmodel = OnBoardingVM()
     
+    @IBAction func goNext(_ sender: Any) {
+        guard let loginVC  = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoginVC.self)) as? LoginVC else { return }
+        self.present(loginVC, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.currentPageIndicatorTintColor = .blue

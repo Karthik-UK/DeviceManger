@@ -42,12 +42,15 @@ class FireBaseManager {
     
     func getAllExistingUserDetails (completionHandler: @escaping (Bool, [[String: Any]]?) -> Void) {
         let existingNode = self.ref.child("existingUsers")
-        existingNode.observeSingleEvent(of: .value) { (dataSnapshot) in
+        DispatchQueue.main.async {
+            existingNode.observeSingleEvent(of: .value) { (dataSnapshot) in
             if let dict = dataSnapshot.value as? [[String: Any]] {
                 completionHandler(true, dict)
             } else {
                 completionHandler(false, nil)
             }
+            }
+            
         }
     }
 
@@ -82,6 +85,7 @@ class FireBaseManager {
     }
 
     func addHistory(deviceId: String, mail: String, deviceName: String, completionHandler: @escaping (Bool) -> Void) {
+        
         ref.child("historicalData").observeSingleEvent(of: .value) { (snapshot) in
             if let dict = snapshot.value as? [[String: Any]] {
                 for (index,item) in dict.enumerated() {

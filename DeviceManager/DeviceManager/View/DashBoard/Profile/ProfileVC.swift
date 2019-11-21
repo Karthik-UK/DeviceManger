@@ -42,12 +42,22 @@ class ProfileVC: BaseVC {
         imagePicker.allowsEditing = false
     }
     
+    
+    
     //logout Action
     @IBAction private func logOut(_ sender: Any) {
         showAlert(message: constants.logOut, type: .alert, action :[AlertAction(title: constants.no,style: .cancel ,handler: nil),AlertAction(title: constants.yes, style: .default, handler: { (_) in
             UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-            guard let dashBoard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: OnBoardingVC.self)) as? OnBoardingVC else { return }
-            self.tabBarController?.present(dashBoard, animated: false, completion: nil)
+          //   self.tabBarController?.present(dashBoard, animated: false, completion: nil)
+            self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+
+          //  self.navigationController?.popViewController(animated: true)
+//            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+//            appdelegate.window!.rootViewController = dashBoard
+            
+           // self.dismiss(animated: true, completion: nil)
+            
+          //  self.tabBarController?.present(dashBoard, animated: false, completion: nil)
         }
             )])
     }
@@ -98,6 +108,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 2 {
             profilevm.currentOwnerDevice = []
+            
             if profilevm.homeVM?.allDevices.count != nil {
                 guard let currentList = UIStoryboard(name: "CurrentDeviceList", bundle: nil).instantiateViewController(withIdentifier: String(describing: CurrentDeviceListVC.self)) as? CurrentDeviceListVC else { return }
                 currentList.profileVM = self.profilevm
@@ -106,6 +117,23 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+        },completion: { finished in
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+            })
+        })
+        
+        
+        
+//
+//        let animation = self.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
+//        let animator = animation(animation: animation)
+//        animator.animate(cell: cell, at: indexPath, in: tableView)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

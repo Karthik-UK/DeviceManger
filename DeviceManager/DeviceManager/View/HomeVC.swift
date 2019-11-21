@@ -17,6 +17,7 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let nib = UINib(nibName: "HomeCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "HomeTableCell")
         getAllDevices()
@@ -43,6 +44,23 @@ class HomeVC: BaseVC , UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return HomeTableCell()
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+        },completion: { finished in
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+            })
+        })
+        
+        
+        
+        //
+        //        let animation = self.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
+        //        let animator = animation(animation: animation)
+        //        animator.animate(cell: cell, at: indexPath, in: tableView)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
